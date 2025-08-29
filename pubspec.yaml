@@ -1,0 +1,75 @@
+name: flutter_english_learning
+description: 英语阅读理解学习平台 - Flutter Android版
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  
+  # Supabase相关依赖
+  supabase_flutter: ^2.9.1
+  
+  # 状态管理
+  provider: ^6.1.5
+  
+  # 本地存储
+  shared_preferences: ^2.5.3
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # 网络和连接
+  connectivity_plus: ^5.0.2
+  
+  # 设备信息
+  device_info_plus: ^9.1.2
+  package_info_plus: ^4.2.0
+  
+  # 权限管理
+  permission_handler: ^11.4.0
+  
+  # 文件操作
+  path_provider: ^2.1.5
+  file_picker: ^8.1.2
+  
+  # 分享功能
+  share_plus: ^7.2.2
+  
+  # URL启动
+  url_launcher: ^6.3.2
+  
+  # UUID生成
+  uuid: ^4.4.0
+  
+  # 语音朗读
+  flutter_tts: ^4.0.2
+  
+  # 本地数据库
+  sqflite: ^2.3.0
+  path: ^1.8.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+  
+  # 资源文件
+  assets:
+    - assets/data/
+    - assets/images/
+    - assets/icons/
+  
+  # 字体配置 - 暂时注释掉，使用系统默认字体
+  # fonts:
+  #   - family: Roboto
+  #     fonts:
+  #       - asset: fonts/Roboto-Regular.ttf
+  #       - asset: fonts/Roboto-Bold.ttf
+  #         weight: 700

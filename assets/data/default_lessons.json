@@ -1,0 +1,78 @@
+[
+  {
+    "lesson": 1,
+    "title": "A Day at the Beach",
+    "content": "Sarah and her family went to the beach on a sunny Saturday morning. The weather was perfect for swimming and playing in the sand. Sarah built a beautiful sandcastle while her brother Tom collected seashells along the shore. Their parents relaxed under a colorful umbrella, reading books and enjoying the peaceful sound of the waves. In the afternoon, they had a picnic lunch with sandwiches and fresh fruit. As the sun began to set, they packed up their things and headed home, tired but happy from their wonderful day at the beach.",
+    "vocabulary": [
+      {"word": "shore", "meaning": "海岸，岸边"},
+      {"word": "umbrella", "meaning": "雨伞，遮阳伞"},
+      {"word": "peaceful", "meaning": "平静的，安宁的"},
+      {"word": "waves", "meaning": "波浪"},
+      {"word": "picnic", "meaning": "野餐"}
+    ],
+    "sentences": [
+      {"text": "The weather was perfect for swimming and playing in the sand.", "note": "be perfect for doing sth. 非常适合做某事"},
+      {"text": "As the sun began to set, they packed up their things.", "note": "as引导时间状语从句，pack up意为'收拾，打包'"}
+    ],
+    "questions": [
+      {
+        "q": "What did Sarah do at the beach?",
+        "options": {
+          "A": "She collected seashells",
+          "B": "She built a sandcastle",
+          "C": "She read books",
+          "D": "She went swimming"
+        },
+        "answer": "B"
+      },
+      {
+        "q": "When did the family go to the beach?",
+        "options": {
+          "A": "Sunday morning",
+          "B": "Saturday afternoon",
+          "C": "Saturday morning",
+          "D": "Sunday afternoon"
+        },
+        "answer": "C"
+      }
+    ]
+  },
+  {
+    "lesson": 2,
+    "title": "The School Library",
+    "content": "The school library is one of the most important places in our school. It contains thousands of books on various subjects including science, history, literature, and mathematics. Students can borrow up to five books at a time and keep them for two weeks. The librarian, Mrs. Johnson, is very helpful and always ready to assist students in finding the books they need. The library also has computers with internet access for research purposes. During lunch break, many students come here to read quietly or work on their homework. The library stays open until 6 PM on weekdays and closes at 3 PM on Saturdays.",
+    "vocabulary": [
+      {"word": "contains", "meaning": "包含，容纳"},
+      {"word": "various", "meaning": "各种各样的"},
+      {"word": "literature", "meaning": "文学"},
+      {"word": "borrow", "meaning": "借用"},
+      {"word": "assist", "meaning": "帮助，协助"}
+    ],
+    "sentences": [
+      {"text": "Students can borrow up to five books at a time.", "note": "up to表示'多达，至多'，at a time表示'一次'"},
+      {"text": "The librarian is always ready to assist students.", "note": "be ready to do sth.准备做某事，乐意做某事"}
+    ],
+    "questions": [
+      {
+        "q": "How many books can students borrow at one time?",
+        "options": {
+          "A": "Three books",
+          "B": "Four books",
+          "C": "Five books",
+          "D": "Six books"
+        },
+        "answer": "C"
+      },
+      {
+        "q": "What time does the library close on Saturdays?",
+        "options": {
+          "A": "3 PM",
+          "B": "6 PM",
+          "C": "5 PM",
+          "D": "4 PM"
+        },
+        "answer": "A"
+      }
+    ]
+  }
+]
