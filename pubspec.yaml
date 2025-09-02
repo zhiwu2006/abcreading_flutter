@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  flutter_launcher_icons: ^0.14.1
   
   # Supabase相关依赖
   supabase_flutter: ^2.9.1
@@ -66,10 +67,14 @@ flutter:
     - assets/images/
     - assets/icons/
   
-  # 字体配置 - 暂时注释掉，使用系统默认字体
-  # fonts:
-  #   - family: Roboto
-  #     fonts:
-  #       - asset: fonts/Roboto-Regular.ttf
-  #       - asset: fonts/Roboto-Bold.ttf
-  #         weight: 700
+  # 字体配置
+  fonts:
+    - family: TimesNewRoman
+      fonts:
+        - asset: assets/fonts/Times.ttc
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21
