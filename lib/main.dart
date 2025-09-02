@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/rendering.dart';
 import 'package:provider/provider.dart';
 import 'models/lesson.dart';
 import 'data/default_lessons.dart';
@@ -78,7 +79,7 @@ class EnglishLearningApp extends StatelessWidget {
         title: '英语阅读理解学习平台',
         theme: ThemeData(
           primarySwatch: Colors.blue,
-          fontFamily: 'Roboto',
+          fontFamily: 'TimesNewRoman',
           useMaterial3: true,
           colorScheme: ColorScheme.fromSeed(
             seedColor: const Color(0xFF3B82F6),
@@ -98,8 +99,8 @@ class ReadingPreferences {
   final bool showVocabularyHighlight;
 
   const ReadingPreferences({
-    this.fontSize = 16,
-    this.fontFamily = 'Roboto',
+    this.fontSize = 24,
+    this.fontFamily = 'Times',
     this.showVocabularyHighlight = true,
   });
 
@@ -119,7 +120,7 @@ class ReadingPreferences {
   String get fontFamilyStyle {
     switch (fontFamily) {
       case 'Times':
-        return 'Times New Roman';
+        return 'TimesNewRoman';
       case 'Arial':
         return 'Arial';
       case 'Georgia':
@@ -145,6 +146,7 @@ class _HomePageState extends State<HomePage> {
   final TTSService _ttsService = TTSService();
   final SyncProgressService _progressService = SyncProgressService();
   bool _isLoadingProgress = true;
+  bool _showChrome = true; // 控制“第几课”标题栏与Tab栏显示
 
   @override
   void initState() {
@@ -343,7 +345,12 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsets.all(16.0),
             child: Column(
               children: [
-                _buildLessonSelector(),
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 200),
+                  switchInCurve: Curves.easeOut,
+                  switchOutCurve: Curves.easeIn,
+                  child: _showChrome ? _buildLessonSelector() : const SizedBox.shrink(),
+                ),
                 const SizedBox(height: 16),
                 Expanded(
                   child: LessonContent(
@@ -351,6 +358,12 @@ class _HomePageState extends State<HomePage> {
                     readingPreferences: readingPreferences,
                     ttsService: _ttsService,
                     progressService: _progressService,
+                    showChrome: _showChrome,
+                    onChromeVisibilityChange: (show) {
+                      if (show != _showChrome) {
+                        setState(() => _showChrome = show);
+                      }
+                    },
                   ),
                 ),
               ],
@@ -1509,6 +1522,8 @@ class LessonContent extends StatefulWidget {
   final ReadingPreferences readingPreferences;
   final TTSService ttsService;
   final ProgressService progressService;
+  final bool showChrome;
+  final ValueChanged<bool>? onChromeVisibilityChange;
 
   const LessonContent({
     super.key,
@@ -1516,6 +1531,8 @@ class LessonContent extends StatefulWidget {
     required this.readingPreferences,
     required this.ttsService,
     required this.progressService,
+    this.showChrome = true,
+    this.onChromeVisibilityChange,
   });
 
   @override
@@ -1528,12 +1545,19 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   bool showResults = false;
   int score = 0;
   Set<String> highlightedWords = {};
+  late ScrollController _scrollController;
+  double _lastOffset = 0;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
     _updateHighlightedWords();
+    _tabController.addListener(() {
+      if (mounted) setState(() {});
+    });
+    _scrollController = ScrollController();
+    _scrollController.addListener(_onScroll);
   }
 
   @override
@@ -1565,64 +1589,105 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   void dispose() {
     _tabController.dispose();
     widget.ttsService.stop();
+    _scrollController.removeListener(_onScroll);
+    _scrollController.dispose();
     super.dispose();
+  }
+
+  void _onScroll() {
+    final current = _scrollController.position.pixels;
+    final direction = current > _lastOffset ? ScrollDirection.reverse : ScrollDirection.forward;
+    _lastOffset = current;
+    if (widget.onChromeVisibilityChange == null) return;
+    // 仅在词汇/句子/练习题三个页签里响应（索引1/2/3）
+    if (_tabController.index == 1 || _tabController.index == 2 || _tabController.index == 3) {
+      if (direction == ScrollDirection.reverse && widget.showChrome) {
+        widget.onChromeVisibilityChange!(false);
+      } else if (direction == ScrollDirection.forward && !widget.showChrome) {
+        widget.onChromeVisibilityChange!(true);
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(12),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.1),
-                spreadRadius: 1,
-                blurRadius: 6,
-                offset: const Offset(0, 2),
-              ),
-            ],
-          ),
-          child: TabBar(
-            controller: _tabController,
-            tabs: const [
-              Tab(icon: Icon(Icons.book), text: '阅读故事'),
-              Tab(icon: Icon(Icons.visibility), text: '词汇学习'),
-              Tab(icon: Icon(Icons.chat_bubble), text: '重点句子'),
-              Tab(icon: Icon(Icons.quiz), text: '练习题'),
-            ],
-            labelColor: Colors.blue,
-            unselectedLabelColor: Colors.grey[600],
-            indicatorColor: Colors.blue,
-            indicatorWeight: 3,
-          ),
+        AnimatedSwitcher(
+          duration: const Duration(milliseconds: 180),
+          switchInCurve: Curves.easeOut,
+          switchOutCurve: Curves.easeIn,
+          child: widget.showChrome
+              ? Container(
+                  key: const ValueKey('tabs-visible'),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.1),
+                        spreadRadius: 1,
+                        blurRadius: 6,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: TabBar(
+                    controller: _tabController,
+                    tabs: const [
+                      Tab(icon: Icon(Icons.book), text: '阅读故事'),
+                      Tab(icon: Icon(Icons.visibility), text: '词汇学习'),
+                      Tab(icon: Icon(Icons.chat_bubble), text: '重点句子'),
+                      Tab(icon: Icon(Icons.quiz), text: '练习题'),
+                    ],
+                    labelColor: Colors.blue,
+                    unselectedLabelColor: Colors.grey[600],
+                    indicatorColor: Colors.blue,
+                    indicatorWeight: 3,
+                  ),
+                )
+              : const SizedBox.shrink(key: ValueKey('tabs-hidden')),
         ),
-        const SizedBox(height: 16),
+        SizedBox(height: widget.showChrome ? 16 : 8),
         Expanded(
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(12),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.1),
-                  spreadRadius: 1,
-                  blurRadius: 6,
-                  offset: const Offset(0, 2),
+          child: Stack(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.1),
+                      spreadRadius: 1,
+                      blurRadius: 6,
+                      offset: const Offset(0, 2),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            child: TabBarView(
-              controller: _tabController,
-              children: [
-                _buildStoryTab(),
-                _buildVocabularyTab(),
-                _buildSentencesTab(),
-                _buildQuizTab(),
-              ],
-            ),
+                child: TabBarView(
+                  controller: _tabController,
+                  children: [
+                    _buildStoryTab(),
+                    _buildVocabularyTab(scrollController: _scrollController),
+                    _buildSentencesTab(scrollController: _scrollController),
+                    _buildQuizTab(scrollController: _scrollController),
+                  ],
+                ),
+              ),
+              if (_tabController.index == 0)
+                Positioned(
+                  right: 12,
+                  bottom: 12,
+                  child: FloatingActionButton(
+                    mini: true,
+                    onPressed: _showFullScreenReading,
+                    backgroundColor: Colors.black.withOpacity(0.75),
+                    foregroundColor: Colors.white,
+                    child: const Icon(Icons.fullscreen),
+                  ),
+                ),
+            ],
           ),
         ),
       ],
@@ -1675,6 +1740,81 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
     );
   }
 
+  void _showFullScreenReading() async {
+    await showGeneralDialog(
+      context: context,
+      barrierDismissible: true,
+      barrierLabel: 'fullscreen',
+      barrierColor: Colors.black26,
+      pageBuilder: (context, anim1, anim2) {
+        return SafeArea(
+          child: Material(
+            color: const Color(0xFFF5ECD8), // Sepia 背景
+            child: Stack(
+              children: [
+                Positioned.fill(
+                  child: SingleChildScrollView(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const SizedBox(height: 8),
+                        // 标题行
+                        Row(
+                          children: [
+                            const Icon(Icons.menu_book, color: Color(0xFF7A5C3E), size: 20),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                '全文阅读',
+                                style: TextStyle(
+                                  color: const Color(0xFF5C4B3B),
+                                  fontSize: widget.readingPreferences.fontSize.toDouble() + 2,
+                                  fontWeight: FontWeight.w600,
+                                  fontFamily: widget.readingPreferences.fontFamilyStyle,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 16),
+                        // 正文
+                        DefaultTextStyle(
+                          style: TextStyle(
+                            color: const Color(0xFF2A2A2A),
+                            height: 1.7,
+                            fontSize: widget.readingPreferences.fontSize.toDouble(),
+                            fontFamily: widget.readingPreferences.fontFamilyStyle,
+                          ),
+                          child: _buildClickableContent(widget.lesson.content),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Positioned(
+                  right: 16,
+                  top: 16,
+                  child: FloatingActionButton(
+                    mini: true,
+                    backgroundColor: const Color(0xFF7A5C3E),
+                    foregroundColor: const Color(0xFFF5ECD8),
+                    onPressed: () => Navigator.of(context).maybePop(),
+                    child: const Icon(Icons.fullscreen_exit),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+      transitionDuration: const Duration(milliseconds: 200),
+      transitionBuilder: (context, anim, _, child) {
+        return FadeTransition(opacity: anim, child: child);
+      },
+    );
+  }
+
   /// 构建可点击的文本内容
   Widget _buildClickableContent(String content) {
     final paragraphs = content.split('\n');
@@ -1693,7 +1833,12 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
 
   /// 构建可点击的段落
   Widget _buildClickableParagraph(String paragraph) {
-    final parts = paragraph.split(RegExp(r'(\s+|[.,!?;:"()[\]{}])'));
+    final tokenReg = RegExp(r'(\s+|[.,!?;:"()[\]{}]|[^\s.,!?;:\"()\[\]{}]+)');
+    final parts = tokenReg
+        .allMatches(paragraph)
+        .map((m) => m.group(0)!)
+        .where((t) => t.isNotEmpty)
+        .toList();
     final List<Widget> widgets = [];
     
     for (int i = 0; i < parts.length; i++) {
@@ -1759,21 +1904,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
         ));
       }
       
-      // 在单词后添加空格（除了最后一个部分和已经是空格的部分）
-      if (i < parts.length - 1 && !RegExp(r'^\s+$').hasMatch(part) && !RegExp(r'^[.,!?;:"()[\]{}]+$').hasMatch(part)) {
-        final nextPart = i + 1 < parts.length ? parts[i + 1] : '';
-        if (!RegExp(r'^\s+$').hasMatch(nextPart) && !RegExp(r'^[.,!?;:"()[\]{}]+$').hasMatch(nextPart)) {
-          widgets.add(Text(
-            ' ',
-            style: TextStyle(
-              fontSize: widget.readingPreferences.fontSize.toDouble(),
-              color: Colors.black87,
-              height: 1.6,
-              fontFamily: widget.readingPreferences.fontFamilyStyle,
-            ),
-          ));
-        }
-      }
+      // 不再手动插入空格，由 token 本身携带空白；避免破坏标点。
     }
     
     return Wrap(
@@ -1882,8 +2013,9 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   }
 
   /// 构建词汇学习标签页
-  Widget _buildVocabularyTab() {
+  Widget _buildVocabularyTab({ScrollController? scrollController}) {
     return SingleChildScrollView(
+      controller: scrollController,
       padding: const EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1963,7 +2095,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                 Text(
                   vocab.word,
                   style: TextStyle(
-                    fontSize: widget.readingPreferences.fontSize.toDouble() + 4,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.black87,
                     fontFamily: widget.readingPreferences.fontFamilyStyle,
@@ -1973,7 +2105,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                 Text(
                   vocab.meaning,
                   style: TextStyle(
-                    fontSize: widget.readingPreferences.fontSize.toDouble(),
+                    fontSize: 20,
                     color: Colors.grey[600],
                     fontFamily: widget.readingPreferences.fontFamilyStyle,
                   ),
@@ -2032,8 +2164,9 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   }
 
   /// 构建重点句子标签页
-  Widget _buildSentencesTab() {
+  Widget _buildSentencesTab({ScrollController? scrollController}) {
     return SingleChildScrollView(
+      controller: scrollController,
       padding: const EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -2113,7 +2246,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                 child: Text(
                   '"${sentence.text}"',
                   style: TextStyle(
-                    fontSize: widget.readingPreferences.fontSize.toDouble() + 2,
+                    fontSize: 20,
                     fontWeight: FontWeight.w500,
                     fontStyle: FontStyle.italic,
                     color: Colors.black87,
@@ -2155,7 +2288,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                   child: Text(
                     sentence.note,
                     style: TextStyle(
-                      fontSize: widget.readingPreferences.fontSize.toDouble(),
+                      fontSize: 20,
                       color: Colors.grey[600],
                       fontFamily: widget.readingPreferences.fontFamilyStyle,
                     ),
@@ -2179,8 +2312,9 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   }
 
   /// 构建练习题标签页
-  Widget _buildQuizTab() {
+  Widget _buildQuizTab({ScrollController? scrollController}) {
     return SingleChildScrollView(
+      controller: scrollController,
       padding: const EdgeInsets.all(24),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -2266,7 +2400,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                 child: Text(
                   question.q,
                   style: TextStyle(
-                    fontSize: widget.readingPreferences.fontSize.toDouble() + 2,
+                    fontSize: 20,
                     fontWeight: FontWeight.w600,
                     color: Colors.black87,
                     fontFamily: widget.readingPreferences.fontFamilyStyle,
@@ -2326,7 +2460,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                         child: Text(
                           '$key. $value',
                           style: TextStyle(
-                            fontSize: widget.readingPreferences.fontSize.toDouble(),
+                            fontSize: 20,
                             color: isWrong
                                 ? Colors.red[700]
                                 : shouldShowCorrect
