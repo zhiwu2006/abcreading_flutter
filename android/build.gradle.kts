@@ -3,6 +3,20 @@ allprojects {
         google()
         mavenCentral()
     }
+    
+    // 全局设置 Java 版本
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = "11"
+        targetCompatibility = "11"
+    }
+    
+    tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+        kotlinOptions {
+            jvmTarget = "11"
+        }
+    }
+    
+
 }
 
 val newBuildDir: Directory = rootProject.layout.buildDirectory.dir("../../build").get()
