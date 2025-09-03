@@ -7,6 +7,8 @@ import '../widgets/lesson_list_widget.dart';
 import '../widgets/lesson_content_widget.dart';
 import '../widgets/progress_indicator_widget.dart';
 import '../widgets/settings_drawer.dart';
+import 'test_page.dart';
+import 'test_page.dart';
 
 /// 主页面
 class HomePage extends StatefulWidget {
@@ -69,7 +71,21 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             );
           },
         ),
-        
+
+        // 测试按钮
+        IconButton(
+          onPressed: () => _navigateToTestPage(),
+          icon: const Icon(Icons.science),
+          tooltip: '测试模块',
+        ),
+
+        // 测试按钮
+        IconButton(
+          onPressed: () => _navigateToTestPage(),
+          icon: const Icon(Icons.science),
+          tooltip: '测试模块',
+        ),
+
         // 设置按钮
         IconButton(
           onPressed: () => _scaffoldKey.currentState?.openDrawer(),
@@ -102,7 +118,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       children: [
         // 进度指示器
         const ProgressIndicatorWidget(),
-        
+
         // 标签页内容
         Expanded(
           child: TabBarView(
@@ -110,7 +126,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             children: [
               // 课程列表页
               const LessonListWidget(),
-              
+
               // 当前课程页
               const LessonContentWidget(),
             ],
@@ -137,10 +153,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                   backgroundColor: Theme.of(context).colorScheme.secondary,
                   child: const Icon(Icons.navigate_before),
                 ),
-              
-              if (progressProvider.canGoPrevious() && progressProvider.canGoNext())
+
+              if (progressProvider.canGoPrevious() &&
+                  progressProvider.canGoNext())
                 const SizedBox(height: 8),
-              
+
               // 下一课按钮
               if (progressProvider.canGoNext())
                 FloatingActionButton(
@@ -182,11 +199,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
       // 同步课程数据
       final syncSuccess = await lessonProvider.syncLessons();
-      
+
       if (syncSuccess) {
         // 更新进度
         await progressProvider.refresh();
-        
+
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(
             content: Row(
@@ -230,17 +247,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     try {
       final success = await progressProvider.previousLesson();
-      
+
       if (success) {
         // 更新当前课程
         final currentLesson = await lessonProvider.getLessonById(
           progressProvider.currentLessonNumber,
         );
-        
+
         if (currentLesson != null) {
           lessonProvider.setCurrentLesson(currentLesson);
         }
-        
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('已切换到第${progressProvider.currentLessonNumber}课'),
@@ -265,24 +282,24 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 
     try {
       final success = await progressProvider.nextLesson();
-      
+
       if (success) {
         // 更新当前课程
         final currentLesson = await lessonProvider.getLessonById(
           progressProvider.currentLessonNumber,
         );
-        
+
         if (currentLesson != null) {
           lessonProvider.setCurrentLesson(currentLesson);
         }
-        
+
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('已切换到第${progressProvider.currentLessonNumber}课'),
             duration: const Duration(seconds: 1),
           ),
         );
-        
+
         // 如果完成了所有课程，显示祝贺信息
         if (progressProvider.isCompleted) {
           _showCompletionDialog();
@@ -361,18 +378,19 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
       final lessonProvider = context.read<LessonProvider>();
 
       try {
-        final success = await progressProvider.resetProgress(lessonProvider.totalLessons);
-        
+        final success =
+            await progressProvider.resetProgress(lessonProvider.totalLessons);
+
         if (success) {
           // 重置当前课程
           final firstLesson = await lessonProvider.getLessonById(1);
           if (firstLesson != null) {
             lessonProvider.setCurrentLesson(firstLesson);
           }
-          
+
           // 切换到第一个标签页
           _tabController.animateTo(0);
-          
+
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Row(
@@ -395,5 +413,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         );
       }
     }
+  }
+
+  /// 导航到测试页面
+  void _navigateToTestPage() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const TestPage(),
+      ),
+    );
+  }
+
+  /// 导航到测试页面
+  void _navigateToTestPage() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const TestPage(),
+      ),
+    );
   }
 }
