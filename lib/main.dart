@@ -19,19 +19,20 @@ import 'presentation/pages/auto_refresh_lesson_list_page.dart';
 import 'utils/connection_test.dart';
 import 'utils/cache_debug_tool.dart';
 import 'utils/provider_refresh_tool.dart';
+import 'presentation/pages/test_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // 初始化Supabase
   try {
     final url = await SupabaseConfig.getUrl();
     final anonKey = await SupabaseConfig.getAnonKey();
-    
+
     print('🔄 正在初始化Supabase...');
     print('URL: $url');
     print('Key: ${anonKey.substring(0, 20)}...');
-    
+
     // 检查配置是否有效
     final isConfigValid = await SupabaseConfig.isConfigValid();
     if (isConfigValid) {
@@ -39,7 +40,7 @@ void main() async {
         url: url,
         anonKey: anonKey,
       );
-      
+
       // 测试连接
       final connectionTest = await SupabaseService.instance.testConnection();
       if (connectionTest) {
@@ -54,15 +55,15 @@ void main() async {
     print('❌ Supabase初始化失败: $e');
     // 继续运行应用，使用本地存储
   }
-  
+
   // 初始化其他服务
   await TTSService().initialize();
   await SyncProgressService().initialize();
-  
+
   // 初始化自动同步服务
   final autoSyncService = AutoSyncService.instance;
   print('🚀 自动同步服务已启动');
-  
+
   runApp(const EnglishLearningApp());
 }
 
@@ -91,6 +92,14 @@ class EnglishLearningApp extends StatelessWidget {
       ),
     );
   }
+
+  void _navigateToTestPage() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const TestPage(),
+      ),
+    );
+  }
 }
 
 class ReadingPreferences {
@@ -112,7 +121,8 @@ class ReadingPreferences {
     return ReadingPreferences(
       fontSize: fontSize ?? this.fontSize,
       fontFamily: fontFamily ?? this.fontFamily,
-      showVocabularyHighlight: showVocabularyHighlight ?? this.showVocabularyHighlight,
+      showVocabularyHighlight:
+          showVocabularyHighlight ?? this.showVocabularyHighlight,
     );
   }
 
@@ -164,7 +174,8 @@ class _HomePageState extends State<HomePage> {
   Future<void> _loadProgress() async {
     try {
       final progress = await _progressService.loadProgress();
-      if (progress != null && progress.currentLessonIndex < defaultLessons.length) {
+      if (progress != null &&
+          progress.currentLessonIndex < defaultLessons.length) {
         setState(() {
           currentLessonIndex = progress.currentLessonIndex;
         });
@@ -321,6 +332,11 @@ class _HomePageState extends State<HomePage> {
         ),
         actions: [
           IconButton(
+            icon: const Icon(Icons.science),
+            onPressed: () => _navigateToTestPage(),
+            tooltip: '测试模块',
+          ),
+          IconButton(
             icon: const Icon(Icons.refresh),
             onPressed: _resetProgress,
             tooltip: '重置学习进度',
@@ -349,7 +365,9 @@ class _HomePageState extends State<HomePage> {
                   duration: const Duration(milliseconds: 200),
                   switchInCurve: Curves.easeOut,
                   switchOutCurve: Curves.easeIn,
-                  child: _showChrome ? _buildLessonSelector() : const SizedBox.shrink(),
+                  child: _showChrome
+                      ? _buildLessonSelector()
+                      : const SizedBox.shrink(),
                 ),
                 const SizedBox(height: 16),
                 Expanded(
@@ -682,24 +700,23 @@ class _HomePageState extends State<HomePage> {
             subtitle: const Text('重新从存储加载缓存数据'),
             onTap: () async {
               Navigator.pop(context); // 关闭drawer
-              
+
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(
                   content: Text('正在重新加载缓存...'),
                   duration: Duration(seconds: 1),
                 ),
               );
-              
+
               final result = await CacheDebugTool.forceReloadCache();
-              
+
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(
-                    result['success'] 
+                  content: Text(result['success']
                       ? '缓存重新加载成功，共 ${result['lessons_count']} 个课程'
-                      : '缓存重新加载失败: ${result['error']}'
-                  ),
-                  backgroundColor: result['success'] ? Colors.green : Colors.red,
+                      : '缓存重新加载失败: ${result['error']}'),
+                  backgroundColor:
+                      result['success'] ? Colors.green : Colors.red,
                   duration: const Duration(seconds: 3),
                 ),
               );
@@ -725,11 +742,11 @@ class _HomePageState extends State<HomePage> {
   Widget _buildLessonSourceSection() {
     final lessonManager = LessonManagerService.instance;
     final currentSource = lessonManager.currentSource;
-    
+
     String sourceText;
     IconData sourceIcon;
     Color sourceColor;
-    
+
     switch (currentSource) {
       case LessonSource.local:
         sourceText = '本地数据';
@@ -747,7 +764,7 @@ class _HomePageState extends State<HomePage> {
         sourceColor = Colors.purple;
         break;
     }
-    
+
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
@@ -881,14 +898,20 @@ class _HomePageState extends State<HomePage> {
           const Divider(height: 1),
           ListTile(
             leading: Icon(
-              SupabaseService.instance.isInitialized ? Icons.cloud_done : Icons.cloud_off,
-              color: SupabaseService.instance.isInitialized ? Colors.green : Colors.grey,
+              SupabaseService.instance.isInitialized
+                  ? Icons.cloud_done
+                  : Icons.cloud_off,
+              color: SupabaseService.instance.isInitialized
+                  ? Colors.green
+                  : Colors.grey,
             ),
             title: const Text('Supabase配置'),
             subtitle: Text(
               SupabaseService.instance.isInitialized ? '已连接云端数据库' : '点击配置云端同步',
               style: TextStyle(
-                color: SupabaseService.instance.isInitialized ? Colors.green[600] : Colors.grey[600],
+                color: SupabaseService.instance.isInitialized
+                    ? Colors.green[600]
+                    : Colors.grey[600],
                 fontSize: 12,
               ),
             ),
@@ -1046,7 +1069,7 @@ class _HomePageState extends State<HomePage> {
             final index = entry.key;
             final lesson = entry.value;
             final isSelected = index == currentLessonIndex;
-            
+
             return ListTile(
               leading: CircleAvatar(
                 backgroundColor: isSelected ? Colors.blue : Colors.grey[300],
@@ -1090,7 +1113,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildLessonSelector() {
     final currentLesson = defaultLessons[currentLessonIndex];
-    
+
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
@@ -1116,8 +1139,10 @@ class _HomePageState extends State<HomePage> {
                 : null,
             icon: const Icon(Icons.chevron_left),
             style: IconButton.styleFrom(
-              backgroundColor: currentLessonIndex > 0 ? Colors.blue : Colors.grey[300],
-              foregroundColor: currentLessonIndex > 0 ? Colors.white : Colors.grey[600],
+              backgroundColor:
+                  currentLessonIndex > 0 ? Colors.blue : Colors.grey[300],
+              foregroundColor:
+                  currentLessonIndex > 0 ? Colors.white : Colors.grey[600],
             ),
           ),
           Expanded(
@@ -1152,8 +1177,12 @@ class _HomePageState extends State<HomePage> {
                 : null,
             icon: const Icon(Icons.chevron_right),
             style: IconButton.styleFrom(
-              backgroundColor: currentLessonIndex < defaultLessons.length - 1 ? Colors.blue : Colors.grey[300],
-              foregroundColor: currentLessonIndex < defaultLessons.length - 1 ? Colors.white : Colors.grey[600],
+              backgroundColor: currentLessonIndex < defaultLessons.length - 1
+                  ? Colors.blue
+                  : Colors.grey[300],
+              foregroundColor: currentLessonIndex < defaultLessons.length - 1
+                  ? Colors.white
+                  : Colors.grey[600],
             ),
           ),
         ],
@@ -1399,11 +1428,13 @@ class _ReadingSettingsState extends State<ReadingSettings> {
             final isSelected = widget.preferences.fontFamily == font['value'];
             return InkWell(
               onTap: () => widget.onPreferencesChange(
-                widget.preferences.copyWith(fontFamily: font['value'] as String),
+                widget.preferences
+                    .copyWith(fontFamily: font['value'] as String),
               ),
               borderRadius: BorderRadius.circular(8),
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
                   color: isSelected ? Colors.indigo : Colors.white,
                   borderRadius: BorderRadius.circular(8),
@@ -1432,7 +1463,9 @@ class _ReadingSettingsState extends State<ReadingSettings> {
     return Row(
       children: [
         Icon(
-          widget.preferences.showVocabularyHighlight ? Icons.visibility : Icons.visibility_off,
+          widget.preferences.showVocabularyHighlight
+              ? Icons.visibility
+              : Icons.visibility_off,
           size: 16,
           color: Colors.black54,
         ),
@@ -1498,7 +1531,8 @@ class _ReadingSettingsState extends State<ReadingSettings> {
                         : null,
                   ),
                 ),
-                const TextSpan(text: '. Can I have a dog? Sally asks mom and dad.'),
+                const TextSpan(
+                    text: '. Can I have a dog? Sally asks mom and dad.'),
               ],
             ),
           ),
@@ -1539,7 +1573,8 @@ class LessonContent extends StatefulWidget {
   State<LessonContent> createState() => _LessonContentState();
 }
 
-class _LessonContentState extends State<LessonContent> with TickerProviderStateMixin {
+class _LessonContentState extends State<LessonContent>
+    with TickerProviderStateMixin {
   late TabController _tabController;
   Map<int, String> selectedAnswers = {};
   bool showResults = false;
@@ -1563,7 +1598,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   @override
   void didUpdateWidget(LessonContent oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.readingPreferences.showVocabularyHighlight != 
+    if (oldWidget.readingPreferences.showVocabularyHighlight !=
         widget.readingPreferences.showVocabularyHighlight) {
       _updateHighlightedWords();
     }
@@ -1578,7 +1613,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
 
   void _updateHighlightedWords() {
     if (widget.readingPreferences.showVocabularyHighlight) {
-      highlightedWords = widget.lesson.vocabulary.map((v) => v.word.toLowerCase()).toSet();
+      highlightedWords =
+          widget.lesson.vocabulary.map((v) => v.word.toLowerCase()).toSet();
     } else {
       highlightedWords.clear();
     }
@@ -1596,11 +1632,15 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
 
   void _onScroll() {
     final current = _scrollController.position.pixels;
-    final direction = current > _lastOffset ? ScrollDirection.reverse : ScrollDirection.forward;
+    final direction = current > _lastOffset
+        ? ScrollDirection.reverse
+        : ScrollDirection.forward;
     _lastOffset = current;
     if (widget.onChromeVisibilityChange == null) return;
     // 仅在词汇/句子/练习题三个页签里响应（索引1/2/3）
-    if (_tabController.index == 1 || _tabController.index == 2 || _tabController.index == 3) {
+    if (_tabController.index == 1 ||
+        _tabController.index == 2 ||
+        _tabController.index == 3) {
       if (direction == ScrollDirection.reverse && widget.showChrome) {
         widget.onChromeVisibilityChange!(false);
       } else if (direction == ScrollDirection.forward && !widget.showChrome) {
@@ -1717,9 +1757,9 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
               IconButton(
                 onPressed: () => _speakFullStory(),
                 icon: Icon(
-                  widget.ttsService.isSpeakingId('full_story') 
-                    ? Icons.stop_circle 
-                    : Icons.play_circle,
+                  widget.ttsService.isSpeakingId('full_story')
+                      ? Icons.stop_circle
+                      : Icons.play_circle,
                   color: Colors.blue,
                 ),
                 tooltip: '朗读全文',
@@ -1754,7 +1794,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
               children: [
                 Positioned.fill(
                   child: SingleChildScrollView(
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 24),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -1762,16 +1803,20 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                         // 标题行
                         Row(
                           children: [
-                            const Icon(Icons.menu_book, color: Color(0xFF7A5C3E), size: 20),
+                            const Icon(Icons.menu_book,
+                                color: Color(0xFF7A5C3E), size: 20),
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 '全文阅读',
                                 style: TextStyle(
                                   color: const Color(0xFF5C4B3B),
-                                  fontSize: widget.readingPreferences.fontSize.toDouble() + 2,
+                                  fontSize: widget.readingPreferences.fontSize
+                                          .toDouble() +
+                                      2,
                                   fontWeight: FontWeight.w600,
-                                  fontFamily: widget.readingPreferences.fontFamilyStyle,
+                                  fontFamily:
+                                      widget.readingPreferences.fontFamilyStyle,
                                 ),
                               ),
                             ),
@@ -1783,8 +1828,10 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                           style: TextStyle(
                             color: const Color(0xFF2A2A2A),
                             height: 1.7,
-                            fontSize: widget.readingPreferences.fontSize.toDouble(),
-                            fontFamily: widget.readingPreferences.fontFamilyStyle,
+                            fontSize:
+                                widget.readingPreferences.fontSize.toDouble(),
+                            fontFamily:
+                                widget.readingPreferences.fontFamilyStyle,
                           ),
                           child: _buildClickableContent(widget.lesson.content),
                         ),
@@ -1822,7 +1869,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
       crossAxisAlignment: CrossAxisAlignment.start,
       children: paragraphs.map((paragraph) {
         if (paragraph.trim().isEmpty) return const SizedBox(height: 8);
-        
+
         return Padding(
           padding: const EdgeInsets.only(bottom: 16),
           child: _buildClickableParagraph(paragraph),
@@ -1840,12 +1887,12 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
         .where((t) => t.isNotEmpty)
         .toList();
     final List<Widget> widgets = [];
-    
+
     for (int i = 0; i < parts.length; i++) {
       final part = parts[i];
-      
+
       if (part.isEmpty) continue;
-      
+
       if (RegExp(r'^\s+$').hasMatch(part)) {
         // 空格部分
         widgets.add(Text(
@@ -1871,24 +1918,27 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
       } else {
         // 单词部分
         final cleanWord = part.replaceAll(RegExp(r'[^\w]'), '').toLowerCase();
-        final shouldHighlight = widget.readingPreferences.showVocabularyHighlight &&
-            highlightedWords.contains(cleanWord);
-        final isVocabWord = widget.lesson.vocabulary.any((vocab) => 
-            vocab.word.toLowerCase() == cleanWord);
-        
+        final shouldHighlight =
+            widget.readingPreferences.showVocabularyHighlight &&
+                highlightedWords.contains(cleanWord);
+        final isVocabWord = widget.lesson.vocabulary
+            .any((vocab) => vocab.word.toLowerCase() == cleanWord);
+
         widgets.add(GestureDetector(
           onTap: () => _speakWord(part),
           child: Container(
             decoration: BoxDecoration(
               color: shouldHighlight ? Colors.yellow[200] : null,
               borderRadius: BorderRadius.circular(2),
-              border: isVocabWord ? Border(
-                bottom: BorderSide(
-                  color: Colors.blue[400]!,
-                  width: 1,
-                  style: BorderStyle.solid,
-                ),
-              ) : null,
+              border: isVocabWord
+                  ? Border(
+                      bottom: BorderSide(
+                        color: Colors.blue[400]!,
+                        width: 1,
+                        style: BorderStyle.solid,
+                      ),
+                    )
+                  : null,
             ),
             child: Text(
               part,
@@ -1903,10 +1953,10 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
           ),
         ));
       }
-      
+
       // 不再手动插入空格，由 token 本身携带空白；避免破坏标点。
     }
-    
+
     return Wrap(
       children: widgets,
     );
@@ -1943,17 +1993,21 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
             spacing: 8,
             runSpacing: 8,
             children: widget.lesson.vocabulary.map((vocab) {
-              final isHighlighted = highlightedWords.contains(vocab.word.toLowerCase());
+              final isHighlighted =
+                  highlightedWords.contains(vocab.word.toLowerCase());
               return InkWell(
                 onTap: () => _toggleWordHighlight(vocab.word),
                 borderRadius: BorderRadius.circular(16),
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
                     color: isHighlighted ? Colors.yellow[200] : Colors.white,
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
-                      color: isHighlighted ? Colors.yellow[600]! : Colors.blue[200]!,
+                      color: isHighlighted
+                          ? Colors.yellow[600]!
+                          : Colors.blue[200]!,
                     ),
                   ),
                   child: Text(
@@ -1961,7 +2015,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                      color: isHighlighted ? Colors.yellow[800] : Colors.blue[600],
+                      color:
+                          isHighlighted ? Colors.yellow[800] : Colors.blue[600],
                     ),
                   ),
                 ),
@@ -2073,7 +2128,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   Widget _buildVocabularyCard(Vocabulary vocab, int index) {
     final vocabId = 'vocab-$index';
     final isPlaying = widget.ttsService.isSpeakingId(vocabId);
-    
+
     return Container(
       margin: const EdgeInsets.only(bottom: 16),
       padding: const EdgeInsets.all(20),
@@ -2128,9 +2183,19 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  _buildMiniSpeakButton('🔊 单词', () => widget.ttsService.speakWord(vocab.word, id: '$vocabId-word'), '$vocabId-word', Colors.blue),
+                  _buildMiniSpeakButton(
+                      '🔊 单词',
+                      () => widget.ttsService
+                          .speakWord(vocab.word, id: '$vocabId-word'),
+                      '$vocabId-word',
+                      Colors.blue),
                   const SizedBox(width: 4),
-                  _buildMiniSpeakButton('🔊 释义', () => widget.ttsService.speak(vocab.meaning.split(';')[0], id: '$vocabId-meaning'), '$vocabId-meaning', Colors.purple),
+                  _buildMiniSpeakButton(
+                      '🔊 释义',
+                      () => widget.ttsService.speak(vocab.meaning.split(';')[0],
+                          id: '$vocabId-meaning'),
+                      '$vocabId-meaning',
+                      Colors.purple),
                 ],
               ),
             ],
@@ -2141,7 +2206,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   }
 
   /// 构建小型朗读按钮
-  Widget _buildMiniSpeakButton(String text, VoidCallback onTap, String id, MaterialColor color) {
+  Widget _buildMiniSpeakButton(
+      String text, VoidCallback onTap, String id, MaterialColor color) {
     final isPlaying = widget.ttsService.isSpeakingId(id);
     return InkWell(
       onTap: onTap,
@@ -2224,7 +2290,7 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
   Widget _buildSentenceCard(Sentence sentence, int index) {
     final sentenceId = 'sentence-$index';
     final isPlaying = widget.ttsService.isSpeakingId(sentenceId);
-    
+
     return Container(
       margin: const EdgeInsets.only(bottom: 20),
       padding: const EdgeInsets.all(20),
@@ -2255,7 +2321,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                 ),
               ),
               IconButton(
-                onPressed: () => widget.ttsService.speak(sentence.text, id: sentenceId),
+                onPressed: () =>
+                    widget.ttsService.speak(sentence.text, id: sentenceId),
                 icon: Icon(
                   isPlaying ? Icons.stop_circle : Icons.play_circle,
                   color: isPlaying ? Colors.red : Colors.purple,
@@ -2301,9 +2368,19 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              _buildMiniSpeakButton('🔊 慢速', () => widget.ttsService.speakSentenceSlow(sentence.text, id: '$sentenceId-slow'), '$sentenceId-slow', Colors.indigo),
+              _buildMiniSpeakButton(
+                  '🔊 慢速',
+                  () => widget.ttsService
+                      .speakSentenceSlow(sentence.text, id: '$sentenceId-slow'),
+                  '$sentenceId-slow',
+                  Colors.indigo),
               const SizedBox(width: 8),
-              _buildMiniSpeakButton('🔊 快速', () => widget.ttsService.speakSentenceFast(sentence.text, id: '$sentenceId-fast'), '$sentenceId-fast', Colors.orange),
+              _buildMiniSpeakButton(
+                  '🔊 快速',
+                  () => widget.ttsService
+                      .speakSentenceFast(sentence.text, id: '$sentenceId-fast'),
+                  '$sentenceId-fast',
+                  Colors.orange),
             ],
           ),
         ],
@@ -2334,7 +2411,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
               const Spacer(),
               if (showResults) ...[
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
                     color: Colors.green[100],
                     borderRadius: BorderRadius.circular(16),
@@ -2342,7 +2420,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.emoji_events, color: Colors.green, size: 16),
+                      const Icon(Icons.emoji_events,
+                          color: Colors.green, size: 16),
                       const SizedBox(width: 4),
                       Text(
                         '得分: $score/${widget.lesson.questions.length}',
@@ -2408,9 +2487,12 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                 ),
               ),
               IconButton(
-                onPressed: () => widget.ttsService.speak(question.q, id: 'question-$qIndex'),
+                onPressed: () =>
+                    widget.ttsService.speak(question.q, id: 'question-$qIndex'),
                 icon: Icon(
-                  widget.ttsService.isSpeakingId('question-$qIndex') ? Icons.stop_circle : Icons.play_circle,
+                  widget.ttsService.isSpeakingId('question-$qIndex')
+                      ? Icons.stop_circle
+                      : Icons.play_circle,
                   color: Colors.orange,
                 ),
                 tooltip: '朗读题目',
@@ -2421,16 +2503,17 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
           ...['A', 'B', 'C', 'D'].map((key) {
             final value = question.options.getOption(key);
             if (value == null) return const SizedBox.shrink();
-            
+
             final isSelected = selectedAnswers[qIndex] == key;
             final isCorrect = question.answer == key;
             final isWrong = showResults && isSelected && !isCorrect;
             final shouldShowCorrect = showResults && isCorrect;
-            
+
             return Container(
               margin: const EdgeInsets.only(bottom: 8),
               child: InkWell(
-                onTap: showResults ? null : () => _handleAnswerSelect(qIndex, key),
+                onTap:
+                    showResults ? null : () => _handleAnswerSelect(qIndex, key),
                 borderRadius: BorderRadius.circular(8),
                 child: Container(
                   padding: const EdgeInsets.all(16),
@@ -2438,19 +2521,19 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                     color: isWrong
                         ? Colors.red[50]
                         : shouldShowCorrect
-                        ? Colors.green[50]
-                        : isSelected
-                        ? Colors.blue[50]
-                        : Colors.white,
+                            ? Colors.green[50]
+                            : isSelected
+                                ? Colors.blue[50]
+                                : Colors.white,
                     borderRadius: BorderRadius.circular(8),
                     border: Border.all(
                       color: isWrong
                           ? Colors.red[400]!
                           : shouldShowCorrect
-                          ? Colors.green[400]!
-                          : isSelected
-                          ? Colors.blue[400]!
-                          : Colors.grey[200]!,
+                              ? Colors.green[400]!
+                              : isSelected
+                                  ? Colors.blue[400]!
+                                  : Colors.grey[200]!,
                       width: 2,
                     ),
                   ),
@@ -2464,17 +2547,19 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
                             color: isWrong
                                 ? Colors.red[700]
                                 : shouldShowCorrect
-                                ? Colors.green[700]
-                                : isSelected
-                                ? Colors.blue[700]
-                                : Colors.black87,
-                            fontFamily: widget.readingPreferences.fontFamilyStyle,
+                                    ? Colors.green[700]
+                                    : isSelected
+                                        ? Colors.blue[700]
+                                        : Colors.black87,
+                            fontFamily:
+                                widget.readingPreferences.fontFamilyStyle,
                           ),
                         ),
                       ),
                       if (showResults) ...[
                         if (isCorrect)
-                          const Icon(Icons.check_circle, color: Colors.green, size: 20)
+                          const Icon(Icons.check_circle,
+                              color: Colors.green, size: 20)
                         else if (isWrong)
                           const Icon(Icons.cancel, color: Colors.red, size: 20),
                       ],
@@ -2568,17 +2653,15 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
         return selectedAnswers[index] == question.answer ? count + 1 : count;
       },
     );
-    
+
     setState(() {
       score = correctCount;
       showResults = true;
     });
 
     // 保存分数到进度服务
-    await widget.progressService.updateLessonScore(
-      widget.lesson.lesson.toString(), 
-      correctCount
-    );
+    await widget.progressService
+        .updateLessonScore(widget.lesson.lesson.toString(), correctCount);
 
     // 显示结果对话框
     if (mounted) {
@@ -2598,14 +2681,14 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
               correctCount >= widget.lesson.questions.length * 0.8
                   ? Icons.emoji_events
                   : correctCount >= widget.lesson.questions.length * 0.6
-                  ? Icons.thumb_up
-                  : Icons.school,
+                      ? Icons.thumb_up
+                      : Icons.school,
               size: 48,
               color: correctCount >= widget.lesson.questions.length * 0.8
                   ? Colors.amber
                   : correctCount >= widget.lesson.questions.length * 0.6
-                  ? Colors.green
-                  : Colors.blue,
+                      ? Colors.green
+                      : Colors.blue,
             ),
             const SizedBox(height: 16),
             Text(
@@ -2628,8 +2711,8 @@ class _LessonContentState extends State<LessonContent> with TickerProviderStateM
               correctCount >= widget.lesson.questions.length * 0.8
                   ? '🎉 太棒了！您掌握得很好！'
                   : correctCount >= widget.lesson.questions.length * 0.6
-                  ? '👍 不错！继续加油！'
-                  : '📚 还需要多练习哦！',
+                      ? '👍 不错！继续加油！'
+                      : '📚 还需要多练习哦！',
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 14),
             ),
