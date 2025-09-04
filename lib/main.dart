@@ -92,14 +92,6 @@ class EnglishLearningApp extends StatelessWidget {
       ),
     );
   }
-
-  void _navigateToTestPage() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const TestPage(),
-      ),
-    );
-  }
 }
 
 class ReadingPreferences {
@@ -1214,6 +1206,14 @@ class _HomePageState extends State<HomePage> {
             child: const Text('确定'),
           ),
         ],
+      ),
+    );
+  }
+
+  void _navigateToTestPage() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const TestPage(),
       ),
     );
   }

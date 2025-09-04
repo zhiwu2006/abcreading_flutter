@@ -168,7 +168,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
             ],
           );
         }
-        return null;
+        return const SizedBox.shrink();
       },
     );
   }
@@ -413,15 +413,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         );
       }
     }
-  }
-
-  /// 导航到测试页面
-  void _navigateToTestPage() {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (context) => const TestPage(),
-      ),
-    );
   }
 
   /// 导航到测试页面
