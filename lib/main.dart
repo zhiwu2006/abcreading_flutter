@@ -20,6 +20,7 @@ import 'utils/connection_test.dart';
 import 'utils/cache_debug_tool.dart';
 import 'utils/provider_refresh_tool.dart';
 import 'presentation/pages/test_page.dart';
+import 'presentation/pages/lesson_editor_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -323,6 +324,11 @@ class _HomePageState extends State<HomePage> {
           onPressed: () => _scaffoldKey.currentState?.openDrawer(),
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.edit_note),
+            onPressed: () => _navigateToLessonEditor(),
+            tooltip: '课程编辑器',
+          ),
           IconButton(
             icon: const Icon(Icons.science),
             onPressed: () => _navigateToTestPage(),
@@ -1214,6 +1220,14 @@ class _HomePageState extends State<HomePage> {
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const TestPage(),
+      ),
+    );
+  }
+
+  void _navigateToLessonEditor() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => const LessonEditorPage(),
       ),
     );
   }
