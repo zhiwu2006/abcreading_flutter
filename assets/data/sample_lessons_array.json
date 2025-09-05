@@ -1,0 +1,68 @@
+[
+  {
+    "lesson": 997,
+    "title": "数组测试课程 1",
+    "content": "This is the first lesson in the array test. It demonstrates how multiple lessons can be imported at once using the lesson editor.",
+    "vocabulary": [
+      {
+        "word": "array",
+        "meaning": "数组"
+      },
+      {
+        "word": "multiple",
+        "meaning": "多个的"
+      }
+    ],
+    "sentences": [
+      {
+        "text": "Multiple lessons can be imported at once.",
+        "note": "多个课程可以一次性导入。"
+      }
+    ],
+    "questions": [
+      {
+        "q": "What can be imported at once?",
+        "options": {
+          "A": "Single lesson",
+          "B": "Multiple lessons",
+          "C": "Only vocabulary",
+          "D": "Only questions"
+        },
+        "answer": "B"
+      }
+    ]
+  },
+  {
+    "lesson": 998,
+    "title": "数组测试课程 2",
+    "content": "This is the second lesson in the array test. It shows that the lesson editor can handle batch imports efficiently.",
+    "vocabulary": [
+      {
+        "word": "batch",
+        "meaning": "批量"
+      },
+      {
+        "word": "efficiently",
+        "meaning": "高效地"
+      }
+    ],
+    "sentences": [
+      {
+        "text": "The lesson editor can handle batch imports efficiently.",
+        "note": "课程编辑器可以高效地处理批量导入。"
+      }
+    ],
+    "questions": [
+      {
+        "q": "How does the lesson editor handle batch imports?",
+        "options": {
+          "A": "Slowly",
+          "B": "Efficiently",
+          "C": "With errors",
+          "D": "Not at all"
+        },
+        "answer": "B"
+      }
+    ]
+  }
+]

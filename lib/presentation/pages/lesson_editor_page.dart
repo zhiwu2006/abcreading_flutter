@@ -7,6 +7,7 @@ import '../../models/lesson.dart';
 import '../../services/lesson_manager_service.dart';
 import '../../data/default_lessons.dart';
 import '../widgets/lesson_import_help_dialog.dart';
+import '../widgets/lesson_preview_dialog.dart';
 
 class LessonEditorPage extends StatefulWidget {
   const LessonEditorPage({super.key});
@@ -152,34 +153,17 @@ class _LessonEditorPageState extends State<LessonEditorPage> {
         throw Exception('没有找到有效的课程数据');
       }
 
-      // 添加到本地课程列表
       setState(() {
-        // 检查重复课程
-        for (var newLesson in newLessons) {
-          bool exists = _localLessons.any((lesson) => lesson.lesson == newLesson.lesson);
-          if (!exists) {
-            _localLessons.add(newLesson);
-            defaultLessons.add(newLesson);
-          }
-        }
-        _localLessons.sort((a, b) => a.lesson.compareTo(b.lesson));
         _isLoading = false;
       });
 
-      // 保存到本地存储
-      await _saveLessonsToLocal();
-
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('✅ 成功导入 ${newLessons.length} 个课程'),
-            backgroundColor: Colors.green,
-          ),
-        );
+      // 显示预览对话框
+      final confirmed = await LessonPreviewDialog.show(context, newLessons);
+      
+      if (confirmed == true) {
+        // 用户确认导入
+        await _importLessons(newLessons);
       }
-
-      // 清空输入框
-      _jsonController.clear();
 
     } catch (e) {
       setState(() {
@@ -191,6 +175,71 @@ class _LessonEditorPageState extends State<LessonEditorPage> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text('❌ 解析失败: $e'),
+            backgroundColor: Colors.red,
+          ),
+        );
+      }
+    }
+  }
+
+  Future<void> _importLessons(List<Lesson> newLessons) async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    try {
+      // 检查重复课程并添加到本地列表
+      int addedCount = 0;
+      List<int> duplicates = [];
+      
+      for (var newLesson in newLessons) {
+        bool exists = _localLessons.any((lesson) => lesson.lesson == newLesson.lesson);
+        if (!exists) {
+          _localLessons.add(newLesson);
+          defaultLessons.add(newLesson);
+          addedCount++;
+        } else {
+          duplicates.add(newLesson.lesson);
+        }
+      }
+      
+      _localLessons.sort((a, b) => a.lesson.compareTo(b.lesson));
+
+      // 保存到本地存储
+      await _saveLessonsToLocal();
+
+      setState(() {
+        _isLoading = false;
+      });
+
+      // 显示导入结果
+      String message = '✅ 成功导入 $addedCount 个课程';
+      if (duplicates.isNotEmpty) {
+        message += '\n⚠️ 跳过重复课程: ${duplicates.join(', ')}';
+      }
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(message),
+            backgroundColor: Colors.green,
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+
+      // 清空输入框
+      _jsonController.clear();
+
+    } catch (e) {
+      setState(() {
+        _isLoading = false;
+      });
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('❌ 导入失败: $e'),
             backgroundColor: Colors.red,
           ),
         );

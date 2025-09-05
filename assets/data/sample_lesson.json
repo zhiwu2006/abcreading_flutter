@@ -1,0 +1,59 @@
+{
+  "lesson": 999,
+  "title": "测试课程 - 编辑器功能验证",
+  "content": "This is a test lesson for the lesson editor functionality. It contains sample English content to verify that the import feature works correctly. The lesson editor allows users to import new lessons through file upload or clipboard paste operations.",
+  "vocabulary": [
+    {
+      "word": "editor",
+      "meaning": "编辑器"
+    },
+    {
+      "word": "functionality",
+      "meaning": "功能性"
+    },
+    {
+      "word": "import",
+      "meaning": "导入"
+    },
+    {
+      "word": "verify",
+      "meaning": "验证"
+    },
+    {
+      "word": "clipboard",
+      "meaning": "剪贴板"
+    }
+  ],
+  "sentences": [
+    {
+      "text": "The lesson editor allows users to import new lessons.",
+      "note": "这句话说明了课程编辑器允许用户导入新课程。"
+    },
+    {
+      "text": "It contains sample English content to verify functionality.",
+      "note": "这句话表达了包含示例英文内容来验证功能的意思。"
+    }
+  ],
+  "questions": [
+    {
+      "q": "What does the lesson editor allow users to do?",
+      "options": {
+        "A": "Delete lessons only",
+        "B": "Import new lessons",
+        "C": "Change app settings",
+        "D": "Play games"
+      },
+      "answer": "B"
+    },
+    {
+      "q": "What is the purpose of this test lesson?",
+      "options": {
+        "A": "To teach grammar",
+        "B": "To verify editor functionality",
+        "C": "To practice pronunciation",
+        "D": "To learn vocabulary"
+      },
+      "answer": "B"
+    }
+  ]
+}
