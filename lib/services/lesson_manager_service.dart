@@ -249,6 +249,95 @@ class LessonManagerService {
     }
   }
 
+  /// 删除单个课程
+  Future<bool> deleteLesson(int lessonNumber) async {
+    try {
+      print('🗑️ 开始删除课程 $lessonNumber...');
+      
+      // 从内存缓存中删除
+      if (_cachedLocalLessons != null) {
+        _cachedLocalLessons!.removeWhere((lesson) => lesson.lesson == lessonNumber);
+      }
+      
+      // 从本地存储中删除
+      await _updateLocalCache();
+      
+      print('✅ 课程 $lessonNumber 删除完成');
+      return true;
+    } catch (e) {
+      print('❌ 删除课程 $lessonNumber 失败: $e');
+      return false;
+    }
+  }
+
+  /// 批量删除课程
+  Future<bool> deleteLessons(List<int> lessonNumbers) async {
+    try {
+      print('🗑️ 开始批量删除 ${lessonNumbers.length} 个课程...');
+      
+      // 从内存缓存中删除
+      if (_cachedLocalLessons != null) {
+        _cachedLocalLessons!.removeWhere((lesson) => lessonNumbers.contains(lesson.lesson));
+      }
+      
+      // 更新本地存储
+      await _updateLocalCache();
+      
+      print('✅ 批量删除 ${lessonNumbers.length} 个课程完成');
+      return true;
+    } catch (e) {
+      print('❌ 批量删除课程失败: $e');
+      return false;
+    }
+  }
+
+  /// 添加新课程
+  Future<bool> addLessons(List<Lesson> newLessons) async {
+    try {
+      print('➕ 开始添加 ${newLessons.length} 个课程...');
+      
+      // 检查重复课程
+      final localLessons = await getLocalLessons();
+      final existingLessonNumbers = localLessons.map((l) => l.lesson).toSet();
+      final lessonsToAdd = newLessons.where((lesson) => !existingLessonNumbers.contains(lesson.lesson)).toList();
+      
+      if (lessonsToAdd.isEmpty) {
+        print('⚠️ 所有课程都已存在，无需添加');
+        return false;
+      }
+      
+      // 添加到内存缓存
+      if (_cachedLocalLessons != null) {
+        _cachedLocalLessons!.addAll(lessonsToAdd);
+        _cachedLocalLessons!.sort((a, b) => a.lesson.compareTo(b.lesson));
+      }
+      
+      // 更新本地存储
+      await _updateLocalCache();
+      
+      print('✅ 成功添加 ${lessonsToAdd.length} 个课程');
+      return true;
+    } catch (e) {
+      print('❌ 添加课程失败: $e');
+      return false;
+    }
+  }
+
+  /// 更新本地缓存到 SharedPreferences
+  Future<void> _updateLocalCache() async {
+    try {
+      if (_cachedLocalLessons != null) {
+        final prefs = await SharedPreferences.getInstance();
+        final lessonsJson = json.encode(_cachedLocalLessons!.map((lesson) => lesson.toJson()).toList());
+        await prefs.setString('cached_lessons', lessonsJson);
+        await prefs.setString('last_sync_time', DateTime.now().toIso8601String());
+        print('💾 本地缓存已更新，共 ${_cachedLocalLessons!.length} 个课程');
+      }
+    } catch (e) {
+      print('❌ 更新本地缓存失败: $e');
+    }
+  }
+
   /// 获取课程统计信息
   Future<Map<String, dynamic>> getLessonStats() async {
     final stats = <String, dynamic>{};
