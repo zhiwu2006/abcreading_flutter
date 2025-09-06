@@ -1,0 +1,3231 @@
+[
+    {
+        "lesson": 3001,
+        "title": "Bonk's Broken Leg",
+        "content": "Push me on the swing, Lerk, says Bonk. What's the magic word? says Lerk. Presto-Chain-Jo? asks Bonk. Try again, says Lerk. Please? asks Bonk. Lerk pushes Bonk on the swing. Push harder, says Bonk. Lerk gives a big push. Harder, yells Bonk. Lerk gives a bigger push. Harder, yells Bonk. Lerk gives a giant push. Bonk's hands slip from the swing. He tumbles to the ground. My leg, he cries. Lerk takes Bonk to the doctor. Bonk has a broken leg, says the doctor. He will need your help.\nAt home, Lerk gives Bonk a bell. You can ring it when you need something. Bonk rings the bell right away. I need a story, says Bonk. Lerk reads him a story. Bonk rings the bell again. I need you to play checkers with me, says Bonk. Lerk plays many games of checkers with Bonk. Bonk rings the bell again. I need you to bake me a cherry pie, says Bonk. Lerk bakes a cherry pie for Bonk. This is nice, says Bonk. I ring the bell and you do what I want, says Bonk. Lerk frowns. You are being bossy, says Lerk. I am? asks Bonk. You are, says Lerk. Bonk rings the bell again. I need to say I'm sorry, says Bonk. Apology accepted, says Lerk. I also need some ice cream, says Bonk. Lerk brings him a banana split.\nSoon Bonk's leg heals. Bonk is as good as new, says the doctor. No more cast, says Bonk. I know something better than no more cast, says Lerk. What could be better than that? says Bonk. No more bell, says Lerk.",
+        "vocabulary": [
+            {
+                "word": "tumbles",
+                "meaning": "to fall suddenly and helplessly; 摔倒"
+            },
+            {
+                "word": "giant",
+                "meaning": "very large; 巨大的"
+            },
+            {
+                "word": "frowns",
+                "meaning": "to make an angry or unhappy expression; 皱眉"
+            },
+            {
+                "word": "bossy",
+                "meaning": "fond of giving people orders; 爱发号施令的"
+            },
+            {
+                "word": "apology",
+                "meaning": "a regretful acknowledgment of an offense or failure; 道歉"
+            },
+            {
+                "word": "accepted",
+                "meaning": "agreed to or received; 接受"
+            },
+            {
+                "word": "heals",
+                "meaning": "to become sound or healthy again; 愈合"
+            },
+            {
+                "word": "cast",
+                "meaning": "a supportive dressing wrapped around a broken bone; 石膏"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Lerk gives a giant push.",
+                "note": "句子的基本结构是“主语 (Lerk) + 谓语 (gives) + 宾语 (a giant push)”。形容词 'giant' 用来修饰名词 'push'。"
+            },
+            {
+                "text": "You can ring it when you need something.",
+                "note": "'when' 引导一个时间状语从句，说明主句动作 'You can ring it' 发生的时间。"
+            },
+            {
+                "text": "I ring the bell and you do what I want.",
+                "note": "这是一个由 'and' 连接的并列句，包含两个独立的句子，描述了两个连续的动作或情况。"
+            },
+            {
+                "text": "You are being bossy.",
+                "note": "现在进行时 'are being' 用来描述某人暂时的、此刻表现出的行为或特征，带有批评的意味。"
+            },
+            {
+                "text": "Bonk is as good as new.",
+                "note": "固定短语 'as good as new' 表示“完好如新”，用来形容某物被修复得很好。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. How did Bonk break his leg?",
+                "options": {
+                    "A": "He fell off his bike.",
+                    "B": "Lerk pushed him too hard on the swing.",
+                    "C": "He tripped while running.",
+                    "D": "A doctor broke it by accident."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. What did Lerk give Bonk to ask for help?",
+                "options": {
+                    "A": "A whistle.",
+                    "B": "A phone.",
+                    "C": "A bell.",
+                    "D": "A horn."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. Why did Lerk say Bonk was being 'bossy'?",
+                "options": {
+                    "A": "Bonk was telling Lerk what to do all the time.",
+                    "B": "Bonk was wearing a boss's hat.",
+                    "C": "Bonk refused to eat the cherry pie.",
+                    "D": "Bonk didn't say thank you."
+                },
+                "answer": "A"
+            },
+            {
+                "q": "4. How did Bonk apologize to Lerk?",
+                "options": {
+                    "A": "He wrote a letter.",
+                    "B": "He gave Lerk a gift.",
+                    "C": "He rang the bell and said 'I need to say I'm sorry'.",
+                    "D": "He baked a pie for Lerk."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What did Lerk think was better than Bonk's cast coming off?",
+                "options": {
+                    "A": "Getting more ice cream.",
+                    "B": "Playing checkers again.",
+                    "C": "Getting paid for his help.",
+                    "D": "No more bell ringing."
+                },
+                "answer": "D"
+            }
+        ]
+    },
+    {
+        "lesson": 3002,
+        "title": "The Washington Monument",
+        "content": "The Washington Monument was built to honor George Washington. George Washington was a hero. He was the first president of the United States. The monument is in Washington, D.C. It is in an area called the National Mall. The monument is the tallest building in the city. A law says that no other building in the city can be taller. The monument is 555 feet (169 meters) tall. That is as tall as 29 giraffes. It is built of stone.\nWork on the monument started in 1848. Work stopped and started many times. At times, there was not enough money. Work was also stopped by a war in the United States. The monument first opened in 1885.\nWhat's inside? People can go inside the monument. It has a statue of George Washington. It also has a museum. People can see special stones on the inside walls. Some stones were gifts from U.S. states. Other stones were gifts from people who wanted the monument to be built. People can go to the top of the monument. They can look out and see Washington, D.C.\nWhat's outside? Around the monument are 50 U.S. flags. The 50 flags stand for the 50 states. A big stone at the corner of the monument has many things inside it. The things honor George Washington and the United States.\nOh no! Cracks! An earthquake damaged the monument in 2011. Then a storm damaged it more. It took almost three years to repair the monument. Many people visit the Washington monument each year. If you visit it, what would you want to see?",
+        "vocabulary": [
+            {
+                "word": "honor",
+                "meaning": "to show great respect for someone or something; 纪念，向…致敬"
+            },
+            {
+                "word": "monument",
+                "meaning": "a structure built to commemorate a person or event; 纪念碑"
+            },
+            {
+                "word": "president",
+                "meaning": "the elected head of a republican state; 总统"
+            },
+            {
+                "word": "statue",
+                "meaning": "a carved or cast figure of a person or animal; 雕像"
+            },
+            {
+                "word": "repair",
+                "meaning": "to fix or mend something that is broken or damaged; 修理"
+            },
+            {
+                "word": "damaged",
+                "meaning": "harmed or broken; 受损的"
+            },
+            {
+                "word": "earthquake",
+                "meaning": "a sudden violent shaking of the ground; 地震"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The Washington Monument was built to honor George Washington.",
+                "note": "被动语态 'was built' 用于强调动作的承受者 (The Washington Monument)。不定式短语 'to honor...' 表示目的。"
+            },
+            {
+                "text": "A law says that no other building in the city can be taller.",
+                "note": "'that' 引导一个宾语从句，作为动词 'says' 的内容。"
+            },
+            {
+                "text": "That is as tall as 29 giraffes.",
+                "note": "'as...as' 结构用来进行同级比较，表示两者在某个方面程度相同。"
+            },
+            {
+                "text": "Work was also stopped by a war in the United States.",
+                "note": "被动语态 'was stopped' 表明 'Work' 是动作的承受者，'by a war' 指出动作的执行者。"
+            },
+            {
+                "text": "The 50 flags stand for the 50 states.",
+                "note": "动词短语 'stand for' 在这里的意思是“代表，象征”。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. Who was the Washington Monument built to honor?",
+                "options": {
+                    "A": "The first king of England.",
+                    "B": "The current president.",
+                    "C": "George Washington.",
+                    "D": "All American heroes."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. Why is the Washington Monument the tallest building in Washington, D.C.?",
+                "options": {
+                    "A": "It is built on a high hill.",
+                    "B": "A law prevents other buildings from being taller.",
+                    "C": "There was not enough material to build anything taller.",
+                    "D": "It is an optical illusion."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. What can people see inside the monument?",
+                "options": {
+                    "A": "A swimming pool and a cafe.",
+                    "B": "The president's office.",
+                    "C": "A statue of George Washington and a museum.",
+                    "D": "Only empty rooms."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. What natural disaster damaged the monument in 2011?",
+                "options": {
+                    "A": "A flood.",
+                    "B": "A volcano eruption.",
+                    "C": "A hurricane.",
+                    "D": "An earthquake."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "5. What do the 50 flags outside the monument represent?",
+                "options": {
+                    "A": "The 50 countries that helped build it.",
+                    "B": "The 50 states of the United States.",
+                    "C": "The 50 years it took to build.",
+                    "D": "The 50 heroes of America."
+                },
+                "answer": "B"
+            }
+        ]
+    },
+    {
+        "lesson": 3003,
+        "title": "The Pocket Park",
+        "content": "April and her brother, Jesse, lived in the city. April's mom gave her a puppy named Tiny for her birthday. April and Jesse wanted to play outside with Tiny. They had no place to go. They asked their mom what to do. The city owns the empty lot across the street, mom said. Let's ask them if we could put a pocket park there. What kind of pocket has a park? Jesse asked. He pulled a penny out of his pocket. No park here, he said. A pocket park is a small park, mom explained. April and Jesse thought a pocket park was a great idea.\nFirst our neighbors need to sign a paper, mom said. It says they want the park too. We'll take that with us when we go to City Hall, April said. April, Jesse, and their mom talked to the neighbors. Everyone signed the paper. Then mom took April and Jesse to City Hall. They showed a woman the paper. Mom had to fill out some other papers. Now we have to wait for the permit, mom said. It says we can build the park. They waited, and a few weeks later it came.\nLet's build a pocket park, April and Jesse said. Let's ask the neighborhood to help, mom replied. April, Jesse, and their mom talked to their neighbors again. Everyone wanted to help. The next weekend, the whole neighborhood met at the lot. They picked up trash and pulled weeds. They planted grass and flowers. Mr. Martin donated a nice bench. Mrs. Lee donated a fountain. April and Jesse painted a picture on the wall. Everyone was very tired when it was done. They had a little party in the pocket park. The neighborhood was happier because of the new park. Even Tiny made new friends.",
+        "vocabulary": [
+            {
+                "word": "lot",
+                "meaning": "an area of land; 一块空地"
+            },
+            {
+                "word": "pocket park",
+                "meaning": "a very small park in a city; 袖珍公园"
+            },
+            {
+                "word": "neighbors",
+                "meaning": "people who live near you; 邻居"
+            },
+            {
+                "word": "sign",
+                "meaning": "to write your name on something to show you agree; 签署"
+            },
+            {
+                "word": "City Hall",
+                "meaning": "the building that is the main office of a city's government; 市政厅"
+            },
+            {
+                "word": "permit",
+                "meaning": "an official document that allows you to do something; 许可证"
+            },
+            {
+                "word": "donated",
+                "meaning": "gave something to a person or group to help them; 捐赠"
+            },
+            {
+                "word": "neighborhood",
+                "meaning": "the area where you live; 社区，街区"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The city owns the empty lot across the street.",
+                "note": "介词短语 'across the street' 作地点状语，修饰名词 'lot'，说明空地的位置。"
+            },
+            {
+                "text": "Let's ask them if we could put a pocket park there.",
+                "note": "'if' 引导一个宾语从句，作动词 'ask' 的间接宾语，表示询问的内容。"
+            },
+            {
+                "text": "It says they want the park too.",
+                "note": "这里的 'It' 指代 'a paper'。动词 'says' 后面跟一个省略了 'that' 的宾语从句。"
+            },
+            {
+                "text": "Now we have to wait for the permit.",
+                "note": "情态动词短语 'have to' 表示“必须”，强调一种客观的需要。"
+            },
+            {
+                "text": "Everyone was very tired when it was done.",
+                "note": "'when' 引导一个时间状语从句，说明主句 'Everyone was very tired' 发生的时间。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What is a 'pocket park'?",
+                "options": {
+                    "A": "A park that fits in your pocket.",
+                    "B": "A very large park with many trees.",
+                    "C": "A small park in a city.",
+                    "D": "A park only for puppies."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. Why did April and Jesse want a park?",
+                "options": {
+                    "A": "They wanted a place to play with their puppy, Tiny.",
+                    "B": "They were bored of their toys.",
+                    "C": "Their mom told them to build one.",
+                    "D": "They wanted to plant flowers."
+                },
+                "answer": "A"
+            },
+            {
+                "q": "3. What was the first step to getting the park built?",
+                "options": {
+                    "A": "Buying flowers and benches.",
+                    "B": "Asking their neighbors to sign a paper.",
+                    "C": "Cleaning up the empty lot.",
+                    "D": "Painting a picture on the wall."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. Who helped build the park?",
+                "options": {
+                    "A": "Only April and Jesse.",
+                    "B": "Only their mom.",
+                    "C": "The whole neighborhood.",
+                    "D": "Workers from City Hall."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What did Mr. Martin and Mrs. Lee do for the park?",
+                "options": {
+                    "A": "They signed the paper.",
+                    "B": "They picked up trash.",
+                    "C": "They donated a bench and a fountain.",
+                    "D": "They had a party."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3004,
+        "title": "Millie the Sheep Dog",
+        "content": "There once was a sheep dog named Millie. She looked after sheep on a farm. One day, Millie saw that one sheep was missing. Where's Dolly? Millie asked. Why don't you ask the goats? said one sheep. They have been acting nervous, the sheep added. Millie asked the goats if they knew anything. An old goat said, Yesterday, I looked over the wall. I saw a wolf covered in sheep's wool. He added he was leading Dolly into the forest. Millie thought, where would a wolf get wool? Then she looked in the barn where the sheep got their haircuts. That gave her an idea.\nMillie told the sheep her plan. She covered herself with wool. So she looked like a sheep too. Then she moved to the edge of the field and pretended to graze. Soon the wolf covered in sheep's wool came near the field. Want to know where some tasty grass is? the wolf asked Millie. Follow me, he added. Millie followed him into the forest. The rest of the sheep quietly followed behind. The wolf led Millie to his den. Dolly was there. She was scared, but alive. Dolly! Millie barked loudly. The sheep ran into the wolf's den. They pinned the wolf against the den wall. His wool fell to the ground. Now the sheep saw what he really was. A wolf in sheep's clothing. The wolf backed down. There were many more of them than him. He ran from the den with his tail between his legs. Millie and the sheep all went home. Dolly never followed a strange sheep again.",
+        "vocabulary": [
+            {
+                "word": "missing",
+                "meaning": "not able to be found; 失踪的"
+            },
+            {
+                "word": "nervous",
+                "meaning": "worried and anxious; 紧张的"
+            },
+            {
+                "word": "wool",
+                "meaning": "the fine, soft curly hair forming the fleece of a sheep; 羊毛"
+            },
+            {
+                "word": "pretended",
+                "meaning": "to act as if something is true when it is not; 假装"
+            },
+            {
+                "word": "graze",
+                "meaning": "to eat grass in a field; 吃草"
+            },
+            {
+                "word": "den",
+                "meaning": "the home of a wild animal; 兽穴"
+            },
+            {
+                "word": "pinned",
+                "meaning": "held someone firmly in a position; 钉住，压住"
+            },
+            {
+                "word": "a wolf in sheep's clothing",
+                "meaning": "a person who seems friendly but is actually hostile; 披着羊皮的狼"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "She looked after sheep on a farm.",
+                "note": "动词短语 'look after' 意为“照顾”，相当于 'take care of'。"
+            },
+            {
+                "text": "Millie asked the goats if they knew anything.",
+                "note": "'if' 引导宾语从句，表示“是否”，将一个一般疑问句转换为陈述句作宾语。"
+            },
+            {
+                "text": "She covered herself with wool.",
+                "note": "反身代词 'herself' 作宾语，表示动作的发出者和承受者是同一个人。"
+            },
+            {
+                "text": "The rest of the sheep quietly followed behind.",
+                "note": "副词 'quietly' 修饰动词 'followed'，描述动作的方式。"
+            },
+            {
+                "text": "He ran from the den with his tail between his legs.",
+                "note": "介词短语 'with his tail between his legs' 是一个习语，表示“夹着尾巴”，形容非常羞愧或害怕地逃跑。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What was Millie's job on the farm?",
+                "options": {
+                    "A": "She was a sheep.",
+                    "B": "She was a sheep dog who looked after sheep.",
+                    "C": "She gave haircuts to the sheep.",
+                    "D": "She guarded the barn."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Who did Millie first ask about the missing sheep, Dolly?",
+                "options": {
+                    "A": "The farmer.",
+                    "B": "The wolf.",
+                    "C": "The other sheep.",
+                    "D": "The goats."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What was the wolf disguised as?",
+                "options": {
+                    "A": "A goat.",
+                    "B": "A farmer.",
+                    "C": "A sheep.",
+                    "D": "A dog."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. What was Millie's plan to rescue Dolly?",
+                "options": {
+                    "A": "To call the police.",
+                    "B": "To set a trap for the wolf.",
+                    "C": "To cover herself in wool and follow the wolf.",
+                    "D": "To ask the goats for help."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What happened to the wolf at the end?",
+                "options": {
+                    "A": "He became friends with the sheep.",
+                    "B": "He was pinned by the sheep and ran away scared.",
+                    "C": "He ate Dolly.",
+                    "D": "He was taken to a zoo."
+                },
+                "answer": "B"
+            }
+        ]
+    },
+    {
+        "lesson": 3005,
+        "title": "Acadia National Park",
+        "content": "Maine is the first state to see the sun rise. In Maine, Acadia National Park is one of the places to see it first.\nLand that meets the sea. Millions of people visit Acadia each year. They come to see the sun rise on its tall peaks. They come to see its islands, forests, lakes, and rocky coast. When the tide goes out, tide pools form on Acadia's beaches. The tide pools are home to many living things.\nWildlife. Acadia is a great place to watch birds. Some fly over as they head south. Other birds live in the park all year. People have seen 338 kinds of birds there. Acadia is home to many mammals too. Some of those mammals live in the water and on land. Some of those mammals live in the forest. Some of those mammals live in the ground.\nA park made piece by piece. After Maine became a state, people bought land along its coast. Soon, many different people owned bits of the area. Some of them wanted to protect the area. One of those people was George Doar. Doar and others donated their land to the government. In 1919, that land became a national park.\nConclusion. There is plenty to see and do in Acadia. Some people come to see the sun rise. Some people come to see the land meet the sea. Some people come to hike, climb, fish, or ride a bicycle. If you ever get the chance to visit, do.",
+        "vocabulary": [
+            {
+                "word": "sun rise",
+                "meaning": "the time in the morning when the sun first appears; 日出"
+            },
+            {
+                "word": "peaks",
+                "meaning": "the pointed top of a mountain; 山峰"
+            },
+            {
+                "word": "coast",
+                "meaning": "the land next to or close to the sea; 海岸"
+            },
+            {
+                "word": "tide",
+                "meaning": "the regular rise and fall in the level of the sea; 潮汐"
+            },
+            {
+                "word": "wildlife",
+                "meaning": "animals that live and grow in natural conditions; 野生动物"
+            },
+            {
+                "word": "mammals",
+                "meaning": "animals that feed milk to their young; 哺乳动物"
+            },
+            {
+                "word": "protect",
+                "meaning": "to keep safe from harm or injury; 保护"
+            },
+            {
+                "word": "donated",
+                "meaning": "gave money or goods to help a person or organization; 捐赠"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Maine is the first state to see the sun rise.",
+                "note": "不定式短语 'to see the sun rise' 在这里作定语，修饰名词 'state'。"
+            },
+            {
+                "text": "The tide pools are home to many living things.",
+                "note": "固定短语 'be home to' 意思是“是…的家园”，用来介绍某地的栖息物种。"
+            },
+            {
+                "text": "Acadia is a great place to watch birds.",
+                "note": "不定式短语 'to watch birds' 作定语，修饰 'place'，说明这个地方的用途。"
+            },
+            {
+                "text": "Doar and others donated their land to the government.",
+                "note": "动词 'donate' 的用法是 'donate something to somebody'，意为“把某物捐给某人”。"
+            },
+            {
+                "text": "If you ever get the chance to visit, do.",
+                "note": "这是一个省略句，最后的 'do' 是助动词，代替了前面提到的动词 'visit'，意思是“如果你有机会去参观，就去吧”。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. Where is Acadia National Park located?",
+                "options": {
+                    "A": "California.",
+                    "B": "Florida.",
+                    "C": "Maine.",
+                    "D": "Texas."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. What natural event can visitors see first in Acadia?",
+                "options": {
+                    "A": "Sunset.",
+                    "B": "Moonrise.",
+                    "C": "An eclipse.",
+                    "D": "Sunrise."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "3. What forms on Acadia's beaches when the tide goes out?",
+                "options": {
+                    "A": "Sandcastles.",
+                    "B": "Tide pools.",
+                    "C": "Big waves.",
+                    "D": "Islands."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. How was Acadia National Park created?",
+                "options": {
+                    "A": "The government bought all the land at once.",
+                    "B": "It was always a park.",
+                    "C": "People like George Doar donated their land to the government.",
+                    "D": "It was discovered by explorers."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. Besides seeing the sunrise, what is another activity mentioned that people can do in Acadia?",
+                "options": {
+                    "A": "Go shopping.",
+                    "B": "Visit a movie theater.",
+                    "C": "Hike, climb, fish, or ride a bicycle.",
+                    "D": "Drive race cars."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3006,
+        "title": "Acadia National Park",
+        "content": "Maine is the first state to see the sun rise. In Maine, Acadia National Park is one of the places to see it first.\nLand that meets the sea. Millions of people visit Acadia each year. They come to see the sun rise on its tall peaks. They come to see its islands, forests, lakes, and rocky coast. When the tide goes out, tide pools form on Acadia's beaches. The tide pools are home to many living things.\nWildlife. Acadia is a great place to watch birds. Some fly over as they head south. Other birds live in the park all year. People have seen 338 kinds of birds there. Acadia is home to many mammals, too. Some of those mammals live in the water and on land. Some of those mammals live in the forest. Some of those mammals live in the ground.\nA park made piece by piece. After Maine became a state, people bought land along its coast. Soon, many different people owned bits of the area. Some of them wanted to protect the area. One of those people was George Doerr. Doerr and others donated their land to the government. In 1919, that land became a national park.\nConclusion. There is plenty to see and do in Acadia. Some people come to see the sun rise. Some people come to see the land meet the sea. Some people come to hike, climb, fish, or ride a bicycle. If you ever get the chance to visit, do.",
+        "vocabulary": [
+            {
+                "word": "sun rise",
+                "meaning": "the time in the morning when the sun first appears; 日出"
+            },
+            {
+                "word": "peaks",
+                "meaning": "the pointed top of a mountain; 山峰"
+            },
+            {
+                "word": "coast",
+                "meaning": "the land next to or close to the sea; 海岸"
+            },
+            {
+                "word": "tide",
+                "meaning": "the regular rise and fall in the level of the sea; 潮汐"
+            },
+            {
+                "word": "wildlife",
+                "meaning": "animals that live and grow in natural conditions; 野生动物"
+            },
+            {
+                "word": "mammals",
+                "meaning": "animals that feed milk to their young; 哺乳动物"
+            },
+            {
+                "word": "protect",
+                "meaning": "to keep safe from harm or injury; 保护"
+            },
+            {
+                "word": "donated",
+                "meaning": "gave money or goods to help a person or organization; 捐赠"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Maine is the first state to see the sun rise.",
+                "note": "不定式短语 'to see the sun rise' 在这里作定语，修饰名词 'state'。"
+            },
+            {
+                "text": "The tide pools are home to many living things.",
+                "note": "固定短语 'be home to' 意思是“是…的家园”，用来介绍某地的栖息物种。"
+            },
+            {
+                "text": "Acadia is a great place to watch birds.",
+                "note": "不定式短语 'to watch birds' 作定语，修饰 'place'，说明这个地方的用途。"
+            },
+            {
+                "text": "Doerr and others donated their land to the government.",
+                "note": "动词 'donate' 的用法是 'donate something to somebody'，意为“把某物捐给某人”。"
+            },
+            {
+                "text": "If you ever get the chance to visit, do.",
+                "note": "这是一个省略句，最后的 'do' 是助动词，代替了前面提到的动词 'visit'，意思是“如果你有机会去参观，就去吧”。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. Where is Acadia National Park located?",
+                "options": {
+                    "A": "California.",
+                    "B": "Florida.",
+                    "C": "Maine.",
+                    "D": "Texas."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. What natural event can visitors see first in Acadia?",
+                "options": {
+                    "A": "Sunset.",
+                    "B": "Moonrise.",
+                    "C": "An eclipse.",
+                    "D": "Sunrise."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "3. What forms on Acadia's beaches when the tide goes out?",
+                "options": {
+                    "A": "Sandcastles.",
+                    "B": "Tide pools.",
+                    "C": "Big waves.",
+                    "D": "Islands."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. How was Acadia National Park created?",
+                "options": {
+                    "A": "The government bought all the land at once.",
+                    "B": "It was always a park.",
+                    "C": "People like George Doerr donated their land to the government.",
+                    "D": "It was discovered by explorers."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. Besides seeing the sunrise, what is another activity mentioned that people can do in Acadia?",
+                "options": {
+                    "A": "Go shopping.",
+                    "B": "Visit a movie theater.",
+                    "C": "Hike, climb, fish, or ride a bicycle.",
+                    "D": "Drive race cars."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3007,
+        "title": "Alastair the Cat",
+        "content": "Dong, dong. There goes the grandfather clock. It's 2 a.m. Time to get up. I wonder what Becky and Dan are doing. Look at this. They're sound asleep. Lazy people. It's time to get up. I want to play. Come on, wake up. Where's my mouse? I want to play with my mouse. Go away, Alastair, says Becky. Oh, you'd rather play what's under the blanket. Okay. Pounce, pounce. Stop it, Alastair, says Dan. Hey, you just pushed me off the bed. I know you didn't mean to do that. Let's play something else. Something that isn't so rough. Okay, Alastair, out you go. What? You can't put me out. I don't want to go out. I want to be with you. It's lonely out here. Come on, let me in. If you don't let me in, I'll find another way to entertain myself. Don't say I didn't warn you. I know I'm not supposed to be up here, but you're not entertaining me. Oops. Don't worry, I'm okay. As for that face, well, it was kind of ugly, don't you think? Now I'll find something else to do. Something that isn't so dangerous. I know, I'll play kitty superhero. I'm watching for burglars. All clear to the east, but there's trouble to the west. Oh, it's you. Honey, says Dan, where are you going? I can't sleep, says Becky. I'm going to read. Come on, Alastair, says Becky. You can come with me. Well, okay, if you really want me to, but no love stories. I hate love stories. Hey, look what I found, Becky says. My mouse, how nice, but I've had a tough night. I'm ready to sleep.",
+        "vocabulary": [
+            {
+                "word": "sound asleep",
+                "meaning": "sleeping deeply; 熟睡"
+            },
+            {
+                "word": "pounce",
+                "meaning": "to jump or move quickly in order to catch something; 猛扑"
+            },
+            {
+                "word": "lonely",
+                "meaning": "sad because one has no friends or company; 孤独的"
+            },
+            {
+                "word": "entertain",
+                "meaning": "to provide with amusement or enjoyment; 娱乐，使…开心"
+            },
+            {
+                "word": "warn",
+                "meaning": "to inform someone in advance of a possible danger or problem; 警告"
+            },
+            {
+                "word": "dangerous",
+                "meaning": "able or likely to cause harm or injury; 危险的"
+            },
+            {
+                "word": "burglars",
+                "meaning": "people who illegally enter buildings and steal things; 窃贼"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "I wonder what Becky and Dan are doing.",
+                "note": "'what' 引导一个宾语从句，作为动词 'wonder' 的宾语，表达猫的好奇。"
+            },
+            {
+                "text": "Oh, you'd rather play what's under the blanket.",
+                "note": "短语 'would rather' 表示“宁愿”，后面跟动词原形。'what's under the blanket' 是一个名词性从句。"
+            },
+            {
+                "text": "If you don't let me in, I'll find another way to entertain myself.",
+                "note": "这是一个由 'if' 引导的条件状语从句，表示一个真实的、可能发生的假设。"
+            },
+            {
+                "text": "I know I'm not supposed to be up here, but you're not entertaining me.",
+                "note": "短语 'be supposed to' 表示“应该”，这里用否定形式。'but' 连接两个表示对比的句子。"
+            },
+            {
+                "text": "As for that face, well, it was kind of ugly, don't you think?",
+                "note": "短语 'as for' 用来转换话题。'don't you think?' 是一个反义疑问句，用来征求对方的同意。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What time does Alastair the cat wake up?",
+                "options": {
+                    "A": "Midnight.",
+                    "B": "Sunrise.",
+                    "C": "2 a.m.",
+                    "D": "Noon."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. Why does Alastair want to wake up Becky and Dan?",
+                "options": {
+                    "A": "He is hungry.",
+                    "B": "He wants to play.",
+                    "C": "He is scared.",
+                    "D": "He needs to go outside."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. What does Dan do when Alastair pounces on the bed?",
+                "options": {
+                    "A": "He plays with Alastair.",
+                    "B": "He pushes Alastair off the bed.",
+                    "C": "He gives Alastair a toy mouse.",
+                    "D": "He ignores him."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. What does Alastair pretend to be when he is alone?",
+                "options": {
+                    "A": "A dog.",
+                    "B": "A burglar.",
+                    "C": "A kitty superhero.",
+                    "D": "A sleeping person."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What happens at the very end of the story?",
+                "options": {
+                    "A": "Alastair goes back outside.",
+                    "B": "Becky and Dan go back to sleep.",
+                    "C": "Alastair decides he is ready to sleep.",
+                    "D": "Alastair plays with his mouse all night."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3008,
+        "title": "Alastair the Cat",
+        "content": "Dong, dong. There goes the grandfather clock. It's two a.m., time to get up. I wonder what Becky and Dan are doing. Look at this, they're sound asleep. Lazy people, it's time to get up. I want to play, come on, wake up. Where's my mouse? I want to play with my mouse. Go away, Alastair, says Becky. Oh, you'd rather play what's under the blanket. Okay, pounce, pounce, pounce. Stop it, Alastair, says Dan. Hey, you just pushed me off the bed. I know you didn't mean to do that. Let's play something else, something that isn't so rough. Okay, Alastair, out you go. What? You can't put me out. I don't want to go out. I want to be with you. It's lonely out here. Come on, let me in. If you don't let me in, I'll find another way to entertain myself. Don't say I didn't warn you. I know I'm not supposed to be up here, but you're not entertaining me. Oops, don't worry, I'm okay. As for that face, well, it was kind of ugly, don't you think? Now I'll find something else to do, something that isn't so dangerous. I know, I'll play kitty superhero. I'm watching for burglars. All clear to the east, but there's trouble to the west. Oh, it's you. Honey, says Dan, where are you going? I can't sleep, says Becky. I'm going to read. Come on, Alastair, says Becky. You can come with me. Well, okay, if you really want me to, but no love stories. I hate love stories. Hey, look what I found, Becky says. My mouse, how nice, but I've had a tough night. I'm ready to sleep.",
+        "vocabulary": [
+            {
+                "word": "sound asleep",
+                "meaning": "sleeping deeply; 熟睡"
+            },
+            {
+                "word": "pounce",
+                "meaning": "to jump or move quickly in order to catch something; 猛扑"
+            },
+            {
+                "word": "lonely",
+                "meaning": "sad because one has no friends or company; 孤独的"
+            },
+            {
+                "word": "entertain",
+                "meaning": "to provide with amusement or enjoyment; 娱乐，使…开心"
+            },
+            {
+                "word": "warn",
+                "meaning": "to inform someone in advance of a possible danger or problem; 警告"
+            },
+            {
+                "word": "dangerous",
+                "meaning": "able or likely to cause harm or injury; 危险的"
+            },
+            {
+                "word": "burglars",
+                "meaning": "people who illegally enter buildings and steal things; 窃贼"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "I wonder what Becky and Dan are doing.",
+                "note": "'what' 引导一个宾语从句，作为动词 'wonder' 的宾语，表达猫的好奇。"
+            },
+            {
+                "text": "Oh, you'd rather play what's under the blanket.",
+                "note": "短语 'would rather' 表示“宁愿”，后面跟动词原形。'what's under the blanket' 是一个名词性从句。"
+            },
+            {
+                "text": "If you don't let me in, I'll find another way to entertain myself.",
+                "note": "这是一个由 'if' 引导的条件状语从句，表示一个真实的、可能发生的假设。"
+            },
+            {
+                "text": "I know I'm not supposed to be up here, but you're not entertaining me.",
+                "note": "短语 'be supposed to' 表示“应该”，这里用否定形式。'but' 连接两个表示对比的句子。"
+            },
+            {
+                "text": "As for that face, well, it was kind of ugly, don't you think?",
+                "note": "短语 'as for' 用来转换话题。'don't you think?' 是一个反义疑问句，用来征求对方的同意。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What time does Alastair the cat wake up?",
+                "options": {
+                    "A": "Midnight.",
+                    "B": "Sunrise.",
+                    "C": "2 a.m.",
+                    "D": "Noon."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. Why does Alastair want to wake up Becky and Dan?",
+                "options": {
+                    "A": "He is hungry.",
+                    "B": "He wants to play.",
+                    "C": "He is scared.",
+                    "D": "He needs to go outside."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. What does Dan do when Alastair pounces on the bed?",
+                "options": {
+                    "A": "He plays with Alastair.",
+                    "B": "He pushes Alastair off the bed.",
+                    "C": "He gives Alastair a toy mouse.",
+                    "D": "He ignores him."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. What does Alastair pretend to be when he is alone?",
+                "options": {
+                    "A": "A dog.",
+                    "B": "A burglar.",
+                    "C": "A kitty superhero.",
+                    "D": "A sleeping person."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What happens at the very end of the story?",
+                "options": {
+                    "A": "Alastair goes back outside.",
+                    "B": "Becky and Dan go back to sleep.",
+                    "C": "Alastair decides he is ready to sleep.",
+                    "D": "Alastair plays with his mouse all night."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3009,
+        "title": "Armadillo's Song",
+        "content": "Armadillo sat by a pond in the forest. He heard Frog singing. Croak, croak. Oh, how I wish I could sing like that, said Armadillo. Don't be silly, replied Frog. Armadillo's can't sing, said he. Armadillo walked down the forest path. He came upon Cricket singing. Chirp, chirp. Oh, how I wish I could sing like that, said Armadillo. Don't be foolish, laughed Cricket. Armadillo's can't sing, said she. Armadillo heard a sharp sound. He came upon Crow singing. Caw, caw. Oh, how I wish I could sing like that, said Armadillo. Are you crazy? replied Crow. Everyone knows Armadillo's can't sing, said she. Armadillo looked up at the trees. He came upon Bee singing. Buzz, buzz. Oh, how I wish I could sing like that, said Armadillo. No way, exclaimed Bee. Everyone knows Armadillo's can't sing, said he. Armadillo sat alone by the forest path. Big clouds rolled in. The sky turned dark. Thump, bump. Thump, bump. What's that? asked he. Pebbles of hail rained down on Armadillo's shell. My shell is singing! exclaimed Armadillo. Armadillo ran back down the forest path to tell the others about his singing shell. Now we can all sing together, said he. So they did, and it sounded sweet. Croak, croak. Chirp, chirp. Caw, caw. Buzz, buzz. Thump, bump. Thump, bump.",
+        "vocabulary": [
+            {
+                "word": "silly",
+                "meaning": "having or showing a lack of common sense or judgment; foolish; 傻的"
+            },
+            {
+                "word": "replied",
+                "meaning": "said something in response to something someone has said; 回答"
+            },
+            {
+                "word": "foolish",
+                "meaning": "lacking good sense or judgment; unwise; 愚蠢的"
+            },
+            {
+                "word": "exclaimed",
+                "meaning": "cried out suddenly in surprise, strong emotion, or pain; 惊呼"
+            },
+            {
+                "word": "hail",
+                "meaning": "pellets of frozen rain that fall in showers; 冰雹"
+            },
+            {
+                "word": "shell",
+                "meaning": "the hard protective outer case of an animal such as a turtle or armadillo; 壳"
+            },
+            {
+                "word": "together",
+                "meaning": "with or near to another person or people; 一起"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Oh, how I wish I could sing like that.",
+                "note": "'I wish' 后面跟虚拟语气，表示一种与现在事实相反的愿望。'could' 是 'can' 的过去式，用于虚拟语气中。"
+            },
+            {
+                "text": "Armadillo walked down the forest path.",
+                "note": "介词 'down' 在这里表示“沿着”，描述了移动的方向。"
+            },
+            {
+                "text": "He came upon Cricket singing.",
+                "note": "动词短语 'come upon' 意为“偶然遇见”。'singing' 是现在分词，作宾语补足语，表示 Cricket 当时正在唱歌。"
+            },
+            {
+                "text": "Pebbles of hail rained down on Armadillo's shell.",
+                "note": "动词 'rained down' 形象地描述了冰雹落下的样子。'on' 表示落下的位置。"
+            },
+            {
+                "text": "Now we can all sing together.",
+                "note": "情态动词 'can' 表示能力。副词 'together' 修饰动词 'sing'，表示一起唱歌。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What did Armadillo wish he could do?",
+                "options": {
+                    "A": "Fly like a crow.",
+                    "B": "Swim like a frog.",
+                    "C": "Sing like the other animals.",
+                    "D": "Build a nest like a bee."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. What did the other animals tell Armadillo?",
+                "options": {
+                    "A": "They would teach him to sing.",
+                    "B": "He had a beautiful voice.",
+                    "C": "Armadillos can't sing.",
+                    "D": "He should sing quietly."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. Which animal did Armadillo NOT meet on his walk?",
+                "options": {
+                    "A": "Frog.",
+                    "B": "Cricket.",
+                    "C": "Rabbit.",
+                    "D": "Crow."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. How did Armadillo discover his own song?",
+                "options": {
+                    "A": "Frog taught him.",
+                    "B": "He practiced every day.",
+                    "C": "Pebbles of hail rained down on his shell, making a sound.",
+                    "D": "He found a magical singing stone."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What was the sound Armadillo's shell made?",
+                "options": {
+                    "A": "Croak, croak.",
+                    "B": "Chirp, chirp.",
+                    "C": "Buzz, buzz.",
+                    "D": "Thump, bump."
+                },
+                "answer": "D"
+            }
+        ]
+    },
+    {
+        "lesson": 3010,
+        "title": "Arthur's New Sister",
+        "content": "Hey, sit down and I'll tell you a story. My name is Arthur. I'm eight years old and my life is great. Every morning, mom wakes me up by tickling my feet. It makes me laugh and starts my day on a happy note. For breakfast, dad makes Mickey Mouse shaped pancakes. After school, dad and I kick the ball until dinner. For dessert, I always have a huge cookie with milk. I have my own special cup from Disneyland, but a few months ago, my parents told me some bad news. They said that I'm going to have a little sister.\nI know I'm not going to like it. I have never had to share my parents with anybody. My friend, Jeff, got a baby sister last year. His parents never have time to play with him, and they are always busy changing the baby's stinky diapers. Yuck. Mom and dad said that I will have to share my bedroom with the baby. She better not use my Disneyland cup. No way. I told mom that I don't want a baby sister, but that didn't seem to matter.\nToday, mom and dad are coming home with my new sister. I'm just going to tell them to take her back. I don't want to share my mom and dad or my room. Well, here they are. Dad is carrying some pink blankets. Is the baby inside there? Is she that small? Grandma goes outside. She hugs mom and then looks inside the pink blankets. I hear grandma say the baby is beautiful. I'm not going out there. I'm going to sit right here. Now mom is hugging me. Dad puts the baby in my lap, and then the most amazing thing happens. She reaches out and grabs my finger. She won't let go. I think she knows that I'm her big brother. She likes me already. Hey, maybe having a sister won't be so bad. I think mom and dad have enough love for both of us.",
+        "vocabulary": [
+            {
+                "word": "tickling",
+                "meaning": "lightly touching in a way that causes laughter; 挠痒痒"
+            },
+            {
+                "word": "huge",
+                "meaning": "extremely large; 巨大的"
+            },
+            {
+                "word": "share",
+                "meaning": "to have or use something at the same time as someone else; 分享"
+            },
+            {
+                "word": "stinky",
+                "meaning": "having a strong, unpleasant smell; 臭的"
+            },
+            {
+                "word": "diapers",
+                "meaning": "a piece of absorbent material worn by a baby; 尿布"
+            },
+            {
+                "word": "matter",
+                "meaning": "to be important or significant; 要紧，有关系"
+            },
+            {
+                "word": "blankets",
+                "meaning": "coverings used on a bed; 毯子"
+            },
+            {
+                "word": "lap",
+                "meaning": "the flat area between the waist and knees of a seated person; 膝上"
+            },
+            {
+                "word": "amazing",
+                "meaning": "causing great surprise or wonder; astonishing; 令人惊奇的"
+            },
+            {
+                "word": "grabs",
+                "meaning": "to take hold of something or someone suddenly; 抓住"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Every morning, mom wakes me up by tickling my feet.",
+                "note": "介词 'by' 后面跟动名词 'tickling'，表示方式，说明了“如何”叫醒我。"
+            },
+            {
+                "text": "I have never had to share my parents with anybody.",
+                "note": "现在完成时 'have never had' 表示从过去到现在从未有过的经历。'have to' 意为“必须”。"
+            },
+            {
+                "text": "His parents never have time to play with him.",
+                "note": "不定式 'to play with him' 作定语，修饰名词 'time'。"
+            },
+            {
+                "text": "She better not use my Disneyland cup.",
+                "note": "短语 'had better not' (口语中 'had' 常省略) 表示强烈的建议或警告，意为“最好不要”。"
+            },
+            {
+                "text": "I told mom that I don't want a baby sister, but that didn't seem to matter.",
+                "note": "这是一个由 'but' 连接的并列句，表示转折。前半句中 'that' 引导宾语从句。"
+            },
+            {
+                "text": "I hear grandma say the baby is beautiful.",
+                "note": "感官动词 'hear' 后面的宾语从句中，动词 'say' 用原形（省略了 to）。"
+            },
+            {
+                "text": "I think mom and dad have enough love for both of us.",
+                "note": "形容词 'enough' 放在名词 'love' 之前修饰它。'for both of us' 指出爱是给两个人的。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. At the beginning of the story, how does Arthur feel about his life?",
+                "options": {
+                    "A": "He thinks his life is sad.",
+                    "B": "He thinks his life is great.",
+                    "C": "He thinks his life is boring.",
+                    "D": "He is unhappy with his parents."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. What is the 'bad news' Arthur's parents tell him?",
+                "options": {
+                    "A": "They are moving to a new city.",
+                    "B": "He has to go to a new school.",
+                    "C": "He is going to have a little sister.",
+                    "D": "They are getting a new pet."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. Why is Arthur worried about having a sister?",
+                "options": {
+                    "A": "He is allergic to babies.",
+                    "B": "He will have to share his parents' time and his room.",
+                    "C": "He doesn't like the color pink.",
+                    "D": "His friend Jeff told him sisters are mean."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. What is Arthur planning to do when his parents bring the baby home?",
+                "options": {
+                    "A": "Run away from home.",
+                    "B": "Hide in his room.",
+                    "C": "Tell them to take her back.",
+                    "D": "Give her a present."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What happens that makes Arthur change his mind about his sister?",
+                "options": {
+                    "A": "She smiles at him.",
+                    "B": "She reaches out and grabs his finger.",
+                    "C": "His parents promise to still play with him.",
+                    "D": "His grandma tells him to be nice."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "6. What does Arthur realize at the end of the story?",
+                "options": {
+                    "A": "His parents will love the baby more.",
+                    "B": "He will have to do all the chores.",
+                    "C": "His life will never be great again.",
+                    "D": "His parents have enough love for both him and his sister."
+                },
+                "answer": "D"
+            }
+        ]
+    },
+    {
+        "lesson": 3011,
+        "title": "Amazing Birds",
+        "content": "• This pelican has a big, long beak. There is a deep sack of skin under its beak. The sack holds fish that the pelican scoops up from the water.\n• This bird is a road runner. It lives in the desert and spends most of its time on the ground. It eats fast lizards, snakes, and bugs. The road runner runs very fast to get its food.\n• This toucan lives in the rainforest. It has a big, colorful beak. It uses its beak to pick fruit from trees.\n• This big bird is an emu. It cannot fly because it has small wings for such a large body, but it has very long, strong legs. It can run very fast to get away from danger.\n• This puffin eats small fish. It is short and fat and has a colorful beak. Puffins look funny on land, but they spend most of their time in the sea. They swim under the water with their wings.\n• Most owls come out at night. They have big eyes to help them see in the dark. Their feathers are very soft. Many can fly without making a sound.\n• Hummingbirds are the smallest birds. They are bright and colorful. They can stay in one place when they fly. They use their long beaks and tongues to get food from flowers.\n• Eagles fly high above the ground. They can spot snakes, mice, and fish from high over land and water. Eagles have sharp claws on their feet and sharp beaks. They use their feet and beaks to catch food and rip it apart.\n• Cockatoos have thick, sharp beaks that can crack open hard nuts. Cockatoos live in large groups. They can be very loud.\n• Vultures eat dead animals. Many have no feathers on their heads. Many have big holes in their beaks. The holes help them to smell food from far away.",
+        "vocabulary": [
+            {
+                "word": "beak",
+                "meaning": "the hard, pointed part of a bird's mouth; 鸟嘴"
+            },
+            {
+                "word": "scoops up",
+                "meaning": "to lift something quickly with a sweeping movement; 舀起，抄起"
+            },
+            {
+                "word": "desert",
+                "meaning": "a dry, sandy region with little rainfall; 沙漠"
+            },
+            {
+                "word": "rainforest",
+                "meaning": "a dense forest with high rainfall; 雨林"
+            },
+            {
+                "word": "feathers",
+                "meaning": "the soft, light things that cover a bird's body; 羽毛"
+            },
+            {
+                "word": "claws",
+                "meaning": "sharp nails on the feet of birds or animals; 爪子"
+            },
+            {
+                "word": "vultures",
+                "meaning": "large birds that eat dead animals; 秃鹫"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The sack holds fish that the pelican scoops up from the water.",
+                "note": "'that' 引导一个定语从句，修饰名词 'fish'，说明是哪种鱼。"
+            },
+            {
+                "text": "It cannot fly because it has small wings for such a large body.",
+                "note": "'because' 引导原因状语从句，解释为什么它不能飞。'such a' 用于加强语气。"
+            },
+            {
+                "text": "Many can fly without making a sound.",
+                "note": "介词 'without' 后面跟动名词 'making'，表示“没有做某事”。"
+            },
+            {
+                "text": "They use their long beaks and tongues to get food from flowers.",
+                "note": "不定式短语 'to get food' 表示目的，说明使用喙和舌头的目的。"
+            },
+            {
+                "text": "Cockatoos have thick, sharp beaks that can crack open hard nuts.",
+                "note": "'that' 引导一个定语从句，修饰名词 'beaks'，描述了喙的功能。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. Which bird uses a sack under its beak to hold fish?",
+                "options": {
+                    "A": "Toucan",
+                    "B": "Pelican",
+                    "C": "Eagle",
+                    "D": "Puffin"
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Why can't an emu fly?",
+                "options": {
+                    "A": "It has no feathers.",
+                    "B": "It lives in the desert.",
+                    "C": "It has small wings for its large body.",
+                    "D": "It is too heavy."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. Which bird is known for having big eyes to see in the dark?",
+                "options": {
+                    "A": "Road runner",
+                    "B": "Hummingbird",
+                    "C": "Owl",
+                    "D": "Cockatoo"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. What do hummingbirds eat?",
+                "options": {
+                    "A": "Fish",
+                    "B": "Snakes",
+                    "C": "Nuts",
+                    "D": "Food from flowers."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "5. What is special about vultures?",
+                "options": {
+                    "A": "They are the smallest birds.",
+                    "B": "They eat dead animals.",
+                    "C": "They have very colorful beaks.",
+                    "D": "They swim under the water."
+                },
+                "answer": "B"
+            }
+        ]
+    },
+    {
+        "lesson": 3012,
+        "title": "Bonk's Swimming Lessons",
+        "content": "Bonk is bragging. I know how to swim, he says. I swam across the ocean. I swam faster than dolphins. Good for you, says Joop. You can help us at swimming lessons. Swimming lessons? asks Bonk. Yes, says Joop. They start today. Joop, Lerk, and Snag get ready. They put on their swimsuits and swim trunks. They bring their towels and goggles. Are you ready, Bonk? asks Snag. No, my swim trunks are too small, says Bonk. My towel is too big. My goggles are too big. I can't go to swimming lessons, says Bonk. But it won't be the same without you, says Snag. Snag trades swim trunks with Bonk. Lerk trades goggles with Bonk. Joop trades towels with Bonk. Now you can go with us, says Joop.\nAt the pool, monsters dive and splash. Lerk, Joop, and Snag meet their teacher. It is time to get in the water, says the teacher. The monsters jump in. But Bonk sits at the side of the pool. This water is too cold, says Bonk. It is too wet, says Bonk. I will just watch today. The monsters dive under the water. They blow bubbles. They kick their feet. The monsters have fun. But Bonk does not.\nAfter swimming lessons, Joop sits by Bonk. Are you afraid of the water, Bonk? she asks. Bonk crosses his arms and stomps his feet. I am a good swimmer, he says. Joop is quiet. Okay, I am not a good swimmer, says Bonk. I know how to swim a little bit, says Bonk. Joop is still quiet. Bonk hangs his head. I don't know how to swim at all, says Bonk. Joop pats Bonk's back. She rubs his head. Then we can all learn together, she says.\nThe next day, Bonk is the first monster ready. He has a life jacket. He has water wings. He has a dinosaur float. I went swimming last night, he says. The pool was closed, says Joop. Where did you swim? In my bathtub, says Bonk.",
+        "vocabulary": [
+            {
+                "word": "bragging",
+                "meaning": "saying something in a boastful manner; 吹牛"
+            },
+            {
+                "word": "ocean",
+                "meaning": "a very large expanse of sea; 海洋"
+            },
+            {
+                "word": "dolphins",
+                "meaning": "a small toothed whale that has a beaklike snout and a curved fin on the back; 海豚"
+            },
+            {
+                "word": "goggles",
+                "meaning": "close-fitting eyewear that protects the eyes from something; 护目镜"
+            },
+            {
+                "word": "trades",
+                "meaning": "exchanges something for something else; 交换"
+            },
+            {
+                "word": "splash",
+                "meaning": "to cause liquid to fly about in drops; 溅水"
+            },
+            {
+                "word": "stomps",
+                "meaning": "to tread heavily and noisily; 跺脚"
+            },
+            {
+                "word": "hangs his head",
+                "meaning": "to look down in shame or sadness; 低下头"
+            },
+            {
+                "word": "life jacket",
+                "meaning": "a sleeveless buoyant or inflatable jacket for keeping a person afloat in water; 救生衣"
+            },
+            {
+                "word": "bathtub",
+                "meaning": "a tub, usually installed in a bathroom, in which to bathe; 浴缸"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "I swam faster than dolphins.",
+                "note": "这是一个比较级句子，使用 'faster than' 来比较游泳速度。"
+            },
+            {
+                "text": "But it won't be the same without you.",
+                "note": "介词 'without' 表示“没有”，说明了 Bonk 不去的后果。"
+            },
+            {
+                "text": "Bonk sits at the side of the pool.",
+                "note": "介词短语 'at the side of' 准确地描述了 Bonk 所在的位置。"
+            },
+            {
+                "text": "Are you afraid of the water, Bonk?",
+                "note": "固定短语 'be afraid of' 表示“害怕…”。"
+            },
+            {
+                "text": "I don't know how to swim at all.",
+                "note": "短语 'at all' 用在否定句中加强语气，表示“根本，一点也（不）”。"
+            },
+            {
+                "text": "Then we can all learn together.",
+                "note": "情态动词 'can' 表示可能性或能力。副词 'together' 表示“一起”。"
+            },
+            {
+                "text": "Bonk is the first monster ready.",
+                "note": "序数词 'first' 用来表明顺序。形容词 'ready' 在此作后置定语，修饰 'monster'。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What did Bonk brag about at the beginning of the story?",
+                "options": {
+                    "A": "He was the fastest runner.",
+                    "B": "He knew how to swim very well.",
+                    "C": "He had the best swim trunks.",
+                    "D": "He could hold his breath for a long time."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Why did Bonk initially say he couldn't go to swimming lessons?",
+                "options": {
+                    "A": "He was sick.",
+                    "B": "He didn't have any friends to go with.",
+                    "C": "He said his swim trunks, towel, and goggles were the wrong size.",
+                    "D": "He forgot about the lessons."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What did Bonk do at the pool while the other monsters were swimming?",
+                "options": {
+                    "A": "He jumped in and swam with them.",
+                    "B": "He sat at the side of the pool and watched.",
+                    "C": "He went home.",
+                    "D": "He played with a ball."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. What was the real reason Bonk didn't want to get in the water?",
+                "options": {
+                    "A": "The water was too cold and wet.",
+                    "B": "He didn't like the teacher.",
+                    "C": "He didn't know how to swim at all.",
+                    "D": "He was tired."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. Who helped Bonk admit the truth?",
+                "options": {
+                    "A": "Lerk",
+                    "B": "Snag",
+                    "C": "The teacher",
+                    "D": "Joop"
+                },
+                "answer": "D"
+            },
+            {
+                "q": "6. Where did Bonk 'practice' swimming the night after his first lesson?",
+                "options": {
+                    "A": "In the ocean.",
+                    "B": "In the closed pool.",
+                    "C": "In his bathtub.",
+                    "D": "In a lake."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3013,
+        "title": "Bonk's Lucky Nut",
+        "content": "Bonk carries a lucky nut in his pocket. It is a Buckeye nut. This nut brings me good luck, Bonk says. It was with me when I found a nickel, Bonk says. It was with me when I won the spelling bee, Bonk says. One night, Bonk takes the nut out of his pocket. He puts it on his dresser. In the morning, Bonk's lucky nut is gone. Oh no, Bonk says. That day, Bonk has bad luck. He drops his toast on the jelly side at breakfast. He breaks his best pencil at school. He talks to Lerk, Joop, and Uzzle. Did you take my lucky nut? No, they all say. This is a mystery, says Joop. Then she has an idea.\nThat night, Joop, Lerk, and Uzzle go to Bonk's house. Joop puts an acorn on Bonk's dresser. They turn off the lights and wait. Everyone falls asleep except Joop. Something crawls in the window. It is a squirrel. The squirrel takes the acorn. Joop wakes up the monsters. Follow that squirrel, she says. The monsters follow the squirrel. They spy from the bushes. The squirrel digs and digs. It hides the acorn and runs into the woods. Bonk and the monsters dig too. They find Bonk's lucky buckeye nut. We solved the mystery, says Joop. That's good luck, says Bonk.",
+        "vocabulary": [
+            {
+                "word": "lucky",
+                "meaning": "having, bringing, or resulting from good luck; 幸运的"
+            },
+            {
+                "word": "nickel",
+                "meaning": "a five-cent coin; 五分硬币"
+            },
+            {
+                "word": "spelling bee",
+                "meaning": "a competition in which contestants are asked to spell a broad selection of words; 拼字比赛"
+            },
+            {
+                "word": "dresser",
+                "meaning": "a piece of furniture with drawers, typically for storing clothes; 梳妆台，衣柜"
+            },
+            {
+                "word": "mystery",
+                "meaning": "something that is difficult or impossible to understand or explain; 谜团"
+            },
+            {
+                "word": "acorn",
+                "meaning": "the fruit of the oak tree, a smooth oval nut in a cup-like base; 橡子"
+            },
+            {
+                "word": "squirrel",
+                "meaning": "an agile tree-dwelling rodent with a bushy tail; 松鼠"
+            },
+            {
+                "word": "spy",
+                "meaning": "to watch secretly; 侦查，暗中监视"
+            },
+            {
+                "word": "solved",
+                "meaning": "found an answer to, explanation for, or way of dealing with (a problem or mystery); 解决"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Bonk carries a lucky nut in his pocket.",
+                "note": "形容词 'lucky' 修饰名词 'nut'。介词短语 'in his pocket' 表示地点。"
+            },
+            {
+                "text": "It was with me when I found a nickel.",
+                "note": "'when' 引导一个时间状语从句，描述了主句事件发生时的情况。"
+            },
+            {
+                "text": "He drops his toast on the jelly side at breakfast.",
+                "note": "介词短语 'on the jelly side' 描述了吐司掉落的方式。'at breakfast' 指明了时间。"
+            },
+            {
+                "text": "Everyone falls asleep except Joop.",
+                "note": "介词 'except' 表示“除了…”，用来排除一部分人或物。"
+            },
+            {
+                "text": "The monsters follow the squirrel.",
+                "note": "这是一个简单的主谓宾结构的句子，清晰地描述了动作。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What kind of lucky item does Bonk carry?",
+                "options": {
+                    "A": "A lucky coin.",
+                    "B": "A lucky feather.",
+                    "C": "A lucky nut.",
+                    "D": "A lucky rock."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. What happens to Bonk after he loses his lucky nut?",
+                "options": {
+                    "A": "He has good luck.",
+                    "B": "He feels happy.",
+                    "C": "He has bad luck.",
+                    "D": "He finds another nut."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What does Joop use as bait to catch the thief?",
+                "options": {
+                    "A": "A piece of cheese.",
+                    "B": "An acorn.",
+                    "C": "A shiny nickel.",
+                    "D": "Another buckeye nut."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. Who was taking the nuts from Bonk's dresser?",
+                "options": {
+                    "A": "Lerk",
+                    "B": "A bird",
+                    "C": "A squirrel",
+                    "D": "Uzzle"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. Where did the monsters find Bonk's lucky nut?",
+                "options": {
+                    "A": "In the squirrel's nest.",
+                    "B": "Under Bonk's bed.",
+                    "C": "In a hole the squirrel had dug.",
+                    "D": "On the dresser."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3014,
+        "title": "How Bridges Are Built",
+        "content": "Bridges go over rivers and lakes. They go over bays and swamps. They go over highways and railroads. Some even float. Bridges are long and short. They can be high above the water. They can be near the water. They can carry cars, trucks, trains, and buses. Some carry people. Some carry water or oil.\nThe first bridges were made out of wood, rope, or stone. Today, most bridges are made of steel and concrete. The first bridges were simple. Some were just logs placed across a stream. Some were ropes stretched across a river. Later, stones were used to build stronger and longer bridges. In time, people were building bridges like the ones we see today. These are made of concrete and steel. They go across longer distances. There are names for different types of bridges. This table shows some of the types.\nBuilding bridges is a big job. It can take many years. It can cost millions of dollars. It can take many workers to build a bridge. Let's look at a bridge being built over a river. First, workers must build supports under the water. They hammer large steel tubes into the river bottom. The tubes, called piles, are filled with concrete. Next, workers put supports across the piles. The supports are built underwater using a special dam. A dam holds the water back. The workers can work where it is dry. Next, workers build piers. They are like the legs on a table. They will hold up the bridge. Then caps are put on the tops of the piers. Concrete pieces, called girders, are put between two piers. The girders hold up the roadway, and steel bars are placed between the girders. The steel bars make the concrete stronger. Concrete is poured over the steel bars. The concrete gets hard. Finally, the new bridge is ready for traffic.",
+        "vocabulary": [
+            {
+                "word": "swamps",
+                "meaning": "areas of low-lying, uncultivated ground where water collects;沼泽"
+            },
+            {
+                "word": "highways",
+                "meaning": "a main road connecting major towns or cities; 公路"
+            },
+            {
+                "word": "steel",
+                "meaning": "a hard, strong gray or bluish-gray alloy of iron with carbon; 钢"
+            },
+            {
+                "word": "concrete",
+                "meaning": "a building material made from a mixture of broken stone or gravel, sand, cement, and water; 混凝土"
+            },
+            {
+                "word": "supports",
+                "meaning": "things that bear the weight of something or keep it upright; 支撑物"
+            },
+            {
+                "word": "piles",
+                "meaning": "heavy posts driven into the ground to support foundations or bridges; 桩"
+            },
+            {
+                "word": "dam",
+                "meaning": "a barrier constructed to hold back water and raise its level; 水坝"
+            },
+            {
+                "word": "piers",
+                "meaning": "a solid support for a bridge; 桥墩"
+            },
+            {
+                "word": "girders",
+                "meaning": "large iron or steel beams used for building bridges and the framework of large buildings; 大梁"
+            },
+            {
+                "word": "roadway",
+                "meaning": "the part of a road intended for traffic; 车行道"
+            },
+            {
+                "word": "traffic",
+                "meaning": "vehicles moving on a public highway; 交通"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The first bridges were made out of wood, rope, or stone.",
+                "note": "被动语态 'were made out of' 用来说明制作某物的材料。"
+            },
+            {
+                "text": "Some were just logs placed across a stream.",
+                "note": "'placed across a stream' 是过去分词短语作后置定语，修饰名词 'logs'。"
+            },
+            {
+                "text": "It can take many years.",
+                "note": "动词 'take' 在这里表示“花费（时间）”。主语 'It' 指代 'Building bridges'。"
+            },
+            {
+                "text": "First, workers must build supports under the water.",
+                "note": "情态动词 'must' 表示必须，强调动作的必要性。"
+            },
+            {
+                "text": "The tubes, called piles, are filled with concrete.",
+                "note": "'called piles' 是过去分词短语作插入语，用来解释名词 'tubes'。"
+            },
+            {
+                "text": "The workers can work where it is dry.",
+                "note": "'where' 引导一个地点状语从句，说明工作的地点。"
+            },
+            {
+                "text": "They are like the legs on a table.",
+                "note": "介词 'like' 在这里表示“像…一样”，用来打比方。"
+            },
+            {
+                "text": "The steel bars make the concrete stronger.",
+                "note": "这是一个 'make + 宾语 + 形容词' 的结构，表示“使…变得…”。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What materials are most bridges made of today?",
+                "options": {
+                    "A": "Wood and rope.",
+                    "B": "Stone and logs.",
+                    "C": "Steel and concrete.",
+                    "D": "Only steel."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. What is the first step mentioned for building a bridge over a river?",
+                "options": {
+                    "A": "Pouring the concrete for the road.",
+                    "B": "Building piers.",
+                    "C": "Building supports under the water.",
+                    "D": "Putting caps on the piers."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What are the steel tubes hammered into the river bottom called?",
+                "options": {
+                    "A": "Piers",
+                    "B": "Girders",
+                    "C": "Piles",
+                    "D": "Dams"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. What is the purpose of a dam in bridge construction?",
+                "options": {
+                    "A": "To hold up the roadway.",
+                    "B": "To hold the water back so workers can work in a dry area.",
+                    "C": "To make the concrete stronger.",
+                    "D": "To carry cars and trucks."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "5. What are the 'legs' of the bridge called?",
+                "options": {
+                    "A": "Piles",
+                    "B": "Supports",
+                    "C": "Piers",
+                    "D": "Caps"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "6. What is placed between the girders to make the concrete roadway stronger?",
+                "options": {
+                    "A": "More concrete.",
+                    "B": "Wooden planks.",
+                    "C": "Steel bars.",
+                    "D": "Large rocks."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3015,
+        "title": "Bonk Goes Camping",
+        "content": "Bonk is brave. He packs his blankie. He packs his flashlight. He packs a peanut butter and ladybug sandwich. I'm going camping, says Bonk. Uzzle is Bonk's friend. Uzzle always worries. All by yourself? he asks. All by myself, says Bonk. Lurk is Bonk's thoughtful friend. Will you be afraid? he asks. I'm never afraid, says Bonk. Snag is Bonk's friend, too. Snag is happy. That sounds fun, he says.\nBonk hikes all by himself. He sets up his tent all by himself. He eats his sandwich all by himself. Soon, it is very dark. Bonk shivers. He hears grunting. Maybe it's the fireflies, says Bonk. Wait, fireflies don't grunt, says Bonk. He hears stomping. Maybe it's a tree branch, says Bonk. Wait, tree branches don't stomp, says Bonk. He hears screeching. Maybe it's the moon, says Bonk. Wait, the moon doesn't screech, says Bonk. Bonk is afraid. His flashlight is broken. His sandwich is gone. Bonk hides under his blankie. He wipes his tears. He honks his nose. He listens to the noises growing louder. Soon, there is grunting, stomping, and screeching all around the tent. Bonk jumps. Who is there? asks Bonk. It's me, says Uzzle. It's me, says Lurk. It's me, says Snag. Can we camp with you? they ask. But my flashlight doesn't work, says Bonk. I have no sandwich. My blankie is too small to share. That's okay, says Snag. Uzzle, Lurk, and Snag open their backpacks. Uzzle has a flashlight. Lurk has cheese and cricket sandwiches. Snag has a big, warm blanket. Bonk, Uzzle, Lurk, and Snag sing around the campfire. They wish on a star. They howl at the moon. Do you know what I like most about camping? asks Bonk. What? asks Uzzle. Camping with my friends, says Bonk.",
+        "vocabulary": [
+            {
+                "word": "brave",
+                "meaning": "ready to face and endure danger or pain; showing courage; 勇敢的"
+            },
+            {
+                "word": "blankie",
+                "meaning": "a child's word for a blanket; 小毯子"
+            },
+            {
+                "word": "flashlight",
+                "meaning": "a battery-operated portable light; 手电筒"
+            },
+            {
+                "word": "shivers",
+                "meaning": "shakes slightly and uncontrollably as a result of being cold, frightened, or excited; 发抖"
+            },
+            {
+                "word": "grunting",
+                "meaning": "making a low, short guttural sound; 发出呼噜声"
+            },
+            {
+                "word": "stomping",
+                "meaning": "walking with heavy, noisy steps; 跺脚走"
+            },
+            {
+                "word": "screeching",
+                "meaning": "making a loud, harsh, piercing cry; 发出尖叫声"
+            },
+            {
+                "word": "backpacks",
+                "meaning": "bags carried on the back, typically for carrying supplies; 背包"
+            },
+            {
+                "word": "campfire",
+                "meaning": "an open-air fire in a camp, used for cooking and warmth; 营火"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "All by yourself?",
+                "note": "这是一个省略问句，完整的句子是 'Are you going all by yourself?'。短语 'by yourself' 意为“独自一人”。"
+            },
+            {
+                "text": "I'm never afraid.",
+                "note": "副词 'never' 用来表示完全否定，强调自己从不害怕。"
+            },
+            {
+                "text": "He listens to the noises growing louder.",
+                "note": "'growing louder' 是现在分词短语作宾语补足语，描述 'the noises' 的状态变化。"
+            },
+            {
+                "text": "My blankie is too small to share.",
+                "note": "'too...to...' 结构表示“太…而不能…”，这里意为毯子太小了，不能分享。"
+            },
+            {
+                "text": "Do you know what I like most about camping?",
+                "note": "'what' 引导一个宾语从句，作为动词 'know' 的宾语。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What did Bonk say when Lurk asked if he would be afraid?",
+                "options": {
+                    "A": "Yes, a little bit.",
+                    "B": "Only if it gets dark.",
+                    "C": "I'm never afraid.",
+                    "D": "I will be with my friends."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. What did Bonk do when he got scared in the dark?",
+                "options": {
+                    "A": "He ran home.",
+                    "B": "He sang a loud song.",
+                    "C": "He hid under his blankie.",
+                    "D": "He called his friends."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What were the grunting, stomping, and screeching noises outside the tent?",
+                "options": {
+                    "A": "A big monster.",
+                    "B": "Fireflies, tree branches, and the moon.",
+                    "C": "His friends Uzzle, Lurk, and Snag.",
+                    "D": "A bear."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. What did Bonk's friends bring with them?",
+                "options": {
+                    "A": "Toys and games.",
+                    "B": "A tent and sleeping bags.",
+                    "C": "A flashlight, sandwiches, and a big blanket.",
+                    "D": "Only themselves."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What did Bonk decide he liked most about camping?",
+                "options": {
+                    "A": "Eating sandwiches.",
+                    "B": "Being brave.",
+                    "C": "Sleeping in a tent.",
+                    "D": "Camping with his friends."
+                },
+                "answer": "D"
+            }
+        ]
+    },
+    {
+        "lesson": 3016,
+        "title": "Stories of George Washington",
+        "content": "George Washington was America's first president. You can see his picture on the dollar bill. There are many stories about George Washington's childhood. The most famous story is about a cherry tree. One day, George's father gave him a little hatchet. George wanted to try it out. The trees in the woods looked too big. But there was a pretty cherry tree in the garden. George swung his hatchet. He chopped the tree down, crash. Then he went off to play. George's father was very angry when he saw the tree. Who cut down my beautiful tree? he said. If George didn't say anything, no one would know. But George said, I did, and I cannot tell a lie.\nAnother story is about a horse. One morning, George went to the stable. He asked the stable man to give him the best horse. The stable man was afraid, but he gave George the horse. George took the horse out. He joined a big fox hunt. But the horse hurt its foot. George's mother saw the limping horse. She got very angry at the stable man. She was going to punish him harshly. But George said, I made him do it, mother.\nHere is another horse story. George's mother had a wild horse. No one knew how to ride it. George and his friends decided to try. George hopped on the horse. The horse bucked and tumbled. George hung on tight. But the horse had a bad heart. The horse fell over and couldn't get up. George and his friends were very upset. They didn't want to hurt the horse. George's mother came home. She asked about the horse. I'm so sorry. I hurt the horse, George said. George's mother was mad. But she was also proud of George. It takes courage to admit that you have done something wrong. George Washington was very honest. Honesty helped him become America's first president.",
+        "vocabulary": [
+            {
+                "word": "hatchet",
+                "meaning": "a small axe with a short handle; 小斧头"
+            },
+            {
+                "word": "chopped",
+                "meaning": "cut something into pieces with repeated sharp blows of an axe or knife; 砍"
+            },
+            {
+                "word": "lie",
+                "meaning": "an intentionally false statement; 谎言"
+            },
+            {
+                "word": "stable",
+                "meaning": "a building where horses are kept; 马厩"
+            },
+            {
+                "word": "limping",
+                "meaning": "walking with difficulty, typically because of a damaged leg or foot; 跛行"
+            },
+            {
+                "word": "punish",
+                "meaning": "to inflict a penalty or sanction on (someone) as retribution for an offense; 惩罚"
+            },
+            {
+                "word": "courage",
+                "meaning": "the ability to do something that frightens one; bravery; 勇气"
+            },
+            {
+                "word": "admit",
+                "meaning": "to confess to be true or to be the case; 承认"
+            },
+            {
+                "word": "honest",
+                "meaning": "truthful and sincere; 诚实的"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "If George didn't say anything, no one would know.",
+                "note": "这是一个与现在事实相反的虚拟条件句，主句用 'would + 动词原形'。"
+            },
+            {
+                "text": "But George said, I did, and I cannot tell a lie.",
+                "note": "助动词 'did' 代替了前面的动词短语 'cut down the tree'，避免重复。"
+            },
+            {
+                "text": "She was going to punish him harshly.",
+                "note": "'be going to' 结构表示计划或意图。副词 'harshly' 修饰动词 'punish'。"
+            },
+            {
+                "text": "But George said, I made him do it, mother.",
+                "note": "动词 'make' 在 'make somebody do something' 结构中是使役动词，意为“使某人做某事”，后面跟动词原形。"
+            },
+            {
+                "text": "It takes courage to admit that you have done something wrong.",
+                "note": "'It takes...' 句型表示“做某事需要…”。'to admit...' 是真正的主语，'It' 是形式主语。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What did George Washington do with the hatchet his father gave him?",
+                "options": {
+                    "A": "He chopped firewood.",
+                    "B": "He chopped down a cherry tree.",
+                    "C": "He lost it in the woods.",
+                    "D": "He gave it back to his father."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. What famous phrase is associated with the cherry tree story?",
+                "options": {
+                    "A": "I am the strongest.",
+                    "B": "I will never do it again.",
+                    "C": "I cannot tell a lie.",
+                    "D": "It was an accident."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. In the first horse story, why did George's mother get angry at the stable man?",
+                "options": {
+                    "A": "Because the stable man hurt the horse.",
+                    "B": "Because the horse was limping.",
+                    "C": "Because the stable man lost the horse.",
+                    "D": "Because the stable man disobeyed her."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "4. What happened to George's mother's wild horse?",
+                "options": {
+                    "A": "George successfully tamed it.",
+                    "B": "It ran away.",
+                    "C": "It fell over and couldn't get up because it had a bad heart.",
+                    "D": "It threw George off and he got hurt."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What personal quality of George Washington is highlighted in all these stories?",
+                "options": {
+                    "A": "His strength.",
+                    "B": "His skill with horses.",
+                    "C": "His honesty.",
+                    "D": "His love for gardening."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3017,
+        "title": "Matteo Cinderello",
+        "content": "A boy named Matteo lived in a small town. Matteo's father taught him how to pitch a baseball. Sadly, Matteo's father died. Later, Matteo's mother married a rich man. Matteo and his mother were thrilled. The man had twins named Primo and Guapo. Matteo asked the twins to play baseball. Not with you, Primo said. Matteo got to do all the chores. The twins got to play. Just like Cinderella, said Primo. Guapo said, Let's call him Cinderella.\nOne day, the coach of the National Little League team came to town. He was holding tryouts. Matteo wanted to go. You can't go, Primo laughed. You don't have a uniform, said Guapo. Their father agreed. Matteo watched the other boys play. Then someone called his name. It was the lady from the taco cart. She said, I'm your fairy godmother. Why don't you play? she asked. I don't have a uniform, he said. She waved her magic spatula. Matteo looked down at his new uniform, smiling. Now no one will know it is you, the fairy godmother said. But you must leave the minute the tryouts are over, she added.\nOn the day of the tryouts, Matteo was the pitcher and got every boy out. Later that day, there were more tryouts. Matteo got every boy out again. When it was over, the team crowded around him. Matteo ran home, but he lost one shoe. He looked down. His new uniform was gone. The coach looked all over for the star pitcher. Every boy in town tried on the shoe. At Matteo's house, the twins tried on the shoe, but it didn't fit. Then Matteo tried, the shoe fit. Matteo will be our star pitcher, said the coach. And the twins will be our towel boys, he added.",
+        "vocabulary": [
+            {
+                "word": "pitch",
+                "meaning": "in baseball, to throw the ball to the batter; 投球"
+            },
+            {
+                "word": "thrilled",
+                "meaning": "very excited and pleased; 非常兴奋"
+            },
+            {
+                "word": "chores",
+                "meaning": "routine tasks, especially a household one; 家务杂事"
+            },
+            {
+                "word": "tryouts",
+                "meaning": "a test of a potential player's ability for a team; 选拔赛"
+            },
+            {
+                "word": "uniform",
+                "meaning": "the special set of clothes worn by members of a particular group or team; 制服"
+            },
+            {
+                "word": "fairy godmother",
+                "meaning": "a fairy with magical powers who acts as a mentor or protector to someone; 教母仙女"
+            },
+            {
+                "word": "spatula",
+                "meaning": "a cooking utensil with a broad, flat blade; 锅铲"
+            },
+            {
+                "word": "pitcher",
+                "meaning": "the player who throws the ball from the pitcher's mound to the catcher; 投手"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Matteo's father taught him how to pitch a baseball.",
+                "note": "'how to pitch...' 是一个由疑问词引导的不定式短语，作动词 'taught' 的宾语。"
+            },
+            {
+                "text": "Matteo got to do all the chores.",
+                "note": "动词短语 'get to do something' 意为“有机会做某事”，在这里带有被迫的意味，即“轮到他做家务”。"
+            },
+            {
+                "text": "She waved her magic spatula.",
+                "note": "这是一个简单的主谓宾结构的句子，描述了一个关键的魔法动作。"
+            },
+            {
+                "text": "But you must leave the minute the tryouts are over.",
+                "note": "'the minute' 在这里用作连词，相当于 'as soon as'，意为“一…就…”。"
+            },
+            {
+                "text": "Every boy in town tried on the shoe.",
+                "note": "动词短语 'try on' 意为“试穿”。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. Who taught Matteo how to pitch a baseball?",
+                "options": {
+                    "A": "His stepfather.",
+                    "B": "His father.",
+                    "C": "The coach.",
+                    "D": "His brothers."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Why did Primo and Guapo call Matteo 'Cinderella'?",
+                "options": {
+                    "A": "Because he liked fairy tales.",
+                    "B": "Because he had to do all the chores while they got to play.",
+                    "C": "Because he wore glass shoes.",
+                    "D": "Because he was a good singer."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. Who helped Matteo get a uniform for the tryouts?",
+                "options": {
+                    "A": "His mother.",
+                    "B": "His stepfather.",
+                    "C": "The coach.",
+                    "D": "His fairy godmother, the lady from the taco cart."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "4. What did the fairy godmother warn Matteo about?",
+                "options": {
+                    "A": "He must not speak to the coach.",
+                    "B": "He must leave as soon as the tryouts were over.",
+                    "C": "He must not lose his shoe.",
+                    "D": "He must not pitch too fast."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "5. How did the coach find his star pitcher?",
+                "options": {
+                    "A": "Matteo's mother told him.",
+                    "B": "He recognized Matteo's face.",
+                    "C": "He had every boy in town try on the lost shoe.",
+                    "D": "The fairy godmother revealed who he was."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3018,
+        "title": "Psy and Medusa",
+        "content": "Psy was the only one at his new school with one eye. One day, he bumped into Mark. Can't you see one eye? Mark asked. Just then, Psy saw Medusa. Medusa could turn people to stone when they looked her in the eye. This gave Psy an idea. I see something cool over there, Psy said to Mark. He pointed to Medusa. Mark looked Medusa in the eye. At once, he turned to stone. Then Psy looked Medusa in the eye by mistake. To his surprise, he did not turn to stone. Mark was taken to the nurse to be turned back to normal. Medusa ran away in tears.\nPsy found her outside. Go away or you will turn to stone, Medusa said. You looked right at me and I'm fine, Psy said. Maybe it's my one eye, he added. Medusa looked at Psy and her face lit up. I can't look at anybody else, she said. I don't look at people anyway, Psy said. I don't see well, but I don't want to wear this silly monocle, he added. Psy pulled the monocle from his pocket and held it up to his face. Can I see it? Medusa asked. Sure, Psy said. The bell rang. Time for shop class, Medusa said. That gave Psy an idea. In shop class, Psy worked on a visor for Medusa. When the visor was done, Medusa tested it. There were mirrors inside. They made it so she did not make direct eye contact with anybody. When she used it, no one turned to stone. You did it! Medusa said. I have been working on your monocle, she added as she handed it to Psy. Now the monocle had a cool leather strap. Thanks. This I would wear, Psy said. Thanks for your help, Medusa said. After class, Medusa and Psy headed out together. Neither of them stared at the ground.",
+        "vocabulary": [
+            {
+                "word": "bumped into",
+                "meaning": "to knock against someone or something; 撞上"
+            },
+            {
+                "word": "Medusa",
+                "meaning": "a character in Greek mythology who could turn people to stone by looking at them; 美杜莎"
+            },
+            {
+                "word": "by mistake",
+                "meaning": "accidentally; unintentionally; 错误地，无意中"
+            },
+            {
+                "word": "lit up",
+                "meaning": "became bright with pleasure or excitement; (脸上)焕发光彩"
+            },
+            {
+                "word": "monocle",
+                "meaning": "a single eyeglass, kept in position by the muscles around the eye; 单片眼镜"
+            },
+            {
+                "word": "visor",
+                "meaning": "a screen for shielding the eyes from light; 遮阳板，面罩"
+            },
+            {
+                "word": "direct eye contact",
+                "meaning": "looking straight into someone's eyes; 直接的眼神接触"
+            },
+            {
+                "word": "strap",
+                "meaning": "a strip of leather, cloth, or other material, used to fasten something; 带子"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Medusa could turn people to stone when they looked her in the eye.",
+                "note": "'when' 引导时间状语从句。短语 'look someone in the eye' 意为“直视某人的眼睛”。"
+            },
+            {
+                "text": "To his surprise, he did not turn to stone.",
+                "note": "短语 'To one's surprise' 意为“令某人惊讶的是”，用作句子状语。"
+            },
+            {
+                "text": "Mark was taken to the nurse to be turned back to normal.",
+                "note": "这个句子包含两个被动语态：'was taken' 和 'to be turned back'。后者是不定式的被动形式，表示目的。"
+            },
+            {
+                "text": "They made it so she did not make direct eye contact with anybody.",
+                "note": "'make it so...' 是一个固定搭配，意为“使之...”，'so' 后面跟一个从句说明结果。"
+            },
+            {
+                "text": "Neither of them stared at the ground.",
+                "note": "不定代词 'Neither' 表示“两者都不”，后面跟的动词用肯定形式，但整个句子表达否定意义。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What could Medusa do to people?",
+                "options": {
+                    "A": "Make them invisible.",
+                    "B": "Turn them to stone if they looked her in the eye.",
+                    "C": "Read their minds.",
+                    "D": "Make them laugh."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Why didn't Psy turn to stone when he looked at Medusa?",
+                "options": {
+                    "A": "He was wearing a monocle.",
+                    "B": "He closed his eyes quickly.",
+                    "C": "He was already made of stone.",
+                    "D": "He thought it was because he only had one eye."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "3. What did Psy make for Medusa in shop class?",
+                "options": {
+                    "A": "A new monocle.",
+                    "B": "A stone statue.",
+                    "C": "A visor with mirrors inside.",
+                    "D": "A leather strap."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. How did the visor help Medusa?",
+                "options": {
+                    "A": "It helped her see better.",
+                    "B": "It protected her from the sun.",
+                    "C": "It prevented her from making direct eye contact with people.",
+                    "D": "It was a cool fashion accessory."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What did Medusa do for Psy?",
+                "options": {
+                    "A": "She helped him with his homework.",
+                    "B": "She turned Mark back to normal.",
+                    "C": "She added a cool leather strap to his monocle.",
+                    "D": "She bought him a new visor."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3019,
+        "title": "Psy and Medusa",
+        "content": "Psy was the only one at his new school with one eye. One day he bumped into Mark. Can't you see one eye? Mark asked. Just then, Psy saw Medusa. Medusa could turn people to stone when they looked her in the eye. This gave Psy an idea. I see something cool over there, Psy said to Mark. He pointed to Medusa. Mark looked Medusa in the eye. At once, he turned to stone. Then Psy looked Medusa in the eye by mistake. To his surprise, he did not turn to stone. Mark was taken to the nurse to be turned back to normal. Medusa ran away in tears. Psy found her outside. Go away or you will turn to stone, Medusa said. You looked right at me and I'm fine, Psy said. Maybe it's my one eye, he added. Medusa looked at Psy and her face lit up. I can't look at anybody else, she said. I don't look at people anyway, Psy said. I don't see well, but I don't want to wear this silly monocle, he added. Psy pulled the monocle from his pocket and held it up to his face. Can I see it? Medusa asked. Sure, Psy said. The bell rang. Time for shop class, Medusa said. That gave Psy an idea. In shop class, Psy worked on a visor for Medusa. When the visor was done, Medusa tested it. There were mirrors inside. They made it so she did not make direct eye contact with anybody. When she used it, no one turned to stone. You did it, Medusa said. I have been working on your monocle, she added as she handed it to Psy. Now the monocle had a cool leather strap. Thanks. This I would wear, Psy said. Thanks for your help, Medusa said. After class, Medusa and Psy headed out together. Neither of them stared at the ground.",
+        "vocabulary": [
+            {
+                "word": "bumped into",
+                "meaning": "to knock against someone or something; 撞上"
+            },
+            {
+                "word": "Medusa",
+                "meaning": "a character in Greek mythology who could turn people to stone by looking at them; 美杜莎"
+            },
+            {
+                "word": "by mistake",
+                "meaning": "accidentally; unintentionally; 错误地，无意中"
+            },
+            {
+                "word": "lit up",
+                "meaning": "became bright with pleasure or excitement; (脸上)焕发光彩"
+            },
+            {
+                "word": "monocle",
+                "meaning": "a single eyeglass, kept in position by the muscles around the eye; 单片眼镜"
+            },
+            {
+                "word": "visor",
+                "meaning": "a screen for shielding the eyes from light; 遮阳板，面罩"
+            },
+            {
+                "word": "direct eye contact",
+                "meaning": "looking straight into someone's eyes; 直接的眼神接触"
+            },
+            {
+                "word": "strap",
+                "meaning": "a strip of leather, cloth, or other material, used to fasten something; 带子"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Medusa could turn people to stone when they looked her in the eye.",
+                "note": "'when' 引导时间状语从句。短语 'look someone in the eye' 意为“直视某人的眼睛”。"
+            },
+            {
+                "text": "To his surprise, he did not turn to stone.",
+                "note": "短语 'To one's surprise' 意为“令某人惊讶的是”，用作句子状语。"
+            },
+            {
+                "text": "Mark was taken to the nurse to be turned back to normal.",
+                "note": "这个句子包含两个被动语态：'was taken' 和 'to be turned back'。后者是不定式的被动形式，表示目的。"
+            },
+            {
+                "text": "They made it so she did not make direct eye contact with anybody.",
+                "note": "'make it so...' 是一个固定搭配，意为“使之...”，'so' 后面跟一个从句说明结果。"
+            },
+            {
+                "text": "Neither of them stared at the ground.",
+                "note": "不定代词 'Neither' 表示“两者都不”，后面跟的动词用肯定形式，但整个句子表达否定意义。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What could Medusa do to people?",
+                "options": {
+                    "A": "Make them invisible.",
+                    "B": "Turn them to stone if they looked her in the eye.",
+                    "C": "Read their minds.",
+                    "D": "Make them laugh."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Why didn't Psy turn to stone when he looked at Medusa?",
+                "options": {
+                    "A": "He was wearing a monocle.",
+                    "B": "He closed his eyes quickly.",
+                    "C": "He was already made of stone.",
+                    "D": "He thought it was because he only had one eye."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "3. What did Psy make for Medusa in shop class?",
+                "options": {
+                    "A": "A new monocle.",
+                    "B": "A stone statue.",
+                    "C": "A visor with mirrors inside.",
+                    "D": "A leather strap."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. How did the visor help Medusa?",
+                "options": {
+                    "A": "It helped her see better.",
+                    "B": "It protected her from the sun.",
+                    "C": "It prevented her from making direct eye contact with people.",
+                    "D": "It was a cool fashion accessory."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "5. What did Medusa do for Psy?",
+                "options": {
+                    "A": "She helped him with his homework.",
+                    "B": "She turned Mark back to normal.",
+                    "C": "She added a cool leather strap to his monocle.",
+                    "D": "She bought him a new visor."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3020,
+        "title": "Finding Fossils",
+        "content": "How do we know dinosaurs lived on Earth? We know because we have found fossils in rocks all over the world. Scientists have found fossils of dinosaur bones, footprints, teeth, nests, and eggs. These scientists are carefully digging dinosaur fossils. They will dig up the bones of the dinosaur fossils out of the ground. They will wrap up the fossils to keep them safe. Then they will take them to a museum. At the museum, scientists will study the fossils. They will put the fossils together to make a skeleton. Some pieces of the skeleton might be missing. Scientists use what they know about other animals to make pieces fit.\nLearning from fossils. Scientists study other animals to learn about dinosaurs. Dinosaur bones may be bigger, but many are shaped the same. Scientists compare dinosaur bone fossils to other animals. They learn that some dinosaurs walked and some flew. Scientists study fossil footprints to see how fast dinosaurs moved. Some dinosaurs moved very slowly. Some moved faster than humans. Scientists study fossil teeth to learn what dinosaurs ate. Some teeth are sharp like the teeth of meat eaters. Other teeth are flat like the teeth of plant eaters. Scientists learn about dinosaur babies from fossil nests and eggs. Some dinosaurs may have sat on their eggs like many birds do. Scientists also find fossils of plants, fish, insects, and other animals. These fossils help them learn what Earth was like when dinosaurs lived here.\nHow long ago? Scientists study rocks where fossils are found. Older fossils are deeper in the ground than newer fossils. No one knows for sure why the dinosaurs disappeared millions of years ago.",
+        "vocabulary": [
+            {
+                "word": "fossils",
+                "meaning": "the remains or impression of a prehistoric organism preserved in rock; 化石"
+            },
+            {
+                "word": "footprints",
+                "meaning": "the impressions left by a foot or shoe on the ground; 脚印"
+            },
+            {
+                "word": "museum",
+                "meaning": "a building in which objects of historical, scientific, artistic, or cultural interest are stored and exhibited; 博物馆"
+            },
+            {
+                "word": "skeleton",
+                "meaning": "the framework of bones in a body; 骨架"
+            },
+            {
+                "word": "compare",
+                "meaning": "to examine two or more things in order to note similarities and differences; 比较"
+            },
+            {
+                "word": "eaters",
+                "meaning": "a person or animal that consumes food in a specified way; …食者"
+            },
+            {
+                "word": "disappeared",
+                "meaning": "ceased to be visible; 消失"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "We know because we have found fossils in rocks all over the world.",
+                "note": "连词 'because' 引导原因状语从句，解释 'We know' 的原因。"
+            },
+            {
+                "text": "They will put the fossils together to make a skeleton.",
+                "note": "不定式短语 'to make a skeleton' 表示目的，说明 'put the fossils together' 的目的。"
+            },
+            {
+                "text": "Scientists use what they know about other animals to make pieces fit.",
+                "note": "'what they know...' 是一个宾语从句。'to make pieces fit' 是目的状语。"
+            },
+            {
+                "text": "Scientists study fossil footprints to see how fast dinosaurs moved.",
+                "note": "不定式 'to see...' 表示目的。'how fast...' 是一个宾语从句，作 'see' 的宾语。"
+            },
+            {
+                "text": "Older fossils are deeper in the ground than newer fossils.",
+                "note": "这是一个比较级句子，使用 'deeper...than' 来比较深度。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. How do we know that dinosaurs lived on Earth?",
+                "options": {
+                    "A": "From old storybooks.",
+                    "B": "Because we can see them at the zoo.",
+                    "C": "From finding their fossils in rocks.",
+                    "D": "From photographs."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. What do scientists do with fossils at a museum?",
+                "options": {
+                    "A": "They sell them.",
+                    "B": "They study them and put them together to make skeletons.",
+                    "C": "They hide them so no one can see them.",
+                    "D": "They paint them."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. What can scientists learn from studying fossil teeth?",
+                "options": {
+                    "A": "How fast dinosaurs moved.",
+                    "B": "What color the dinosaurs were.",
+                    "C": "What dinosaurs ate.",
+                    "D": "How old the dinosaurs were."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. What do scientists learn from fossil nests and eggs?",
+                "options": {
+                    "A": "About dinosaur babies.",
+                    "B": "What plants dinosaurs ate.",
+                    "C": "How dinosaurs flew.",
+                    "D": "Why dinosaurs disappeared."
+                },
+                "answer": "A"
+            },
+            {
+                "q": "5. Where are older fossils usually found?",
+                "options": {
+                    "A": "Closer to the surface of the ground.",
+                    "B": "On top of mountains.",
+                    "C": "Deeper in the ground than newer fossils.",
+                    "D": "In rivers."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3021,
+        "title": "Amazing Dragonflies",
+        "content": "Look, something small and green is flying fast over the water. It's a dragonfly! What are dragonflies? Dragonflies are flying insects with two pairs of wings. They come in many colors. Dragonflies can be green, blue, gold, or even pink. Some dragonflies have stripes. Some change color over time. Dragonflies always live close to water. They lay their eggs in or near water. The young dragonflies live in water for a year or more.\nYoung dragonflies. Young dragonflies look different from adult dragonflies. They can breathe under the water. Their green and brown colors help them hide from fish, frogs, and other hungry animals.\nSuper sight! Adult dragonflies have the largest eyes of all the insects. Each eye is made up of about 30,000 tiny parts. They can see almost all the way around at once.\nAmazing flight! Dragonflies are some of the fastest flying insects in the world. They can change direction quickly in the air. They can fly forward, backward, and even upside down.\nAmazing hunters! Adult dragonflies hunt small flying insects. They catch these insects from behind and below. They often eat their food in the air. Small insects make good meals.\nDragonflies for dinner. Birds, lizards, frogs, and spiders all like to eat dragonflies. Dragonflies eat other dragonflies too. Not many animals can catch a dragonfly.\nSwarms. Sometimes dragonflies travel in large groups. These groups are called swarms.\nDragonflies worldwide. There are nearly 3,000 kinds of dragonflies. They are found all around the world. Look at your closest stream, pond, or lake. Maybe you can spot some dragonflies.",
+        "vocabulary": [
+            {
+                "word": "dragonfly",
+                "meaning": "a fast-flying long-bodied insect with two pairs of large transparent wings; 蜻蜓"
+            },
+            {
+                "word": "insects",
+                "meaning": "small animals with six legs and a body divided into three parts; 昆虫"
+            },
+            {
+                "word": "stripes",
+                "meaning": "long, narrow bands of color; 条纹"
+            },
+            {
+                "word": "adult",
+                "meaning": "fully grown or developed; 成年的"
+            },
+            {
+                "word": "direction",
+                "meaning": "the course along which someone or something moves; 方向"
+            },
+            {
+                "word": "hunters",
+                "meaning": "people or animals that hunt wild animals for food; 猎手"
+            },
+            {
+                "word": "swarms",
+                "meaning": "large, dense groups of flying insects; (昆虫的)群"
+            },
+            {
+                "word": "worldwide",
+                "meaning": "extending or reaching throughout the world; 全世界的"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The young dragonflies live in water for a year or more.",
+                "note": "介词 'for' 后面跟一段时间，表示动作持续的时间。"
+            },
+            {
+                "text": "Their green and brown colors help them hide from fish, frogs, and other hungry animals.",
+                "note": "动词 'help' 的用法是 'help someone (to) do something'，意为“帮助某人做某事”。"
+            },
+            {
+                "text": "Adult dragonflies have the largest eyes of all the insects.",
+                "note": "形容词最高级 'the largest'，后面跟 'of all...' 表示比较的范围。"
+            },
+            {
+                "text": "Each eye is made up of about 30,000 tiny parts.",
+                "note": "短语 'be made up of' 意为“由…组成”。"
+            },
+            {
+                "text": "They can fly forward, backward, and even upside down.",
+                "note": "这是一个并列句，列举了蜻蜓飞行的多种方式，'even' 用来加强语气。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. Where do dragonflies lay their eggs?",
+                "options": {
+                    "A": "On trees.",
+                    "B": "In the air.",
+                    "C": "In or near water.",
+                    "D": "Underground."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. How do young dragonflies differ from adult dragonflies?",
+                "options": {
+                    "A": "They can fly.",
+                    "B": "They can breathe under water.",
+                    "C": "They have very large eyes.",
+                    "D": "They come in many colors."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. What is special about a dragonfly's eyes?",
+                "options": {
+                    "A": "They are the smallest of all insects.",
+                    "B": "They can change color.",
+                    "C": "They are made up of about 30,000 tiny parts.",
+                    "D": "They can only see forward."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. Which of the following is NOT something a dragonfly can do in flight?",
+                "options": {
+                    "A": "Fly backward.",
+                    "B": "Fly upside down.",
+                    "C": "Change direction quickly.",
+                    "D": "Sing a song."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "5. What is a large group of traveling dragonflies called?",
+                "options": {
+                    "A": "A flock.",
+                    "B": "A herd.",
+                    "C": "A swarm.",
+                    "D": "A school."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3022,
+        "title": "Amazing Dragonflies",
+        "content": "Look! Something small and green is flying fast over the water. It's a dragonfly. What are dragonflies? Dragonflies are flying insects with two pairs of wings. They come in many colors. Dragonflies can be green, blue, gold, or even pink. Some dragonflies have stripes. Some change color over time. Dragonflies always live close to water. They lay their eggs in or near water. The young dragonflies live in water for a year or more.\nYoung dragonflies. Young dragonflies look different from adult dragonflies. They can breathe under the water. Their green and brown colors help them hide from fish, frogs, and other hungry animals.\nSuper sight. Adult dragonflies have the largest eyes of all the insects. Each eye is made up of about 30,000 tiny parts. They can see almost all the way around at once.\nAmazing flight! Dragonflies are some of the fastest flying insects in the world. They can change direction quickly in the air. They can fly forward, backward, and even upside down.\nAmazing hunters! Adult dragonflies hunt small flying insects. They catch these insects from behind and below. They often eat their food in the air. Small insects make good meals.\nDragonflies for dinner. Birds, lizards, frogs, and spiders all like to eat dragonflies. Dragonflies eat other dragonflies too. Not many animals can catch a dragonfly.\nSwarms. Sometimes dragonflies travel in large groups. These groups are called swarms.\nDragonflies worldwide. There are nearly 3,000 kinds of dragonflies. They are found all around the world. Look at your closest stream, pond, or lake. Maybe you can spot some dragonflies.",
+        "vocabulary": [
+            {
+                "word": "dragonfly",
+                "meaning": "a fast-flying long-bodied insect with two pairs of large transparent wings; 蜻蜓"
+            },
+            {
+                "word": "insects",
+                "meaning": "small animals with six legs and a body divided into three parts; 昆虫"
+            },
+            {
+                "word": "stripes",
+                "meaning": "long, narrow bands of color; 条纹"
+            },
+            {
+                "word": "adult",
+                "meaning": "fully grown or developed; 成年的"
+            },
+            {
+                "word": "direction",
+                "meaning": "the course along which someone or something moves; 方向"
+            },
+            {
+                "word": "hunters",
+                "meaning": "people or animals that hunt wild animals for food; 猎手"
+            },
+            {
+                "word": "swarms",
+                "meaning": "large, dense groups of flying insects; (昆虫的)群"
+            },
+            {
+                "word": "worldwide",
+                "meaning": "extending or reaching throughout the world; 全世界的"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The young dragonflies live in water for a year or more.",
+                "note": "介词 'for' 后面跟一段时间，表示动作持续的时间。"
+            },
+            {
+                "text": "Their green and brown colors help them hide from fish, frogs, and other hungry animals.",
+                "note": "动词 'help' 的用法是 'help someone (to) do something'，意为“帮助某人做某事”。"
+            },
+            {
+                "text": "Adult dragonflies have the largest eyes of all the insects.",
+                "note": "形容词最高级 'the largest'，后面跟 'of all...' 表示比较的范围。"
+            },
+            {
+                "text": "Each eye is made up of about 30,000 tiny parts.",
+                "note": "短语 'be made up of' 意为“由…组成”。"
+            },
+            {
+                "text": "They can fly forward, backward, and even upside down.",
+                "note": "这是一个并列句，列举了蜻蜓飞行的多种方式，'even' 用来加强语气。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. Where do dragonflies lay their eggs?",
+                "options": {
+                    "A": "On trees.",
+                    "B": "In the air.",
+                    "C": "In or near water.",
+                    "D": "Underground."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. How do young dragonflies differ from adult dragonflies?",
+                "options": {
+                    "A": "They can fly.",
+                    "B": "They can breathe under water.",
+                    "C": "They have very large eyes.",
+                    "D": "They come in many colors."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. What is special about a dragonfly's eyes?",
+                "options": {
+                    "A": "They are the smallest of all insects.",
+                    "B": "They can change color.",
+                    "C": "They are made up of about 30,000 tiny parts.",
+                    "D": "They can only see forward."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. Which of the following is NOT something a dragonfly can do in flight?",
+                "options": {
+                    "A": "Fly backward.",
+                    "B": "Fly upside down.",
+                    "C": "Change direction quickly.",
+                    "D": "Sing a song."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "5. What is a large group of traveling dragonflies called?",
+                "options": {
+                    "A": "A flock.",
+                    "B": "A herd.",
+                    "C": "A swarm.",
+                    "D": "A school."
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3023,
+        "title": "Extreme Insects",
+        "content": "Introduction. Insects are always in danger. They have many enemies. They are food for each other as well as other animals. Insects have many traits that help them stay alive. These traits include size, looks, and weapons. Let's look at some of the extreme traits insects have that help them.\nExtreme size. This beetle can grow as long as a pin. It can weigh as much as a banana. Extreme size and a hard cover protect it from its enemies. This insect can grow longer than a new pencil. Its size frightens smaller insects away. Animals don't eat it because they think it is just a big stick.\nExtreme lookalikes. Many insects look like other things. Their looks help them hide from animals that want to eat them. Some insects look like parts of plants. They can look like leaves, flowers, stems, or even thorns. There are insects with large fake eyes to scare hungry animals away. When scared, this caterpillar can make itself look like a snake.\nExtreme weapons. Some insects have extreme weapons to help them survive. Some of these insects use their weapons to get food. Others use their weapons to keep from becoming food. This insect digs a pit in the sand. It traps ants in the pit. Then it grabs an ant in its large sharp jaws. Yummy! This bug jumps on other insects. It stabs them with its sharp beak. It shoots out poison that turns their insides to goo. Then the bug sucks out the goo. Slurp! Watch out! This beetle sprays out boiling hot poison when touched. It stops animals from trying to eat it.\nConclusion. Insects have many ways to protect themselves. Their size, color, and weapons can help them stay alive.",
+        "vocabulary": [
+            {
+                "word": "extreme",
+                "meaning": "reaching a high or the highest degree; very great; 极端的"
+            },
+            {
+                "word": "traits",
+                "meaning": "distinguishing qualities or characteristics; 特征"
+            },
+            {
+                "word": "frightens",
+                "meaning": "makes someone afraid or anxious; 惊吓"
+            },
+            {
+                "word": "lookalikes",
+                "meaning": "people or things that look very similar to someone or something else; 看起来相像的人或物"
+            },
+            {
+                "word": "caterpillar",
+                "meaning": "the larva of a butterfly or moth; 毛毛虫"
+            },
+            {
+                "word": "survive",
+                "meaning": "to continue to live or exist; 存活"
+            },
+            {
+                "word": "jaws",
+                "meaning": "the upper and lower bony structures in vertebrates, forming the framework of the mouth; 颚"
+            },
+            {
+                "word": "poison",
+                "meaning": "a substance that is capable of causing illness or death when introduced into the body; 毒药"
+            },
+            {
+                "word": "sprays",
+                "meaning": "sends out liquid in a stream of small drops; 喷射"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "It can weigh as much as a banana.",
+                "note": "'as much as' 是同级比较结构，用来比较重量。"
+            },
+            {
+                "text": "Animals don't eat it because they think it is just a big stick.",
+                "note": "'because' 引导原因状语从句，解释为什么动物不吃它。"
+            },
+            {
+                "text": "Their looks help them hide from animals that want to eat them.",
+                "note": "'that want to eat them' 是一个定语从句，修饰名词 'animals'。"
+            },
+            {
+                "text": "When scared, this caterpillar can make itself look like a snake.",
+                "note": "'When scared' 是 'When it is scared' 的省略形式。'make itself look like...' 结构表示“使自己看起来像…”。"
+            },
+            {
+                "text": "Others use their weapons to keep from becoming food.",
+                "note": "不定式 'to keep from...' 表示目的。'keep from' 意为“防止”。"
+            },
+            {
+                "text": "It stops animals from trying to eat it.",
+                "note": "动词短语 'stop someone from doing something' 表示“阻止某人做某事”。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What are the three extreme traits mentioned that help insects stay alive?",
+                "options": {
+                    "A": "Speed, sound, and smell.",
+                    "B": "Size, looks, and weapons.",
+                    "C": "Color, taste, and texture.",
+                    "D": "Flying, swimming, and digging."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Why don't animals eat the insect that can grow longer than a pencil?",
+                "options": {
+                    "A": "Because it is poisonous.",
+                    "B": "Because it moves too fast.",
+                    "C": "Because they think it is just a big stick.",
+                    "D": "Because it has a hard cover."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What can a scared caterpillar make itself look like?",
+                "options": {
+                    "A": "A leaf.",
+                    "B": "A flower.",
+                    "C": "A snake.",
+                    "D": "A thorn."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. How does the bug with a sharp beak eat other insects?",
+                "options": {
+                    "A": "It chews them with its jaws.",
+                    "B": "It sprays them with poison.",
+                    "C": "It traps them in a pit.",
+                    "D": "It stabs them, turns their insides to goo, and sucks it out."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "5. What does the beetle do when it is touched?",
+                "options": {
+                    "A": "It flies away.",
+                    "B": "It hides in the sand.",
+                    "C": "It plays dead.",
+                    "D": "It sprays out boiling hot poison."
+                },
+                "answer": "D"
+            }
+        ]
+    },
+    {
+        "lesson": 3024,
+        "title": "Extreme Insects",
+        "content": "Introduction. Insects are always in danger. They have many enemies. They are food for each other as well as other animals. Insects have many traits that help them stay alive. These traits include size, looks, and weapons. Let's look at some of the extreme traits insects have that help them.\nExtreme size. This beetle can grow as long as a pin. It can weigh as much as a banana. Extreme size and a hard cover protect it from its enemies. This insect can grow longer than a new pencil. Its size frightens smaller insects away. Animals don't eat it because they think it is just a big stick.\nExtreme lookalikes. Many insects look like other things. Their looks help them hide from animals that want to eat them. Some insects look like parts of plants. They can look like leaves, flowers, stems, or even thorns. There are insects with large fake eyes to scare hungry animals away. When scared, this caterpillar can make itself look like a snake.\nExtreme weapons. Some insects have extreme weapons to help them survive. Some of these insects use their weapons to get food. Others use their weapons to keep from becoming food. This insect digs a pit in the sand. It traps ants in the pit. Then it grabs an ant in its large sharp jaws. Yummy! This bug jumps on other insects. It stabs them with its sharp beak. It shoots out poison that turns their insides to goo. Then the bug sucks out the goo. Slurp! Watch out! This beetle sprays out boiling hot poison when touched. It stops animals from trying to eat it.\nConclusion. Insects have many ways to protect themselves. Their size, color, and weapons can help them stay alive.",
+        "vocabulary": [
+            {
+                "word": "extreme",
+                "meaning": "reaching a high or the highest degree; very great; 极端的"
+            },
+            {
+                "word": "traits",
+                "meaning": "distinguishing qualities or characteristics; 特征"
+            },
+            {
+                "word": "frightens",
+                "meaning": "makes someone afraid or anxious; 惊吓"
+            },
+            {
+                "word": "lookalikes",
+                "meaning": "people or things that look very similar to someone or something else; 看起来相像的人或物"
+            },
+            {
+                "word": "caterpillar",
+                "meaning": "the larva of a butterfly or moth; 毛毛虫"
+            },
+            {
+                "word": "survive",
+                "meaning": "to continue to live or exist; 存活"
+            },
+            {
+                "word": "jaws",
+                "meaning": "the upper and lower bony structures in vertebrates, forming the framework of the mouth; 颚"
+            },
+            {
+                "word": "poison",
+                "meaning": "a substance that is capable of causing illness or death when introduced into the body; 毒药"
+            },
+            {
+                "word": "sprays",
+                "meaning": "sends out liquid in a stream of small drops; 喷射"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "It can weigh as much as a banana.",
+                "note": "'as much as' 是同级比较结构，用来比较重量。"
+            },
+            {
+                "text": "Animals don't eat it because they think it is just a big stick.",
+                "note": "'because' 引导原因状语从句，解释为什么动物不吃它。"
+            },
+            {
+                "text": "Their looks help them hide from animals that want to eat them.",
+                "note": "'that want to eat them' 是一个定语从句，修饰名词 'animals'。"
+            },
+            {
+                "text": "When scared, this caterpillar can make itself look like a snake.",
+                "note": "'When scared' 是 'When it is scared' 的省略形式。'make itself look like...' 结构表示“使自己看起来像…”。"
+            },
+            {
+                "text": "Others use their weapons to keep from becoming food.",
+                "note": "不定式 'to keep from...' 表示目的。'keep from' 意为“防止”。"
+            },
+            {
+                "text": "It stops animals from trying to eat it.",
+                "note": "动词短语 'stop someone from doing something' 表示“阻止某人做某事”。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What are the three extreme traits mentioned that help insects stay alive?",
+                "options": {
+                    "A": "Speed, sound, and smell.",
+                    "B": "Size, looks, and weapons.",
+                    "C": "Color, taste, and texture.",
+                    "D": "Flying, swimming, and digging."
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Why don't animals eat the insect that can grow longer than a pencil?",
+                "options": {
+                    "A": "Because it is poisonous.",
+                    "B": "Because it moves too fast.",
+                    "C": "Because they think it is just a big stick.",
+                    "D": "Because it has a hard cover."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What can a scared caterpillar make itself look like?",
+                "options": {
+                    "A": "A leaf.",
+                    "B": "A flower.",
+                    "C": "A snake.",
+                    "D": "A thorn."
+                },
+                "answer": "C"
+            },
+            {
+                "q": "4. How does the bug with a sharp beak eat other insects?",
+                "options": {
+                    "A": "It chews them with its jaws.",
+                    "B": "It sprays them with poison.",
+                    "C": "It traps them in a pit.",
+                    "D": "It stabs them, turns their insides to goo, and sucks it out."
+                },
+                "answer": "D"
+            },
+            {
+                "q": "5. What does the beetle do when it is touched?",
+                "options": {
+                    "A": "It flies away.",
+                    "B": "It hides in the sand.",
+                    "C": "It plays dead.",
+                    "D": "It sprays out boiling hot poison."
+                },
+                "answer": "D"
+            }
+        ]
+    },
+    {
+        "lesson": 3025,
+        "title": "Family Relatives Explained",
+        "content": "Your family members are your relatives. You can have many relatives. Grandparents, parents, brothers, sisters, aunts, uncles, and cousins are all relatives.\nThe parents of your mother and father are your grandparents. You have two grandfathers. One is your father's father. He is called your paternal grandfather. The other is your mother's father. He is called your maternal grandfather. You have two grandmothers. One is your father's mother. She is your paternal grandmother. The other is your mother's mother. She is your maternal grandmother. Sometimes people's grandparents die before they get to know them. Many people do not get to know their great grandparents. Great grandparents are the parents of your grandparents.\nIf your mother or father have brothers, these brothers are called your uncles. If your uncle is married, his wife is called your aunt. If your mother or father have sisters, these sisters are also called your aunts. If your aunt is married, her husband is called your uncle. If your aunts and uncles have children, these children are your cousins.\nIf you have an older brother or sister who has children, you are an aunt or uncle to their children. Your brothers or sisters' children who are boys are your nephews. If the children are girls, they are your nieces.\nSometimes parents get married more than once. If your mother has a husband who is not your father, he is your stepfather. If your father has a wife who is not your mother, she is your stepmother. If your stepmother or stepfather have children from a previous marriage, these children are your stepbrothers or stepsisters. If your father and stepmother have children, these children are your halfbrothers or halfsisters. The children of your mother and stepfather are also your halfbrothers or halfsisters.\nMany people study the history of their family. They show the family history on a diagram called a family tree.",
+        "vocabulary": [
+            {
+                "word": "relatives",
+                "meaning": "members of your family; 亲戚"
+            },
+            {
+                "word": "grandparents",
+                "meaning": "the parents of your father or mother; 祖父母，外祖父母"
+            },
+            {
+                "word": "paternal",
+                "meaning": "related through the father; 父系的"
+            },
+            {
+                "word": "maternal",
+                "meaning": "related through the mother; 母系的"
+            },
+            {
+                "word": "aunts",
+                "meaning": "the sisters of your father or mother, or the wife of your uncle; 姑母，姨母，伯母，婶母，舅母"
+            },
+            {
+                "word": "uncles",
+                "meaning": "the brothers of your father or mother, or the husband of your aunt; 叔叔，伯父，舅父，姑父，姨父"
+            },
+            {
+                "word": "cousins",
+                "meaning": "the children of your uncle or aunt; 堂/表兄弟姐妹"
+            },
+            {
+                "word": "nephews",
+                "meaning": "the sons of your brother or sister; 侄子，外甥"
+            },
+            {
+                "word": "nieces",
+                "meaning": "the daughters of your brother or sister; 侄女，外甥女"
+            },
+            {
+                "word": "stepfather",
+                "meaning": "a man who is married to your mother but is not your biological father; 继父"
+            },
+            {
+                "word": "half-sister",
+                "meaning": "a sister who has only one parent in common with you; 同父异母或同母异父的姐妹"
+            },
+            {
+                "word": "family tree",
+                "meaning": "a diagram showing the relationships between people in several generations of a family; 家谱"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The parents of your mother and father are your grandparents.",
+                "note": "介词短语 'of your mother and father' 作后置定语，修饰 'The parents'。"
+            },
+            {
+                "text": "He is called your paternal grandfather.",
+                "note": "被动语态 'is called' 用于给出名称或称呼。"
+            },
+            {
+                "text": "Many people do not get to know their great grandparents.",
+                "note": "动词短语 'get to know' 意为“开始了解，认识”。"
+            },
+            {
+                "text": "If your uncle is married, his wife is called your aunt.",
+                "note": "'If' 引导一个条件状语从句，描述一种情况及其结果。"
+            },
+            {
+                "text": "If you have an older brother or sister who has children, you are an aunt or uncle to their children.",
+                "note": "'who has children' 是一个定语从句，修饰 'brother or sister'。"
+            },
+            {
+                "text": "If your mother has a husband who is not your father, he is your stepfather.",
+                "note": "'who is not your father' 是一个定语从句，修饰 'husband'，明确其身份。"
+            },
+            {
+                "text": "They show the family history on a diagram called a family tree.",
+                "note": "'called a family tree' 是过去分词短语作后置定语，修饰 'diagram'。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What is the term for the parents of your mother and father?",
+                "options": {
+                    "A": "Aunts and uncles",
+                    "B": "Grandparents",
+                    "C": "Cousins",
+                    "D": "Relatives"
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Your father's father is your...",
+                "options": {
+                    "A": "Maternal grandfather",
+                    "B": "Paternal grandfather",
+                    "C": "Great-grandfather",
+                    "D": "Uncle"
+                },
+                "answer": "B"
+            },
+            {
+                "q": "3. The children of your aunts and uncles are your...",
+                "options": {
+                    "A": "Nephews",
+                    "B": "Nieces",
+                    "C": "Brothers",
+                    "D": "Cousins"
+                },
+                "answer": "D"
+            },
+            {
+                "q": "4. If your sister has a son, what is he to you?",
+                "options": {
+                    "A": "Your nephew",
+                    "B": "Your cousin",
+                    "C": "Your stepbrother",
+                    "D": "Your son"
+                },
+                "answer": "A"
+            },
+            {
+                "q": "5. What do you call the man who is married to your mother but is not your biological father?",
+                "options": {
+                    "A": "Uncle",
+                    "B": "Grandfather",
+                    "C": "Stepfather",
+                    "D": "Half-father"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "6. A child of your father and stepmother is your...",
+                "options": {
+                    "A": "Stepbrother or stepsister",
+                    "B": "Cousin",
+                    "C": "Full brother or sister",
+                    "D": "Half-brother or half-sister"
+                },
+                "answer": "D"
+            },
+            {
+                "q": "7. What is a diagram that shows family history called?",
+                "options": {
+                    "A": "A family diagram",
+                    "B": "A relative chart",
+                    "C": "A family tree",
+                    "D": "A history map"
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3026,
+        "title": "Family Relatives Explained",
+        "content": "Your family members are your relatives. You can have many relatives. Grandparents, parents, brothers, sisters, aunts, uncles, and cousins are all relatives.\nThe parents of your mother and father are your grandparents. You have two grandfathers. One is your father's father. He is called your paternal grandfather. The other is your mother's father. He is called your maternal grandfather. You have two grandmothers. One is your father's mother. She is your paternal grandmother. The other is your mother's mother. She is your maternal grandmother. Sometimes people's grandparents die before they get to know them. Many people do not get to know their great-grandparents. Great-grandparents are the parents of your grandparents.\nIf your mother or father have brothers, these brothers are called your uncles. If your uncle is married, his wife is called your aunt. If your mother or father have sisters, these sisters are also called your aunts. If your aunt is married, her husband is called your uncle. If your aunts and uncles have children, these children are your cousins.\nIf you have an older brother or sister who has children, you are an aunt or uncle to their children. If your brothers or sisters' children, who are boys, are your nephews, if the children are girls, they are your nieces.\nSometimes parents get married more than once. If your mother has a husband who is not your father, he is your stepfather. If your father has a wife who is not your mother, she is your stepmother. If your stepmother or stepfather have children from a previous marriage, these children are your stepbrothers or stepsisters. If your father and stepmother have children, these children are your half-brothers or half-sisters. The children of your mother and stepfather are also your half-brothers or half-sisters.\nMany people study the history of their family. They show the family history on a diagram called a family tree.",
+        "vocabulary": [
+            {
+                "word": "relatives",
+                "meaning": "members of your family; 亲戚"
+            },
+            {
+                "word": "grandparents",
+                "meaning": "the parents of your father or mother; 祖父母，外祖父母"
+            },
+            {
+                "word": "paternal",
+                "meaning": "related through the father; 父系的"
+            },
+            {
+                "word": "maternal",
+                "meaning": "related through the mother; 母系的"
+            },
+            {
+                "word": "aunts",
+                "meaning": "the sisters of your father or mother, or the wife of your uncle; 姑母，姨母，伯母，婶母，舅母"
+            },
+            {
+                "word": "uncles",
+                "meaning": "the brothers of your father or mother, or the husband of your aunt; 叔叔，伯父，舅父，姑父，姨父"
+            },
+            {
+                "word": "cousins",
+                "meaning": "the children of your uncle or aunt; 堂/表兄弟姐妹"
+            },
+            {
+                "word": "nephews",
+                "meaning": "the sons of your brother or sister; 侄子，外甥"
+            },
+            {
+                "word": "nieces",
+                "meaning": "the daughters of your brother or sister; 侄女，外甥女"
+            },
+            {
+                "word": "stepmother",
+                "meaning": "a woman who is married to your father but is not your biological mother; 继母"
+            },
+            {
+                "word": "half-brother",
+                "meaning": "a brother who has only one parent in common with you; 同父异母或同母异父的兄弟"
+            },
+            {
+                "word": "family tree",
+                "meaning": "a diagram showing the relationships between people in several generations of a family; 家谱"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "The parents of your mother and father are your grandparents.",
+                "note": "介词短语 'of your mother and father' 作后置定语，修饰 'The parents'。"
+            },
+            {
+                "text": "He is called your paternal grandfather.",
+                "note": "被动语态 'is called' 用于给出名称或称呼。"
+            },
+            {
+                "text": "Many people do not get to know their great-grandparents.",
+                "note": "动词短语 'get to know' 意为“开始了解，认识”。"
+            },
+            {
+                "text": "If your uncle is married, his wife is called your aunt.",
+                "note": "'If' 引导一个条件状语从句，描述一种情况及其结果。"
+            },
+            {
+                "text": "If your brothers or sisters' children, who are boys, are your nephews, if the children are girls, they are your nieces.",
+                "note": "这是一个复杂的条件句，其中 'who are boys' 是一个非限制性定语从句，补充说明 'children'。"
+            },
+            {
+                "text": "If your mother has a husband who is not your father, he is your stepfather.",
+                "note": "'who is not your father' 是一个定语从句，修饰 'husband'，明确其身份。"
+            },
+            {
+                "text": "They show the family history on a diagram called a family tree.",
+                "note": "'called a family tree' 是过去分词短语作后置定语，修饰 'diagram'。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What is the term for the parents of your mother and father?",
+                "options": {
+                    "A": "Aunts and uncles",
+                    "B": "Grandparents",
+                    "C": "Cousins",
+                    "D": "Relatives"
+                },
+                "answer": "B"
+            },
+            {
+                "q": "2. Your mother's mother is your...",
+                "options": {
+                    "A": "Maternal grandmother",
+                    "B": "Paternal grandmother",
+                    "C": "Great-grandmother",
+                    "D": "Aunt"
+                },
+                "answer": "A"
+            },
+            {
+                "q": "3. The children of your aunts and uncles are your...",
+                "options": {
+                    "A": "Nephews",
+                    "B": "Nieces",
+                    "C": "Brothers",
+                    "D": "Cousins"
+                },
+                "answer": "D"
+            },
+            {
+                "q": "4. If your brother has a daughter, what is she to you?",
+                "options": {
+                    "A": "Your niece",
+                    "B": "Your cousin",
+                    "C": "Your stepsister",
+                    "D": "Your daughter"
+                },
+                "answer": "A"
+            },
+            {
+                "q": "5. What do you call the woman who is married to your father but is not your biological mother?",
+                "options": {
+                    "A": "Aunt",
+                    "B": "Grandmother",
+                    "C": "Stepmother",
+                    "D": "Half-mother"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "6. A child of your mother and stepfather is your...",
+                "options": {
+                    "A": "Stepbrother or stepsister",
+                    "B": "Cousin",
+                    "C": "Full brother or sister",
+                    "D": "Half-brother or half-sister"
+                },
+                "answer": "D"
+            },
+            {
+                "q": "7. What is a diagram that shows family history called?",
+                "options": {
+                    "A": "A family diagram",
+                    "B": "A relative chart",
+                    "C": "A family tree",
+                    "D": "A history map"
+                },
+                "answer": "C"
+            }
+        ]
+    },
+    {
+        "lesson": 3027,
+        "title": "The Fastest Animals",
+        "content": "How fast can you run? How fast can you swim? Humans are slow compared to some animals.\nWhich animals are the fastest running? The fastest runner is the cheetah. It can go as fast as a car on a highway. Cheetahs can only run that speed for a short time, though. They sprint to catch prey. Cheetahs eat gazelles which are not quite as fast as cheetahs. Gazelles can run fast for a longer time, though. Small animals are slower than big animals, but some go fast for their size. The tiger beetle runs 170 times the length of its body in one second. If humans could do that, they could race jet planes.\nSwimming. Turtles are slow on land, yet the world's fastest reptile is a turtle. It can swim four times as fast as a human. The fastest animal in the sea is the sailfish. In a race, it can easily beat most motorboats. Its cousin, the swordfish, is almost as fast.\nFlying. Flying is the fastest way to get around. Some of the fastest animals are birds, bats, and insects. Falconflies are the fastest insects. They catch and eat other flying insects. They can even fly backwards. The fastest animal on earth is the peregrine falcon. It hunts other birds by diving on them from above. During a dive, it tucks in its wings and sails straight down, so fast.\nCheetahs run as fast as a car. Sailfish swim faster than a motorboat. Falcons dive as fast as an airplane. Animals can reach amazing speeds.",
+        "vocabulary": [
+            {
+                "word": "compared to",
+                "meaning": "in relation to something else; 与…相比"
+            },
+            {
+                "word": "cheetah",
+                "meaning": "a large cat that has a yellowish-brown coat with black spots and can run very fast; 猎豹"
+            },
+            {
+                "word": "sprint",
+                "meaning": "to run a short distance very fast; 冲刺"
+            },
+            {
+                "word": "prey",
+                "meaning": "an animal that is hunted and killed by another for food; 猎物"
+            },
+            {
+                "word": "reptile",
+                "meaning": "a cold-blooded vertebrate animal of a class that includes snakes, lizards, crocodiles, turtles; 爬行动物"
+            },
+            {
+                "word": "sailfish",
+                "meaning": "a large fish with a long bill and a large fin on its back that looks like a sail; 旗鱼"
+            },
+            {
+                "word": "peregrine falcon",
+                "meaning": "a powerful falcon found on most continents, breeding chiefly on mountains and coastal cliffs; 游隼"
+            },
+            {
+                "word": "diving",
+                "meaning": "plunging head first into water or down through the air; 俯冲，潜水"
+            }
+        ],
+        "sentences": [
+            {
+                "text": "Humans are slow compared to some animals.",
+                "note": "短语 'compared to' 意为“与…相比”，用作状语，引出比较的对象。"
+            },
+            {
+                "text": "It can go as fast as a car on a highway.",
+                "note": "'as fast as' 是同级比较结构，表示速度相当。"
+            },
+            {
+                "text": "If humans could do that, they could race jet planes.",
+                "note": "这是一个与现在事实相反的虚拟条件句，用 'could' 表示虚拟的可能性。"
+            },
+            {
+                "text": "Turtles are slow on land, yet the world's fastest reptile is a turtle.",
+                "note": "连词 'yet' 表示转折，相当于 'but'，连接两个意思相反的句子。"
+            },
+            {
+                "text": "Flying is the fastest way to get around.",
+                "note": "动名词 'Flying' 在句中作主语。不定式 'to get around' 作定语修饰 'way'。"
+            }
+        ],
+        "questions": [
+            {
+                "q": "1. What is the fastest running animal?",
+                "options": {
+                    "A": "Gazelle",
+                    "B": "Tiger Beetle",
+                    "C": "Cheetah",
+                    "D": "Human"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "2. Which animal can run 170 times the length of its body in one second?",
+                "options": {
+                    "A": "Cheetah",
+                    "B": "Gazelle",
+                    "C": "Tiger beetle",
+                    "D": "Sailfish"
+                },
+                "answer": "C"
+            },
+            {
+                "q": "3. What is the fastest animal in the sea?",
+                "options": {
+                    "A": "Swordfish",
+                    "B": "Turtle",
+                    "C": "Dolphin",
+                    "D": "Sailfish"
+                },
+                "answer": "D"
+            },
+            {
+                "q": "4. What is the fastest animal on Earth?",
+                "options": {
+                    "A": "Falconfly",
+                    "B": "Peregrine falcon",
+                    "C": "Bat",
+                    "D": "Cheetah"
+                },
+                "answer": "B"
+            },
+            {
+                "q": "5. How does the peregrine falcon hunt other birds?",
+                "options": {
+                    "A": "By catching them on the ground.",
+                    "B": "By flying backwards.",
+                    "C": "By diving on them from above.",
+                    "D": "By racing them."
+                },
+                "answer": "C"
+            }
+        ]
+    }
+]
