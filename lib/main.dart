@@ -1803,7 +1803,7 @@ class _LessonContentState extends State<LessonContent>
       pageBuilder: (context, anim1, anim2) {
         return SafeArea(
           child: Material(
-            color: const Color(0xFFF5ECD8), // Sepia 背景
+            color: Colors.white, // 白色背景
             child: Stack(
               children: [
                 Positioned.fill(
@@ -1818,13 +1818,13 @@ class _LessonContentState extends State<LessonContent>
                         Row(
                           children: [
                             const Icon(Icons.menu_book,
-                                color: Color(0xFF7A5C3E), size: 20),
+                                color: Colors.black87, size: 20),
                             const SizedBox(width: 8),
                             Expanded(
                               child: Text(
                                 '全文阅读',
                                 style: TextStyle(
-                                  color: const Color(0xFF5C4B3B),
+                                  color: Colors.black87,
                                   fontSize: widget.readingPreferences.fontSize
                                           .toDouble() +
                                       2,
@@ -1840,7 +1840,7 @@ class _LessonContentState extends State<LessonContent>
                         // 正文
                         DefaultTextStyle(
                           style: TextStyle(
-                            color: const Color(0xFF2A2A2A),
+                            color: Colors.black87,
                             height: 1.7,
                             fontSize:
                                 widget.readingPreferences.fontSize.toDouble(),
@@ -1858,8 +1858,8 @@ class _LessonContentState extends State<LessonContent>
                   top: 16,
                   child: FloatingActionButton(
                     mini: true,
-                    backgroundColor: const Color(0xFF7A5C3E),
-                    foregroundColor: const Color(0xFFF5ECD8),
+                    backgroundColor: Colors.black87,
+                    foregroundColor: Colors.white,
                     onPressed: () => Navigator.of(context).maybePop(),
                     child: const Icon(Icons.fullscreen_exit),
                   ),
