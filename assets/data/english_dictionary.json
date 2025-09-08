@@ -1,0 +1,1984 @@
+--- START OF FILE english_dictionary.json ---
+
+[
+    {
+        "word": "a",
+        "phonetic": "/ə/",
+        "definition": "used when referring to someone or something for the first time",
+        "translation": "一个；一",
+        "pos": "art.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "about",
+        "phonetic": "/əˈbaʊt/",
+        "definition": "on the subject of; concerning",
+        "translation": "关于；大约",
+        "pos": "prep.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "above",
+        "phonetic": "/əˈbʌv/",
+        "definition": "in or to a higher position than something else",
+        "translation": "在...上面；超过",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "accept",
+        "phonetic": "/əkˈsept/",
+        "definition": "consent to receive or undertake something offered",
+        "translation": "接受；同意",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "account",
+        "phonetic": "/əˈkaʊnt/",
+        "definition": "a report or description of an event or experience",
+        "translation": "账户；描述；解释",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "across",
+        "phonetic": "/əˈkrɒs/",
+        "definition": "from one side to the other of something",
+        "translation": "穿过；横过",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "action",
+        "phonetic": "/ˈækʃn/",
+        "definition": "the fact or process of doing something",
+        "translation": "行动；动作",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "activity",
+        "phonetic": "/ækˈtɪvəti/",
+        "definition": "a thing that a person or group does or has done",
+        "translation": "活动；行为",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "add",
+        "phonetic": "/æd/",
+        "definition": "join something to something else so as to increase the size",
+        "translation": "添加；增加",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "after",
+        "phonetic": "/ˈɑːftər/",
+        "definition": "in the time following an event or another period of time",
+        "translation": "在...之后",
+        "pos": "prep.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "again",
+        "phonetic": "/əˈɡen/",
+        "definition": "once more; another time",
+        "translation": "再次；又",
+        "pos": "adv.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "against",
+        "phonetic": "/əˈɡenst/",
+        "definition": "in opposition to",
+        "translation": "反对；靠着",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "age",
+        "phonetic": "/eɪdʒ/",
+        "definition": "the length of time that a person has lived",
+        "translation": "年龄；时代",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "agree",
+        "phonetic": "/əˈɡriː/",
+        "definition": "have the same opinion about something",
+        "translation": "同意；赞成",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "air",
+        "phonetic": "/eər/",
+        "definition": "the invisible gaseous substance surrounding the earth",
+        "translation": "空气；天空",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "all",
+        "phonetic": "/ɔːl/",
+        "definition": "used to refer to the whole quantity or extent of something",
+        "translation": "全部；所有的",
+        "pos": "det.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "allow",
+        "phonetic": "/əˈlaʊ/",
+        "definition": "give someone permission to do something",
+        "translation": "允许；让",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "almost",
+        "phonetic": "/ˈɔːlmoʊst/",
+        "definition": "not quite; very nearly",
+        "translation": "几乎；差不多",
+        "pos": "adv.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "alone",
+        "phonetic": "/əˈloʊn/",
+        "definition": "having no one else present; on one's own",
+        "translation": "独自的；单独的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "along",
+        "phonetic": "/əˈlɔːŋ/",
+        "definition": "in company with or at the same time as",
+        "translation": "沿着；一起",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "already",
+        "phonetic": "/ɔːlˈredi/",
+        "definition": "before or by now or the time in question",
+        "translation": "已经；早已",
+        "pos": "adv.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "also",
+        "phonetic": "/ˈɔːlsoʊ/",
+        "definition": "in addition; too",
+        "translation": "也；同样",
+        "pos": "adv.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "although",
+        "phonetic": "/ɔːlˈðoʊ/",
+        "definition": "in spite of the fact that; even though",
+        "translation": "虽然；尽管",
+        "pos": "conj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "always",
+        "phonetic": "/ˈɔːlweɪz/",
+        "definition": "at all times; on all occasions",
+        "translation": "总是；永远",
+        "pos": "adv.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "among",
+        "phonetic": "/əˈmʌŋ/",
+        "definition": "situated more or less centrally in relation to several other things",
+        "translation": "在...中间；在...之中",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "and",
+        "phonetic": "/ænd/",
+        "definition": "used to connect words of the same part of speech",
+        "translation": "和；与；而且",
+        "pos": "conj.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "animal",
+        "phonetic": "/ˈænɪml/",
+        "definition": "a living organism that feeds on organic matter",
+        "translation": "动物",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "another",
+        "phonetic": "/əˈnʌðər/",
+        "definition": "used to refer to an additional person or thing of the same type",
+        "translation": "另一个；又一个",
+        "pos": "det.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "answer",
+        "phonetic": "/ˈænsər/",
+        "definition": "a thing said, written, or done to deal with or as a reaction to a question",
+        "translation": "回答；答案",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "any",
+        "phonetic": "/ˈeni/",
+        "definition": "used to refer to one or some of a thing or number of things",
+        "translation": "任何的；一些",
+        "pos": "det.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "anyone",
+        "phonetic": "/ˈeniˌwʌn/",
+        "definition": "any person or people",
+        "translation": "任何人",
+        "pos": "pron.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "anything",
+        "phonetic": "/ˈeniˌθɪŋ/",
+        "definition": "used to refer to a thing, no matter what",
+        "translation": "任何事物",
+        "pos": "pron.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "appear",
+        "phonetic": "/əˈpɪr/",
+        "definition": "come into sight; become visible or noticeable",
+        "translation": "出现；显得",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "area",
+        "phonetic": "/ˈeriə/",
+        "definition": "a region or part of a town, a country, or the world",
+        "translation": "地区；面积",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "around",
+        "phonetic": "/əˈraʊnd/",
+        "definition": "located or situated on every side",
+        "translation": "在周围；大约",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "arrive",
+        "phonetic": "/əˈraɪv/",
+        "definition": "reach a place at the end of a journey or a stage in a journey",
+        "translation": "到达；抵达",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "art",
+        "phonetic": "/ɑːrt/",
+        "definition": "the expression or application of human creative skill",
+        "translation": "艺术；美术",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "article",
+        "phonetic": "/ˈɑːrtɪkl/",
+        "definition": "a particular item or object",
+        "translation": "文章；物品",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "as",
+        "phonetic": "/æz/",
+        "definition": "used in comparisons to refer to the extent or degree of something",
+        "translation": "作为；当...时",
+        "pos": "conj.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "ask",
+        "phonetic": "/æsk/",
+        "definition": "say something in order to obtain an answer or some information",
+        "translation": "问；要求",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "at",
+        "phonetic": "/æt/",
+        "definition": "expressing location or arrival in a particular place or position",
+        "translation": "在；向",
+        "pos": "prep.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "attack",
+        "phonetic": "/əˈtæk/",
+        "definition": "take aggressive action against a place or enemy forces",
+        "translation": "攻击；袭击",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "attention",
+        "phonetic": "/əˈtenʃn/",
+        "definition": "notice taken of someone or something",
+        "translation": "注意；关注",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "available",
+        "phonetic": "/əˈveɪləbl/",
+        "definition": "able to be used or obtained; at someone's disposal",
+        "translation": "可获得的；可用的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "away",
+        "phonetic": "/əˈweɪ/",
+        "definition": "to or at a distance from a particular place, person, or thing",
+        "translation": "离开；远离",
+        "pos": "adv.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "baby",
+        "phonetic": "/ˈbeɪbi/",
+        "definition": "a very young child, especially one that has not yet started to walk or talk",
+        "translation": "婴儿；宝贝",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "back",
+        "phonetic": "/bæk/",
+        "definition": "the rear surface of the human body from the shoulders to the hips",
+        "translation": "背部；后面",
+        "pos": "n.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "bad",
+        "phonetic": "/bæd/",
+        "definition": "of poor quality or a low standard",
+        "translation": "坏的；糟糕的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "ball",
+        "phonetic": "/bɔːl/",
+        "definition": "a solid or hollow sphere, especially one used as a toy or in sports",
+        "translation": "球；舞会",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "bank",
+        "phonetic": "/bæŋk/",
+        "definition": "a financial establishment that uses money deposited by customers",
+        "translation": "银行；岸边",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "bar",
+        "phonetic": "/bɑːr/",
+        "definition": "a long, rigid piece of wood, metal, or other material",
+        "translation": "酒吧；杆；栅栏",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "base",
+        "phonetic": "/beɪs/",
+        "definition": "the lowest part or edge of something, especially the part on which it rests",
+        "translation": "基础；底部",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "be",
+        "phonetic": "/biː/",
+        "definition": "exist; occur; take place",
+        "translation": "是；存在",
+        "pos": "v.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "bear",
+        "phonetic": "/ber/",
+        "definition": "carry; support; endure",
+        "translation": "承受；忍受；生育",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "beat",
+        "phonetic": "/biːt/",
+        "definition": "strike (a person or an animal) repeatedly and violently",
+        "translation": "击败；跳动",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "beautiful",
+        "phonetic": "/ˈbjuːtɪfl/",
+        "definition": "pleasing the senses or mind aesthetically",
+        "translation": "美丽的；美好的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "because",
+        "phonetic": "/bɪˈkɔːz/",
+        "definition": "for the reason that; since",
+        "translation": "因为",
+        "pos": "conj.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "become",
+        "phonetic": "/bɪˈkʌm/",
+        "definition": "come to be; grow or change into",
+        "translation": "变成；成为",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "bed",
+        "phonetic": "/bed/",
+        "definition": "a piece of furniture for sleeping on",
+        "translation": "床",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "before",
+        "phonetic": "/bɪˈfɔːr/",
+        "definition": "during the period of time preceding (a particular event or time)",
+        "translation": "在...之前",
+        "pos": "prep.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "begin",
+        "phonetic": "/bɪˈɡɪn/",
+        "definition": "start; perform or undergo the first part of (an action or activity)",
+        "translation": "开始；着手",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "behind",
+        "phonetic": "/bɪˈhaɪnd/",
+        "definition": "at the back of (something)",
+        "translation": "在...后面",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "believe",
+        "phonetic": "/bɪˈliːv/",
+        "definition": "accept that (something) is true, especially without proof",
+        "translation": "相信；认为",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "bell",
+        "phonetic": "/bel/",
+        "definition": "a hollow, cup-shaped metal object that rings when struck",
+        "translation": "铃；钟",
+        "pos": "n.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "belong",
+        "phonetic": "/bɪˈlɔːŋ/",
+        "definition": "be the property of (someone)",
+        "translation": "属于；应归入",
+        "pos": "v.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "below",
+        "phonetic": "/bɪˈloʊ/",
+        "definition": "at a lower level or layer than",
+        "translation": "在...下面",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "belt",
+        "phonetic": "/belt/",
+        "definition": "a strip of leather or other material worn around the waist",
+        "translation": "腰带；地带",
+        "pos": "n.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "beneath",
+        "phonetic": "/bɪˈniːθ/",
+        "definition": "extending or directly underneath (something)",
+        "translation": "在...下面",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "benefit",
+        "phonetic": "/ˈbenɪfɪt/",
+        "definition": "an advantage or profit gained from something",
+        "translation": "利益；好处",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "best",
+        "phonetic": "/best/",
+        "definition": "of the most excellent or desirable type or quality",
+        "translation": "最好的；最棒的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "better",
+        "phonetic": "/ˈbetər/",
+        "definition": "more desirable, satisfactory, or effective",
+        "translation": "更好的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "between",
+        "phonetic": "/bɪˈtwiːn/",
+        "definition": "at, in, or to the space separating two objects or points",
+        "translation": "在...之间",
+        "pos": "prep.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "beyond",
+        "phonetic": "/bɪˈjɒnd/",
+        "definition": "at or to the further side of",
+        "translation": "在...之外；超出",
+        "pos": "prep.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "big",
+        "phonetic": "/bɪɡ/",
+        "definition": "of considerable size or extent",
+        "translation": "大的；重要的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "bill",
+        "phonetic": "/bɪl/",
+        "definition": "a printed or written statement of the money owed for goods or services",
+        "translation": "账单；钞票",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "bird",
+        "phonetic": "/bɜːrd/",
+        "definition": "a warm-blooded egg-laying vertebrate animal",
+        "translation": "鸟",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "birth",
+        "phonetic": "/bɜːrθ/",
+        "definition": "the emergence of a baby or other young from the body of its mother",
+        "translation": "出生；诞生",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "bit",
+        "phonetic": "/bɪt/",
+        "definition": "a small piece or quantity of something",
+        "translation": "一点点；少量",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "black",
+        "phonetic": "/blæk/",
+        "definition": "of the very darkest colour owing to the absence of or complete absorption of light",
+        "translation": "黑色的；黑暗的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "blood",
+        "phonetic": "/blʌd/",
+        "definition": "the red liquid that circulates in the arteries and veins of humans",
+        "translation": "血液；血统",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "blow",
+        "phonetic": "/bloʊ/",
+        "definition": "move creating an air current",
+        "translation": "吹；打击",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "blue",
+        "phonetic": "/bluː/",
+        "definition": "of a colour intermediate between green and violet",
+        "translation": "蓝色的；忧郁的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "board",
+        "phonetic": "/bɔːrd/",
+        "definition": "a long, thin, flat piece of wood or other hard material",
+        "translation": "木板；董事会",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "boat",
+        "phonetic": "/boʊt/",
+        "definition": "a small vessel for travelling over water, propelled by oars, sails, or an engine",
+        "translation": "船",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "body",
+        "phonetic": "/ˈbɒdi/",
+        "definition": "the entire physical structure of a living organism",
+        "translation": "身体；主体",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "book",
+        "phonetic": "/bʊk/",
+        "definition": "a written or printed work consisting of pages glued or sewn together along one side",
+        "translation": "书；预订",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "border",
+        "phonetic": "/ˈbɔːrdər/",
+        "definition": "a line separating two countries, administrative regions, or other areas",
+        "translation": "边界；边缘",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "born",
+        "phonetic": "/bɔːrn/",
+        "definition": "existing as a result of birth",
+        "translation": "出生的；天生的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "both",
+        "phonetic": "/boʊθ/",
+        "definition": "used to refer to two people or things, regarded and identified together",
+        "translation": "两者都",
+        "pos": "det.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "bother",
+        "phonetic": "/ˈbɒðər/",
+        "definition": "take the trouble to do something",
+        "translation": "打扰；费心",
+        "pos": "v.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "bottle",
+        "phonetic": "/ˈbɒtl/",
+        "definition": "a container, typically made of glass or plastic and with a narrow neck, used for holding drinks or other liquids",
+        "translation": "瓶子",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "bottom",
+        "phonetic": "/ˈbɒtəm/",
+        "definition": "the lowest point or part of something",
+        "translation": "底部；尽头",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "box",
+        "phonetic": "/bɒks/",
+        "definition": "a container with a flat base and sides, typically square or rectangular and having a lid",
+        "translation": "盒子；箱子",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "boy",
+        "phonetic": "/bɔɪ/",
+        "definition": "a male child or young man",
+        "translation": "男孩",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "brain",
+        "phonetic": "/breɪn/",
+        "definition": "an organ of soft nervous tissue contained in the skull of vertebrates, functioning as the coordinating centre of sensation and intellectual and nervous activity",
+        "translation": "大脑；智力",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "branch",
+        "phonetic": "/brɑːntʃ/",
+        "definition": "a part of a tree which grows out from the trunk or from a bough",
+        "translation": "树枝；分支",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "brave",
+        "phonetic": "/breɪv/",
+        "definition": "ready to face and endure danger or pain; showing courage",
+        "translation": "勇敢的",
+        "pos": "adj.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "bread",
+        "phonetic": "/bred/",
+        "definition": "food made of flour, water, and yeast mixed together and baked",
+        "translation": "面包",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "break",
+        "phonetic": "/breɪk/",
+        "definition": "separate into pieces as a result of a blow, shock, or strain",
+        "translation": "打破；休息",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "breakfast",
+        "phonetic": "/ˈbrekfəst/",
+        "definition": "a meal eaten in the morning, the first of the day",
+        "translation": "早餐",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "bridge",
+        "phonetic": "/brɪdʒ/",
+        "definition": "a structure carrying a road, path, railway, etc. across a river, road, or other obstacle",
+        "translation": "桥梁",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "bright",
+        "phonetic": "/braɪt/",
+        "definition": "giving out or reflecting a lot of light; shining",
+        "translation": "明亮的；聪明的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "bring",
+        "phonetic": "/brɪŋ/",
+        "definition": "take or go with (someone or something) to a place",
+        "translation": "带来；拿来",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "brother",
+        "phonetic": "/ˈbrʌðər/",
+        "definition": "a man or boy with one or more parents in common with another person",
+        "translation": "兄弟",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "brown",
+        "phonetic": "/braʊn/",
+        "definition": "of a colour produced by mixing red, yellow, and black, as of dark wood or rich soil",
+        "translation": "棕色的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "build",
+        "phonetic": "/bɪld/",
+        "definition": "construct (something) by putting parts or material together",
+        "translation": "建造；建立",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "building",
+        "phonetic": "/ˈbɪldɪŋ/",
+        "definition": "a structure with a roof and walls, such as a house or factory",
+        "translation": "建筑物",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "burn",
+        "phonetic": "/bɜːrn/",
+        "definition": "undergo or cause to undergo combustion",
+        "translation": "燃烧；烧伤",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "bus",
+        "phonetic": "/bʌs/",
+        "definition": "a large motor vehicle carrying passengers by road, typically one serving the public on a fixed route and for a fare",
+        "translation": "公共汽车",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "business",
+        "phonetic": "/ˈbɪznəs/",
+        "definition": "a person's regular occupation, profession, or trade",
+        "translation": "商业；生意",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "busy",
+        "phonetic": "/ˈbɪzi/",
+        "definition": "having a great deal to do",
+        "translation": "忙碌的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "but",
+        "phonetic": "/bʌt/",
+        "definition": "used to introduce a phrase or clause contrasting with what has already been mentioned",
+        "translation": "但是；可是",
+        "pos": "conj.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "buy",
+        "phonetic": "/baɪ/",
+        "definition": "obtain in exchange for payment",
+        "translation": "买",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "by",
+        "phonetic": "/baɪ/",
+        "definition": "indicating the means of achieving something",
+        "translation": "通过；被",
+        "pos": "prep.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "cake",
+        "phonetic": "/keɪk/",
+        "definition": "an item of soft sweet food made from a mixture of flour, fat, eggs, sugar, and other ingredients, baked and sometimes iced or decorated",
+        "translation": "蛋糕",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "call",
+        "phonetic": "/kɔːl/",
+        "definition": "give (someone or something) a specified name",
+        "translation": "打电话；称呼",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "camera",
+        "phonetic": "/ˈkæmərə/",
+        "definition": "a device for recording visual images in the form of photographs, film, or video signals",
+        "translation": "照相机",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "can",
+        "phonetic": "/kæn/",
+        "definition": "be able to",
+        "translation": "能；可以",
+        "pos": "v.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "cancel",
+        "phonetic": "/ˈkænsl/",
+        "definition": "decide that an arranged event will not take place",
+        "translation": "取消",
+        "pos": "v.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "capital",
+        "phonetic": "/ˈkæpɪtl/",
+        "definition": "the most important city or town of a country or region, usually its seat of government and administrative centre",
+        "translation": "首都；资本",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "car",
+        "phonetic": "/kɑːr/",
+        "definition": "a road vehicle, typically with four wheels, powered by an internal combustion engine or electric motor and able to carry a small number of people",
+        "translation": "汽车",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "card",
+        "phonetic": "/kɑːrd/",
+        "definition": "a piece of thick, stiff paper or thin pasteboard, in particular one used for writing or printing on",
+        "translation": "卡片；纸牌",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "care",
+        "phonetic": "/ker/",
+        "definition": "the provision of what is necessary for the health, welfare, maintenance, and protection of someone or something",
+        "translation": "关心；照顾",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "career",
+        "phonetic": "/kəˈrɪər/",
+        "definition": "an occupation undertaken for a significant period of a person's life and with opportunities for progress",
+        "translation": "职业；生涯",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "carry",
+        "phonetic": "/ˈkæri/",
+        "definition": "support and move (someone or something) from one place to another",
+        "translation": "携带；运送",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "case",
+        "phonetic": "/keɪs/",
+        "definition": "an instance of a particular situation; an example of something occurring",
+        "translation": "情况；案例",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cat",
+        "phonetic": "/kæt/",
+        "definition": "a small domesticated carnivorous mammal with soft fur, a short snout, and retractable claws",
+        "translation": "猫",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "catch",
+        "phonetic": "/kætʃ/",
+        "definition": "intercept and hold (something which has been thrown, propelled, or dropped)",
+        "translation": "抓住；赶上",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "cause",
+        "phonetic": "/kɔːz/",
+        "definition": "a person or thing that gives rise to an action, phenomenon, or condition",
+        "translation": "原因；引起",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cell",
+        "phonetic": "/sel/",
+        "definition": "the smallest structural and functional unit of an organism, which is typically microscopic",
+        "translation": "细胞；小隔间",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4 toefl"
+    },
+    {
+        "word": "center",
+        "phonetic": "/ˈsentər/",
+        "definition": "the middle point of a circle or sphere, equidistant from every point on the circumference or surface",
+        "translation": "中心；中央",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "central",
+        "phonetic": "/ˈsentrəl/",
+        "definition": "of, at, or forming the centre",
+        "translation": "中心的；主要的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "century",
+        "phonetic": "/ˈsentʃəri/",
+        "definition": "a period of one hundred years",
+        "translation": "世纪；百年",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "certain",
+        "phonetic": "/ˈsɜːrtn/",
+        "definition": "known for sure; established beyond doubt",
+        "translation": "确定的；某个",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "chair",
+        "phonetic": "/tʃer/",
+        "definition": "a separate seat for one person, typically with a back and four legs",
+        "translation": "椅子",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "challenge",
+        "phonetic": "/ˈtʃælɪndʒ/",
+        "definition": "a call to take part in a contest or competition, especially a duel",
+        "translation": "挑战",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "chance",
+        "phonetic": "/tʃæns/",
+        "definition": "a possibility of something happening",
+        "translation": "机会；可能性",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "change",
+        "phonetic": "/tʃeɪndʒ/",
+        "definition": "make or become different",
+        "translation": "改变；变化",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "character",
+        "phonetic": "/ˈkærəktər/",
+        "definition": "the mental and moral qualities distinctive to an individual",
+        "translation": "性格；角色",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "charge",
+        "phonetic": "/tʃɑːrdʒ/",
+        "definition": "demand (an amount) as a price for a service rendered or goods supplied",
+        "translation": "收费；指控",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cheap",
+        "phonetic": "/tʃiːp/",
+        "definition": "low in price; worth more than its cost",
+        "translation": "便宜的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "check",
+        "phonetic": "/tʃek/",
+        "definition": "examine (something) in order to determine its accuracy, quality, or condition, or to detect the presence of something",
+        "translation": "检查；核对",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "child",
+        "phonetic": "/tʃaɪld/",
+        "definition": "a young human being below the age of puberty or below the legal age of majority",
+        "translation": "孩子",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "choice",
+        "phonetic": "/tʃɔɪs/",
+        "definition": "an act of choosing between two or more possibilities",
+        "translation": "选择",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "choose",
+        "phonetic": "/tʃuːz/",
+        "definition": "pick out (someone or something) as being the best or most appropriate of two or more alternatives",
+        "translation": "选择",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "church",
+        "phonetic": "/tʃɜːrtʃ/",
+        "definition": "a building used for public Christian worship",
+        "translation": "教堂",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "city",
+        "phonetic": "/ˈsɪti/",
+        "definition": "a large town",
+        "translation": "城市",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "claim",
+        "phonetic": "/kleɪm/",
+        "definition": "state or assert that something is the case, typically without providing evidence or proof",
+        "translation": "声称；要求",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "class",
+        "phonetic": "/klæs/",
+        "definition": "a set or category of things having some property or attribute in common and differentiated from others by kind, type, or quality",
+        "translation": "班级；等级",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "clean",
+        "phonetic": "/kliːn/",
+        "definition": "free from dirt, marks, or stains",
+        "translation": "干净的；打扫",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "clear",
+        "phonetic": "/klɪər/",
+        "definition": "easy to perceive, understand, or interpret",
+        "translation": "清晰的；清楚的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "climb",
+        "phonetic": "/klaɪm/",
+        "definition": "go or come up (a slope, incline, or staircase), especially by using the feet and sometimes the hands; ascend",
+        "translation": "攀登；爬",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "clock",
+        "phonetic": "/klɒk/",
+        "definition": "a mechanical or electrical device for measuring time, indicating hours, minutes, and sometimes seconds by hands on a round dial or by displayed figures",
+        "translation": "时钟",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "close",
+        "phonetic": "/kloʊz/",
+        "definition": "move so as to cover an opening",
+        "translation": "关闭；近的",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "clothes",
+        "phonetic": "/kloʊðz/",
+        "definition": "items worn to cover the body",
+        "translation": "衣服",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "club",
+        "phonetic": "/klʌb/",
+        "definition": "an association dedicated to a particular interest or activity",
+        "translation": "俱乐部",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "coat",
+        "phonetic": "/koʊt/",
+        "definition": "an outer garment worn outdoors, having sleeves and typically extending below the hips",
+        "translation": "外套",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "coffee",
+        "phonetic": "/ˈkɒfi/",
+        "definition": "a hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub",
+        "translation": "咖啡",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "cold",
+        "phonetic": "/koʊld/",
+        "definition": "of or at a low or relatively low temperature, especially when compared with the human body",
+        "translation": "寒冷的；感冒",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "collect",
+        "phonetic": "/kəˈlekt/",
+        "definition": "bring or gather together (a number of things)",
+        "translation": "收集；搜集",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "college",
+        "phonetic": "/ˈkɒlɪdʒ/",
+        "definition": "an educational institution or establishment, in particular one providing higher education or specialized professional or vocational training",
+        "translation": "学院；大学",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "color",
+        "phonetic": "/ˈkʌlər/",
+        "definition": "the property possessed by an object of producing different sensations on the eye as a result of the way it reflects or emits light",
+        "translation": "颜色",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "come",
+        "phonetic": "/kʌm/",
+        "definition": "move or travel towards or into a place thought of as near or familiar to the speaker",
+        "translation": "来；来到",
+        "pos": "v.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "common",
+        "phonetic": "/ˈkɒmən/",
+        "definition": "occurring, found, or done often; prevalent",
+        "translation": "常见的；共同的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "community",
+        "phonetic": "/kəˈmjuːnəti/",
+        "definition": "a group of people living in the same place or having a particular characteristic in common",
+        "translation": "社区；社群",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "company",
+        "phonetic": "/ˈkʌmpəni/",
+        "definition": "a commercial business",
+        "translation": "公司；陪伴",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "compare",
+        "phonetic": "/kəmˈper/",
+        "definition": "estimate, measure, or note the similarity or dissimilarity between",
+        "translation": "比较",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "complete",
+        "phonetic": "/kəmˈpliːt/",
+        "definition": "having all the necessary or appropriate parts",
+        "translation": "完成；完整的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "computer",
+        "phonetic": "/kəmˈpjuːtər/",
+        "definition": "an electronic device for storing and processing data, typically in binary form, according to instructions given to it in a variable program",
+        "translation": "电脑",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "concern",
+        "phonetic": "/kənˈsɜːrn/",
+        "definition": "relate to; be about",
+        "translation": "关心；涉及",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "condition",
+        "phonetic": "/kənˈdɪʃn/",
+        "definition": "the state of something with regard to its appearance, quality, or working order",
+        "translation": "状况；条件",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "conference",
+        "phonetic": "/ˈkɒnfərəns/",
+        "definition": "a formal meeting for discussion",
+        "translation": "会议",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "consider",
+        "phonetic": "/kənˈsɪdər/",
+        "definition": "think carefully about (something), typically before making a decision",
+        "translation": "考虑；认为",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "consume",
+        "phonetic": "/kənˈsjuːm/",
+        "definition": "eat, drink, or ingest (food or drink)",
+        "translation": "消耗；消费",
+        "pos": "v.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000 cet6 toefl"
+    },
+    {
+        "word": "contact",
+        "phonetic": "/ˈkɒntækt/",
+        "definition": "the state or condition of physical touching",
+        "translation": "接触；联系",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "contain",
+        "phonetic": "/kənˈteɪn/",
+        "definition": "have or hold (someone or something) within",
+        "translation": "包含；容纳",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "continue",
+        "phonetic": "/kənˈtɪnjuː/",
+        "definition": "persist in an activity or process",
+        "translation": "继续",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "control",
+        "phonetic": "/kənˈtroʊl/",
+        "definition": "the power to influence or direct people's behaviour or the course of events",
+        "translation": "控制",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cook",
+        "phonetic": "/kʊk/",
+        "definition": "prepare (food, a dish, or a meal) by combining and heating the ingredients in various ways",
+        "translation": "烹饪；厨师",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "cool",
+        "phonetic": "/kuːl/",
+        "definition": "of or at a fairly low temperature",
+        "translation": "凉爽的；酷的",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "corner",
+        "phonetic": "/ˈkɔːrnər/",
+        "definition": "a place or angle where two or more sides or edges meet",
+        "translation": "角落；拐角",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "correct",
+        "phonetic": "/kəˈrekt/",
+        "definition": "free from error; in accordance with fact or truth",
+        "translation": "正确的；纠正",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "cost",
+        "phonetic": "/kɒst/",
+        "definition": "(of an object or action) require the payment of (a specified sum of money) before it can be acquired or done",
+        "translation": "成本；花费",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "could",
+        "phonetic": "/kʊd/",
+        "definition": "used as the past tense of can, to indicate possibility",
+        "translation": "可以（can的过去式）",
+        "pos": "v.",
+        "collins": 5,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "country",
+        "phonetic": "/ˈkʌntri/",
+        "definition": "a nation with its own government, occupying a particular territory",
+        "translation": "国家；乡村",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "basic oxford3000"
+    },
+    {
+        "word": "course",
+        "phonetic": "/kɔːrs/",
+        "definition": "the route or direction followed by a ship, aircraft, road, or river",
+        "translation": "课程；过程",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cover",
+        "phonetic": "/ˈkʌvər/",
+        "definition": "put something on top of or in front of (something), especially in order to protect or conceal it",
+        "translation": "覆盖；封面",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "cow",
+        "phonetic": "/kaʊ/",
+        "definition": "a fully grown female animal of a domesticated breed of ox, used as a source of milk or beef",
+        "translation": "奶牛",
+        "pos": "n.",
+        "collins": 3,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "create",
+        "phonetic": "/kriˈeɪt/",
+        "definition": "bring (something) into existence",
+        "translation": "创造；创建",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "credit",
+        "phonetic": "/ˈkredɪt/",
+        "definition": "the ability of a customer to obtain goods or services before payment, based on the trust that payment will be made in the future",
+        "translation": "信用；学分",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "crime",
+        "phonetic": "/kraɪm/",
+        "definition": "an action or omission which constitutes an offence and is punishable by law",
+        "translation": "犯罪",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cross",
+        "phonetic": "/krɒs/",
+        "definition": "go or extend from one side to the other of (a river, road, or area)",
+        "translation": "穿过；十字",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "cry",
+        "phonetic": "/kraɪ/",
+        "definition": "shed tears, typically as an expression of distress, pain, or sorrow",
+        "translation": "哭；喊",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "culture",
+        "phonetic": "/ˈkʌltʃər/",
+        "definition": "the arts and other manifestations of human intellectual achievement regarded collectively",
+        "translation": "文化",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cup",
+        "phonetic": "/kʌp/",
+        "definition": "a small bowl-shaped container for drinking from, typically having a handle",
+        "translation": "杯子",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    },
+    {
+        "word": "current",
+        "phonetic": "/ˈkɜːrənt/",
+        "definition": "belonging to the present time; happening or being used or done now",
+        "translation": "当前的；水流",
+        "pos": "adj.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "customer",
+        "phonetic": "/ˈkʌstəmər/",
+        "definition": "a person who buys goods or services from a shop or business",
+        "translation": "顾客",
+        "pos": "n.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000 cet4"
+    },
+    {
+        "word": "cut",
+        "phonetic": "/kʌt/",
+        "definition": "make an opening, incision, or wound in (something) with a sharp-edged tool or object",
+        "translation": "切；割",
+        "pos": "v.",
+        "collins": 4,
+        "oxford": 1,
+        "tag": "oxford3000"
+    }
+]

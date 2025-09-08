@@ -1,7 +1,7 @@
 name: flutter_english_learning
 description: 英语阅读理解学习平台 - Flutter Android版
 publish_to: 'none'
-version: 0.3.0+1
+version: 0.4.1+1
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
@@ -52,6 +52,9 @@ dependencies:
   # 本地数据库
   sqflite: ^2.3.0
   path: ^1.8.3
+  
+  # 词典功能（仅在线英英）
+  http: ^1.1.0
 
 dev_dependencies:
   flutter_test:

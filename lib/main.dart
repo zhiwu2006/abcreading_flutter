@@ -12,6 +12,7 @@ import 'services/progress_service.dart';
 import 'services/supabase_service.dart';
 import 'services/lesson_manager_service.dart';
 import 'services/auto_sync_service.dart';
+import 'services/enhanced_dictionary_service.dart';
 import 'core/config/supabase_config.dart';
 import 'presentation/pages/supabase_config_page.dart';
 import 'presentation/pages/lesson_source_page.dart';
@@ -28,6 +29,7 @@ import 'presentation/pages/lesson_editor_page.dart';
 // ============================================================================
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   WidgetsFlutterBinding.ensureInitialized();
 
   // 初始化Supabase
@@ -65,6 +67,9 @@ void main() async {
   // 初始化其他服务
   await TTSService().initialize();
   await SyncProgressService().initialize();
+
+  // 初始化增强词典服务
+  await EnhancedDictionaryService.initialize();
 
   // 初始化自动同步服务
   final autoSyncService = AutoSyncService.instance;
@@ -1613,6 +1618,22 @@ class LessonContent extends StatefulWidget {
 class _LessonContentState extends State<LessonContent>
     with TickerProviderStateMixin {
   late TabController _tabController;
+  bool _isShowingWordDialog = false;
+  String? _longPressHighlightedWord;
+
+  void _setLongPressHighlight(String word) {
+    if (_longPressHighlightedWord == word) return;
+    setState(() {
+      _longPressHighlightedWord = word;
+    });
+  }
+
+  void _clearLongPressHighlight() {
+    if (_longPressHighlightedWord == null) return;
+    setState(() {
+      _longPressHighlightedWord = null;
+    });
+  }
   Map<int, String> selectedAnswers = {};
   bool showResults = false;
   int score = 0;
@@ -1711,16 +1732,18 @@ class _LessonContentState extends State<LessonContent>
                   ),
                   child: TabBar(
                     controller: _tabController,
-                    tabs: const [
-                      Tab(icon: Icon(Icons.book), text: '阅读故事'),
-                      Tab(icon: Icon(Icons.visibility), text: '词汇学习'),
-                      Tab(icon: Icon(Icons.chat_bubble), text: '重点句子'),
-                      Tab(icon: Icon(Icons.quiz), text: '练习题'),
+                    tabs: [
+                      _buildCompactTab(Icons.book, '阅读故事'),
+                      _buildCompactTab(Icons.visibility, '词汇学习'),
+                      _buildCompactTab(Icons.chat_bubble, '重点句子'),
+                      _buildCompactTab(Icons.quiz, '练习题'),
                     ],
                     labelColor: Colors.blue,
                     unselectedLabelColor: Colors.grey[600],
                     indicatorColor: Colors.blue,
                     indicatorWeight: 3,
+                    labelPadding: const EdgeInsets.symmetric(horizontal: 4),
+                    isScrollable: false,
                   ),
                 )
               : const SizedBox.shrink(key: ValueKey('tabs-hidden')),
@@ -1818,13 +1841,13 @@ class _LessonContentState extends State<LessonContent>
   }
 
   /// 🎯 FULLSCREEN: 显示全屏阅读界面
-  /// 
+  ///
   /// 功能特点：
   /// - 白底黑字配色方案 (已从 Sepia 色修改)
   /// - 支持单词点击朗读和长按查释义
   /// - 右上角浮动退出按钮
   /// - 沉浸式阅读体验
-  /// 
+  ///
   /// 搜索关键词: FULLSCREEN, 全屏阅读, _showFullScreenReading
   /// 最后修改: 2025-01-XX (配色改为白底黑字)
   void _showFullScreenReading() async {
@@ -1926,13 +1949,13 @@ class _LessonContentState extends State<LessonContent>
   }
 
   /// 🔍 WORD_CLICK: 构建可点击的段落 - 单词交互核心逻辑
-  /// 
+  ///
   /// 功能特点：
   /// - 单词点击：朗读发音
   /// - 单词长按：显示释义弹窗
   /// - 词汇高亮：课程词汇下划线标记
   /// - 智能分词：正确处理标点符号
-  /// 
+  ///
   /// 搜索关键词: WORD_CLICK, 单词点击, GestureDetector
   Widget _buildClickableParagraph(String paragraph) {
     final tokenReg = RegExp(r'(\s+|[.,!?;:"()[\]{}]|[^\s.,!?;:\"()\[\]{}]+)');
@@ -1973,6 +1996,7 @@ class _LessonContentState extends State<LessonContent>
       } else {
         // 单词部分
         final cleanWord = part.replaceAll(RegExp(r'[^\w]'), '').toLowerCase();
+        final isLongPressingThis = _longPressHighlightedWord == cleanWord;
         final shouldHighlight =
             widget.readingPreferences.showVocabularyHighlight &&
                 highlightedWords.contains(cleanWord);
@@ -1980,11 +2004,20 @@ class _LessonContentState extends State<LessonContent>
             .any((vocab) => vocab.word.toLowerCase() == cleanWord);
 
         widgets.add(GestureDetector(
-          onTap: () => _speakWord(part),                                    // 🔊 TTS: 点击朗读
-          onLongPress: () => _showWordMeaning(context, cleanWord, part),    // 🔍 SEARCH: 长按查释义
+          onTap: () => _speakWord(part), // 🔊 TTS: 点击朗读
+          onLongPressStart: (_) async {
+            _setLongPressHighlight(cleanWord);
+            try {
+              await _showWordMeaning(context, cleanWord, part);
+            } finally {
+              _clearLongPressHighlight();
+            }
+          }, // 🔍 SEARCH: 长按开始即弹窗
           child: Container(
             decoration: BoxDecoration(
-              color: shouldHighlight ? Colors.yellow[200] : null,
+              color: isLongPressingThis
+                  ? Colors.yellow[300]
+                  : (shouldHighlight ? Colors.yellow[200] : null),
               borderRadius: BorderRadius.circular(2),
               border: isVocabWord
                   ? Border(
@@ -2000,7 +2033,9 @@ class _LessonContentState extends State<LessonContent>
               part,
               style: TextStyle(
                 fontSize: widget.readingPreferences.fontSize.toDouble(),
-                fontWeight: shouldHighlight ? FontWeight.bold : null,
+                fontWeight: (shouldHighlight || isLongPressingThis)
+                    ? FontWeight.bold
+                    : null,
                 color: Colors.black87,
                 height: 1.6,
                 fontFamily: widget.readingPreferences.fontFamilyStyle,
@@ -2630,6 +2665,91 @@ class _LessonContentState extends State<LessonContent>
     );
   }
 
+  /// 🎨 UI: 构建紧凑型标签页 - 响应式布局
+  ///
+  /// 功能：
+  /// - 根据屏幕宽度自动调整显示模式
+  /// - 宽屏：图标 + 文字水平排列
+  /// - 窄屏：仅显示图标，节省空间
+  ///
+  /// 搜索关键词: COMPACT_TAB, 响应式标签, _buildCompactTab
+  Widget _buildCompactTab(IconData icon, String text) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        // 获取屏幕宽度
+        final screenWidth = MediaQuery.of(context).size.width;
+        final tabWidth = screenWidth / 4; // 4个标签平分宽度
+
+        // 如果每个标签宽度小于80px，只显示图标
+        if (tabWidth < 80) {
+          return Tab(
+            height: 40, // 固定高度，只显示图标
+            child: Icon(icon, size: 20),
+          );
+        }
+        // 如果每个标签宽度小于120px，显示图标和简化文字
+        else if (tabWidth < 120) {
+          final shortText = _getShortText(text);
+          return Tab(
+            height: 40,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(icon, size: 18),
+                const SizedBox(width: 4),
+                Flexible(
+                  child: Text(
+                    shortText,
+                    style: const TextStyle(fontSize: 11),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+        // 宽屏模式：显示完整图标和文字
+        else {
+          return Tab(
+            height: 40,
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(icon, size: 20),
+                const SizedBox(width: 6),
+                Flexible(
+                  child: Text(
+                    text,
+                    style: const TextStyle(fontSize: 12),
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      },
+    );
+  }
+
+  /// 获取简化文字
+  String _getShortText(String text) {
+    switch (text) {
+      case '阅读故事':
+        return '阅读';
+      case '词汇学习':
+        return '词汇';
+      case '重点句子':
+        return '句子';
+      case '练习题':
+        return '练习';
+      default:
+        return text.length > 2 ? text.substring(0, 2) : text;
+    }
+  }
+
   /// 构建提交答案区域
   Widget _buildSubmitSection() {
     return Center(
@@ -2678,23 +2798,27 @@ class _LessonContentState extends State<LessonContent>
   }
 
   /// 🔍 SEARCH: 显示单词释义弹窗 - 长按单词查释义核心功能
-  /// 
+  ///
   /// 功能流程：
   /// 1. 优先查找课程词汇表中的释义
-  /// 2. 找到则显示本地释义弹窗 (包含朗读功能)
-  /// 3. 未找到则显示在线查词选项对话框
-  /// 
-  /// 搜索关键词: SEARCH, 单词释义, _showWordMeaning
-  void _showWordMeaning(BuildContext context, String cleanWord, String originalWord) {
+  /// 2. 如果没找到，查询离线字典 (ECDICT)
+  /// 3. 找到则显示释义弹窗 (包含朗读功能)
+  /// 4. 都没找到则显示在线查词选项对话框
+  ///
+  /// 搜索关键词: SEARCH, 单词释义, _showWordMeaning, 离线字典
+  Future<void> _showWordMeaning(
+      BuildContext context, String cleanWord, String originalWord) async {
+    if (_isShowingWordDialog) return;
     // 查找对应的词汇释义
     final vocabulary = widget.lesson.vocabulary.firstWhere(
       (vocab) => vocab.word.toLowerCase() == cleanWord,
       orElse: () => Vocabulary(word: originalWord, meaning: ''),
     );
 
-    // 如果找到了词汇，显示课程词汇释义
+    // 如果找到了课程词汇，显示课程词汇释义
     if (vocabulary.meaning.isNotEmpty) {
-      showDialog(
+      _isShowingWordDialog = true;
+      await showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
@@ -2741,8 +2865,8 @@ class _LessonContentState extends State<LessonContent>
                     ),
                     child: Row(
                       children: [
-                        Icon(Icons.lightbulb_outline, 
-                             color: Colors.blue[600], size: 16),
+                        Icon(Icons.lightbulb_outline,
+                            color: Colors.blue[600], size: 16),
                         const SizedBox(width: 8),
                         const Text(
                           '中文释义',
@@ -2768,7 +2892,8 @@ class _LessonContentState extends State<LessonContent>
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       TextButton.icon(
-                        onPressed: () => widget.ttsService.speakWord(vocabulary.word),
+                        onPressed: () =>
+                            widget.ttsService.speakWord(vocabulary.word),
                         icon: const Icon(Icons.play_circle, size: 18),
                         label: const Text('朗读单词'),
                         style: TextButton.styleFrom(
@@ -2776,7 +2901,8 @@ class _LessonContentState extends State<LessonContent>
                         ),
                       ),
                       TextButton.icon(
-                        onPressed: () => widget.ttsService.speak(vocabulary.meaning.split(';')[0]),
+                        onPressed: () => widget.ttsService
+                            .speak(vocabulary.meaning.split(';')[0]),
                         icon: const Icon(Icons.record_voice_over, size: 18),
                         label: const Text('朗读释义'),
                         style: TextButton.styleFrom(
@@ -2797,20 +2923,52 @@ class _LessonContentState extends State<LessonContent>
           );
         },
       );
+      _isShowingWordDialog = false;
     } else {
-      // 如果没有找到课程词汇释义，显示查词选项对话框
-      _showWordLookupDialog(context, cleanWord, originalWord);
+      // 如果没有找到课程词汇释义，尝试查询离线字典
+      try {
+        print('🔍 Looking up word: $cleanWord');
+        final dictionaryEntry =
+            await EnhancedDictionaryService.lookupWord(cleanWord);
+
+        if (dictionaryEntry != null) {
+          print('✅ Found dictionary entry:');
+          print('  Word: ${dictionaryEntry.word}');
+          print('  Primary meaning: ${dictionaryEntry.primaryMeaning}');
+          print('  All meanings: ${dictionaryEntry.meanings}');
+          print('  Source: ${dictionaryEntry.source}');
+
+          // 显示离线字典释义
+          await _showDictionaryMeaning(context, dictionaryEntry, originalWord);
+        } else {
+          print('❌ No dictionary entry found for: $cleanWord');
+          // 不再显示在线查词选项，直接返回
+        }
+      } catch (e) {
+        print('❌ Dictionary lookup error: $e');
+        // 出错直接返回
+      }
     }
   }
 
-  /// 🔍 SEARCH: 显示在线查词选项对话框
-  /// 
-  /// 功能：当课程词汇表中没有找到单词时的备选方案
-  /// 支持的在线词典：有道词典、百度翻译、金山词霸
-  /// 
-  /// 搜索关键词: SEARCH, 在线查词, _showWordLookupDialog
-  void _showWordLookupDialog(BuildContext context, String cleanWord, String originalWord) {
-    showDialog(
+  
+
+  /// 🔍 DICTIONARY: 显示离线字典释义弹窗
+  ///
+  /// 功能：显示从 ECDICT 离线字典查询到的单词释义
+  /// 包含音标、中文释义、朗读功能等完整信息
+  ///
+  /// 搜索关键词: DICTIONARY, 离线字典, _showDictionaryMeaning
+  Future<void> _showDictionaryMeaning(
+      BuildContext context, DictionaryResult entry, String originalWord) async {
+    print('🎨 Showing dictionary meaning dialog:');
+    print('  Word: ${entry.word}');
+    print('  Primary meaning: ${entry.primaryMeaning}');
+    print('  Meanings length: ${entry.meanings.length}');
+    print('  Meanings: ${entry.meanings}');
+
+    _isShowingWordDialog = true;
+    await showDialog(
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
@@ -2819,23 +2977,37 @@ class _LessonContentState extends State<LessonContent>
           ),
           title: Row(
             children: [
-              Icon(Icons.search, color: Colors.orange[600], size: 20),
+              Icon(Icons.book, color: Colors.indigo[600], size: 20),
               const SizedBox(width: 8),
               Expanded(
-                child: Text(
-                  originalWord,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.orange[800],
-                  ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      entry.word,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.indigo[800],
+                      ),
+                    ),
+                    if (entry.formattedPhonetic.isNotEmpty)
+                      Text(
+                        entry.formattedPhonetic,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey[600],
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                  ],
                 ),
               ),
               IconButton(
-                onPressed: () => widget.ttsService.speakWord(originalWord),
+                onPressed: () => widget.ttsService.speakWord(entry.word),
                 icon: Icon(
                   Icons.volume_up,
-                  color: Colors.orange[600],
+                  color: Colors.indigo[600],
                   size: 20,
                 ),
                 tooltip: '朗读单词',
@@ -2843,67 +3015,232 @@ class _LessonContentState extends State<LessonContent>
             ],
           ),
           content: Container(
-            constraints: const BoxConstraints(maxWidth: 300),
+            constraints: const BoxConstraints(
+              maxWidth: 350,
+              maxHeight: 400, // 限制最大高度
+            ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // 释义标题
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: Colors.orange[50],
+                    color: Colors.indigo[50],
                     borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.orange[200]!),
+                    border: Border.all(color: Colors.indigo[200]!),
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.info_outline, 
-                           color: Colors.orange[600], size: 16),
+                      Icon(Icons.translate,
+                          color: Colors.indigo[600], size: 16),
                       const SizedBox(width: 8),
-                      const Expanded(
+                      Text(
+                        entry.source == 'Free Dictionary API' ? '英文释义' : '中文释义',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.indigo,
+                        ),
+                      ),
+                      const Spacer(),
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: Colors.green[100],
+                          borderRadius: BorderRadius.circular(4),
+                        ),
                         child: Text(
-                          '该单词不在课程词汇表中',
+                          entry.source == 'Free Dictionary API'
+                              ? '在线词典'
+                              : '离线词典',
                           style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.orange,
+                            fontSize: 10,
+                            color: Colors.green[700],
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
                     ],
                   ),
                 ),
-                const SizedBox(height: 16),
-                const Text(
-                  '您可以选择以下方式查看释义：',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black87,
+                const SizedBox(height: 12),
+
+                // 释义内容 - 使用滚动容器（固定高度，避免布局冲突）
+                SizedBox(
+                  height: 220,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // 主要释义
+                        Text(
+                          entry.primaryMeaning.isNotEmpty
+                              ? entry.primaryMeaning
+                              : '暂无释义',
+                          style: const TextStyle(
+                            fontSize: 16,
+                            color: Colors.black87,
+                            height: 1.4,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+
+                        // 调试信息（临时）
+                        if (entry.primaryMeaning.isEmpty)
+                          Container(
+                            margin: const EdgeInsets.only(top: 8),
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.red[50],
+                              borderRadius: BorderRadius.circular(4),
+                              border: Border.all(color: Colors.red[200]!),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  '调试信息:',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.red[700],
+                                  ),
+                                ),
+                                Text(
+                                  'Word: ${entry.word}',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.red[600],
+                                  ),
+                                ),
+                                Text(
+                                  'Meanings: ${entry.meanings}',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.red[600],
+                                  ),
+                                ),
+                                Text(
+                                  'Source: ${entry.source}',
+                                  style: TextStyle(
+                                    fontSize: 11,
+                                    color: Colors.red[600],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+
+                        // 其他释义（如果有多个）
+                        if (entry.meanings.length > 1) ...[
+                          const SizedBox(height: 8),
+                          ...entry.meanings.skip(1).map((meaning) => Padding(
+                                padding: const EdgeInsets.only(top: 4),
+                                child: Text(
+                                  '• $meaning',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    color: Colors.grey[700],
+                                    height: 1.3,
+                                  ),
+                                ),
+                              )),
+                        ],
+
+                        // 例句（如果有）
+                        if (entry.hasExamples) ...[
+                          const SizedBox(height: 12),
+                          Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                              color: Colors.blue[50],
+                              borderRadius: BorderRadius.circular(6),
+                              border: Border.all(color: Colors.blue[200]!),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  children: [
+                                    Icon(Icons.format_quote,
+                                        color: Colors.blue[600], size: 14),
+                                    const SizedBox(width: 4),
+                                    Text(
+                                      '例句',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                        color: Colors.blue[700],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                const SizedBox(height: 4),
+                                Text(
+                                  entry.firstExample,
+                                  style: TextStyle(
+                                    fontSize: 13,
+                                    color: Colors.grey[700],
+                                    fontStyle: FontStyle.italic,
+                                    height: 1.3,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+
+                        // 词性信息（如果有）
+                        if (entry.partOfSpeech.isNotEmpty) ...[
+                          const SizedBox(height: 8),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Colors.orange[100],
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: Text(
+                              entry.partOfSpeech,
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.orange[700],
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
                   ),
                 ),
+
                 const SizedBox(height: 16),
-                // 在线查词选项
-                _buildLookupOption(
-                  context,
-                  Icons.language,
-                  '有道词典',
-                  Colors.red,
-                  () => _openOnlineDictionary(context, originalWord, 'youdao'),
-                ),
-                const SizedBox(height: 8),
-                _buildLookupOption(
-                  context,
-                  Icons.translate,
-                  '百度翻译',
-                  Colors.blue,
-                  () => _openOnlineDictionary(context, originalWord, 'baidu'),
-                ),
-                const SizedBox(height: 8),
-                _buildLookupOption(
-                  context,
-                  Icons.book,
-                  '金山词霸',
-                  Colors.green,
-                  () => _openOnlineDictionary(context, originalWord, 'iciba'),
+
+                // 操作按钮
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    TextButton.icon(
+                      onPressed: () => widget.ttsService.speakWord(entry.word),
+                      icon: const Icon(Icons.play_circle, size: 18),
+                      label: const Text('朗读单词'),
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.green[600],
+                      ),
+                    ),
+                    TextButton.icon(
+                      onPressed: () =>
+                          widget.ttsService.speak(entry.primaryMeaning),
+                      icon: const Icon(Icons.record_voice_over, size: 18),
+                      label: const Text('朗读释义'),
+                      style: TextButton.styleFrom(
+                        foregroundColor: Colors.purple[600],
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -2917,45 +3254,14 @@ class _LessonContentState extends State<LessonContent>
         );
       },
     );
-  }
-
-  /// 构建查词选项按钮
-  Widget _buildLookupOption(BuildContext context, IconData icon, String name, 
-                           MaterialColor color, VoidCallback onTap) {
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        padding: const EdgeInsets.all(12),
-        decoration: BoxDecoration(
-          border: Border.all(color: color[200]!),
-          borderRadius: BorderRadius.circular(8),
-        ),
-        child: Row(
-          children: [
-            Icon(icon, color: color[600], size: 20),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                name,
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                  color: color[800],
-                ),
-              ),
-            ),
-            Icon(Icons.open_in_new, color: color[400], size: 16),
-          ],
-        ),
-      ),
-    );
+    _isShowingWordDialog = false;
   }
 
   /// 打开在线词典
-  void _openOnlineDictionary(BuildContext context, String word, String type) async {
+  void _openOnlineDictionary(
+      BuildContext context, String word, String type) async {
     Navigator.of(context).pop(); // 关闭对话框
-    
+
     String url;
     String dictName;
     switch (type) {
@@ -2980,7 +3286,7 @@ class _LessonContentState extends State<LessonContent>
       final uri = Uri.parse(url);
       if (await canLaunchUrl(uri)) {
         await launchUrl(uri, mode: LaunchMode.externalApplication);
-        
+
         // 显示成功提示
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -3009,7 +3315,7 @@ class _LessonContentState extends State<LessonContent>
             ),
           ),
         );
-        
+
         // 复制链接到剪贴板
         await Clipboard.setData(ClipboardData(text: url));
       }

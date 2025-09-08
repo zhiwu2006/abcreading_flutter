@@ -1,0 +1,84 @@
+{
+  "dictionary": [
+    {
+      "word": "hello",
+      "phonetic": "/həˈloʊ/",
+      "translation": "你好；喂（用于打招呼）",
+      "definition": "used as a greeting or to begin a phone conversation",
+      "tag": "基础词汇",
+      "frq": 5000
+    },
+    {
+      "word": "world",
+      "phonetic": "/wɜːrld/",
+      "translation": "世界；地球；领域",
+      "definition": "the earth, together with all of its countries and peoples",
+      "tag": "基础词汇",
+      "frq": 4500
+    },
+    {
+      "word": "book",
+      "phonetic": "/bʊk/",
+      "translation": "书；书籍；预订",
+      "definition": "a written or printed work consisting of pages glued or sewn together along one side and bound in covers",
+      "tag": "基础词汇",
+      "frq": 4000
+    },
+    {
+      "word": "read",
+      "phonetic": "/riːd/",
+      "translation": "阅读；读懂；理解",
+      "definition": "look at and comprehend the meaning of written or printed matter",
+      "tag": "基础词汇",
+      "frq": 4200
+    },
+    {
+      "word": "learn",
+      "phonetic": "/lɜːrn/",
+      "translation": "学习；学会；得知",
+      "definition": "acquire knowledge or skills through experience, study, or by being taught",
+      "tag": "基础词汇",
+      "frq": 3800
+    },
+    {
+      "word": "study",
+      "phonetic": "/ˈstʌdi/",
+      "translation": "学习；研究；书房",
+      "definition": "the devotion of time and attention to acquiring knowledge",
+      "tag": "基础词汇",
+      "frq": 3600
+    },
+    {
+      "word": "english",
+      "phonetic": "/ˈɪŋɡlɪʃ/",
+      "translation": "英语；英国的",
+      "definition": "the language of England, widely used in many varieties throughout the world",
+      "tag": "基础词汇",
+      "frq": 4100
+    },
+    {
+      "word": "language",
+      "phonetic": "/ˈlæŋɡwɪdʒ/",
+      "translation": "语言；语言文字",
+      "definition": "the method of human communication using spoken or written words",
+      "tag": "基础词汇",
+      "frq": 3500
+    },
+    {
+      "word": "story",
+      "phonetic": "/ˈstɔːri/",
+      "translation": "故事；小说；报道",
+      "definition": "an account of incidents or events; a narrative",
+      "tag": "基础词汇",
+      "frq": 3700
+    },
+    {
+      "word": "word",
+      "phonetic": "/wɜːrd/",
+      "translation": "单词；话语；消息",
+      "definition": "a single distinct meaningful element of speech or writing",
+      "tag": "基础词汇",
+      "frq": 4300
+    }
+  ]
+}
