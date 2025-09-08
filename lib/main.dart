@@ -23,6 +23,10 @@ import 'utils/provider_refresh_tool.dart';
 import 'presentation/pages/test_page.dart';
 import 'presentation/pages/lesson_editor_page.dart';
 
+// ============================================================================
+// 🚀 应用程序入口和初始化
+// ============================================================================
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -69,6 +73,10 @@ void main() async {
   runApp(const EnglishLearningApp());
 }
 
+// ============================================================================
+// 🎨 主应用程序和主题配置
+// ============================================================================
+
 class EnglishLearningApp extends StatelessWidget {
   const EnglishLearningApp({super.key});
 
@@ -95,6 +103,10 @@ class EnglishLearningApp extends StatelessWidget {
     );
   }
 }
+
+// ============================================================================
+// ⚙️ 阅读偏好设置数据类
+// ============================================================================
 
 class ReadingPreferences {
   final int fontSize;
@@ -135,6 +147,10 @@ class ReadingPreferences {
     }
   }
 }
+
+// ============================================================================
+// 📱 主页面组件 - 应用程序主界面
+// ============================================================================
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -1234,7 +1250,10 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-// 阅读设置组件
+// ============================================================================
+// ⚙️ 阅读设置组件 - 字体、高亮等个性化设置
+// ============================================================================
+
 class ReadingSettings extends StatefulWidget {
   final ReadingPreferences preferences;
   final Function(ReadingPreferences) onPreferencesChange;
@@ -1565,7 +1584,10 @@ class _ReadingSettingsState extends State<ReadingSettings> {
   }
 }
 
-// 课程内容组件
+// ============================================================================
+// 📖 课程内容组件 - 核心学习功能 (故事、词汇、句子、测试)
+// ============================================================================
+
 class LessonContent extends StatefulWidget {
   final Lesson lesson;
   final ReadingPreferences readingPreferences;
@@ -1795,6 +1817,16 @@ class _LessonContentState extends State<LessonContent>
     );
   }
 
+  /// 🎯 FULLSCREEN: 显示全屏阅读界面
+  /// 
+  /// 功能特点：
+  /// - 白底黑字配色方案 (已从 Sepia 色修改)
+  /// - 支持单词点击朗读和长按查释义
+  /// - 右上角浮动退出按钮
+  /// - 沉浸式阅读体验
+  /// 
+  /// 搜索关键词: FULLSCREEN, 全屏阅读, _showFullScreenReading
+  /// 最后修改: 2025-01-XX (配色改为白底黑字)
   void _showFullScreenReading() async {
     await showGeneralDialog(
       context: context,
@@ -1804,7 +1836,7 @@ class _LessonContentState extends State<LessonContent>
       pageBuilder: (context, anim1, anim2) {
         return SafeArea(
           child: Material(
-            color: Colors.white, // 白色背景
+            color: Colors.white, // 🎨 THEME: 全屏阅读白色背景 (搜索: THEME)
             child: Stack(
               children: [
                 Positioned.fill(
@@ -1893,7 +1925,15 @@ class _LessonContentState extends State<LessonContent>
     );
   }
 
-  /// 构建可点击的段落
+  /// 🔍 WORD_CLICK: 构建可点击的段落 - 单词交互核心逻辑
+  /// 
+  /// 功能特点：
+  /// - 单词点击：朗读发音
+  /// - 单词长按：显示释义弹窗
+  /// - 词汇高亮：课程词汇下划线标记
+  /// - 智能分词：正确处理标点符号
+  /// 
+  /// 搜索关键词: WORD_CLICK, 单词点击, GestureDetector
   Widget _buildClickableParagraph(String paragraph) {
     final tokenReg = RegExp(r'(\s+|[.,!?;:"()[\]{}]|[^\s.,!?;:\"()\[\]{}]+)');
     final parts = tokenReg
@@ -1940,8 +1980,8 @@ class _LessonContentState extends State<LessonContent>
             .any((vocab) => vocab.word.toLowerCase() == cleanWord);
 
         widgets.add(GestureDetector(
-          onTap: () => _speakWord(part),
-          onLongPress: () => _showWordMeaning(context, cleanWord, part),
+          onTap: () => _speakWord(part),                                    // 🔊 TTS: 点击朗读
+          onLongPress: () => _showWordMeaning(context, cleanWord, part),    // 🔍 SEARCH: 长按查释义
           child: Container(
             decoration: BoxDecoration(
               color: shouldHighlight ? Colors.yellow[200] : null,
@@ -2637,7 +2677,14 @@ class _LessonContentState extends State<LessonContent>
     widget.ttsService.speakWord(word);
   }
 
-  /// 显示单词释义弹窗
+  /// 🔍 SEARCH: 显示单词释义弹窗 - 长按单词查释义核心功能
+  /// 
+  /// 功能流程：
+  /// 1. 优先查找课程词汇表中的释义
+  /// 2. 找到则显示本地释义弹窗 (包含朗读功能)
+  /// 3. 未找到则显示在线查词选项对话框
+  /// 
+  /// 搜索关键词: SEARCH, 单词释义, _showWordMeaning
   void _showWordMeaning(BuildContext context, String cleanWord, String originalWord) {
     // 查找对应的词汇释义
     final vocabulary = widget.lesson.vocabulary.firstWhere(
@@ -2756,7 +2803,12 @@ class _LessonContentState extends State<LessonContent>
     }
   }
 
-  /// 显示查词选项对话框
+  /// 🔍 SEARCH: 显示在线查词选项对话框
+  /// 
+  /// 功能：当课程词汇表中没有找到单词时的备选方案
+  /// 支持的在线词典：有道词典、百度翻译、金山词霸
+  /// 
+  /// 搜索关键词: SEARCH, 在线查词, _showWordLookupDialog
   void _showWordLookupDialog(BuildContext context, String cleanWord, String originalWord) {
     showDialog(
       context: context,
