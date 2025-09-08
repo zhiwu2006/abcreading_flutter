@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/rendering.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:provider/provider.dart';
 import 'models/lesson.dart';
 import 'data/default_lessons.dart';
@@ -2900,45 +2901,67 @@ class _LessonContentState extends State<LessonContent>
   }
 
   /// 打开在线词典
-  void _openOnlineDictionary(BuildContext context, String word, String type) {
+  void _openOnlineDictionary(BuildContext context, String word, String type) async {
     Navigator.of(context).pop(); // 关闭对话框
     
     String url;
+    String dictName;
     switch (type) {
       case 'youdao':
         url = 'https://dict.youdao.com/search?q=$word';
+        dictName = '有道词典';
         break;
       case 'baidu':
         url = 'https://fanyi.baidu.com/#en/zh/$word';
+        dictName = '百度翻译';
         break;
       case 'iciba':
         url = 'https://www.iciba.com/word?w=$word';
+        dictName = '金山词霸';
         break;
       default:
         url = 'https://dict.youdao.com/search?q=$word';
+        dictName = '有道词典';
     }
 
-    // 显示提示信息
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('正在打开在线词典查询 "$word"...'),
-        backgroundColor: Colors.blue,
-        duration: const Duration(seconds: 2),
-        action: SnackBarAction(
-          label: '复制链接',
-          textColor: Colors.white,
-          onPressed: () {
-            // 这里可以添加复制链接到剪贴板的功能
-            // Clipboard.setData(ClipboardData(text: url));
-          },
-        ),
-      ),
-    );
-
-    // 注意：在实际应用中，你需要添加 url_launcher 依赖来打开外部链接
-    // 这里先显示提示，实际实现需要：
-    // import 'package:url_launcher/url_launcher.dart';
-    // launchUrl(Uri.parse(url));
+    try {
+      final uri = Uri.parse(url);
+      if (await canLaunchUrl(uri)) {
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
+        
+        // 显示成功提示
+        if (context.mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('已打开 $dictName 查询 "$word"'),
+              backgroundColor: Colors.green,
+              duration: const Duration(seconds: 2),
+            ),
+          );
+        }
+      } else {
+        throw Exception('无法打开链接');
+      }
+    } catch (e) {
+      // 如果打开失败，提供复制链接选项
+      if (context.mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('无法打开 $dictName，已复制链接到剪贴板'),
+            backgroundColor: Colors.orange,
+            duration: const Duration(seconds: 3),
+            action: SnackBarAction(
+              label: '重试',
+              textColor: Colors.white,
+              onPressed: () => _openOnlineDictionary(context, word, type),
+            ),
+          ),
+        );
+        
+        // 复制链接到剪贴板
+        await Clipboard.setData(ClipboardData(text: url));
+      }
+    }
   }
 
   void _speakVocabulary(Vocabulary vocab, String id) {
