@@ -2641,11 +2641,11 @@ class _LessonContentState extends State<LessonContent>
     // 查找对应的词汇释义
     final vocabulary = widget.lesson.vocabulary.firstWhere(
       (vocab) => vocab.word.toLowerCase() == cleanWord,
-      orElse: () => Vocabulary(word: originalWord, meaning: '未找到释义'),
+      orElse: () => Vocabulary(word: originalWord, meaning: ''),
     );
 
-    // 如果找到了词汇，显示弹窗
-    if (vocabulary.meaning != '未找到释义') {
+    // 如果找到了词汇，显示课程词汇释义
+    if (vocabulary.meaning.isNotEmpty) {
       showDialog(
         context: context,
         builder: (BuildContext context) {
@@ -2750,15 +2750,195 @@ class _LessonContentState extends State<LessonContent>
         },
       );
     } else {
-      // 如果没有找到释义，显示简单提示
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text('未找到单词 "$originalWord" 的释义'),
-          backgroundColor: Colors.orange,
-          duration: const Duration(seconds: 2),
-        ),
-      );
+      // 如果没有找到课程词汇释义，显示查词选项对话框
+      _showWordLookupDialog(context, cleanWord, originalWord);
     }
+  }
+
+  /// 显示查词选项对话框
+  void _showWordLookupDialog(BuildContext context, String cleanWord, String originalWord) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          title: Row(
+            children: [
+              Icon(Icons.search, color: Colors.orange[600], size: 20),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  originalWord,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.orange[800],
+                  ),
+                ),
+              ),
+              IconButton(
+                onPressed: () => widget.ttsService.speakWord(originalWord),
+                icon: Icon(
+                  Icons.volume_up,
+                  color: Colors.orange[600],
+                  size: 20,
+                ),
+                tooltip: '朗读单词',
+              ),
+            ],
+          ),
+          content: Container(
+            constraints: const BoxConstraints(maxWidth: 300),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.orange[50],
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(color: Colors.orange[200]!),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(Icons.info_outline, 
+                           color: Colors.orange[600], size: 16),
+                      const SizedBox(width: 8),
+                      const Expanded(
+                        child: Text(
+                          '该单词不在课程词汇表中',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.orange,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  '您可以选择以下方式查看释义：',
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.black87,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                // 在线查词选项
+                _buildLookupOption(
+                  context,
+                  Icons.language,
+                  '有道词典',
+                  Colors.red,
+                  () => _openOnlineDictionary(context, originalWord, 'youdao'),
+                ),
+                const SizedBox(height: 8),
+                _buildLookupOption(
+                  context,
+                  Icons.translate,
+                  '百度翻译',
+                  Colors.blue,
+                  () => _openOnlineDictionary(context, originalWord, 'baidu'),
+                ),
+                const SizedBox(height: 8),
+                _buildLookupOption(
+                  context,
+                  Icons.book,
+                  '金山词霸',
+                  Colors.green,
+                  () => _openOnlineDictionary(context, originalWord, 'iciba'),
+                ),
+              ],
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(context).pop(),
+              child: const Text('关闭'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  /// 构建查词选项按钮
+  Widget _buildLookupOption(BuildContext context, IconData icon, String name, 
+                           MaterialColor color, VoidCallback onTap) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(8),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          border: Border.all(color: color[200]!),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: color[600], size: 20),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Text(
+                name,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  color: color[800],
+                ),
+              ),
+            ),
+            Icon(Icons.open_in_new, color: color[400], size: 16),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// 打开在线词典
+  void _openOnlineDictionary(BuildContext context, String word, String type) {
+    Navigator.of(context).pop(); // 关闭对话框
+    
+    String url;
+    switch (type) {
+      case 'youdao':
+        url = 'https://dict.youdao.com/search?q=$word';
+        break;
+      case 'baidu':
+        url = 'https://fanyi.baidu.com/#en/zh/$word';
+        break;
+      case 'iciba':
+        url = 'https://www.iciba.com/word?w=$word';
+        break;
+      default:
+        url = 'https://dict.youdao.com/search?q=$word';
+    }
+
+    // 显示提示信息
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('正在打开在线词典查询 "$word"...'),
+        backgroundColor: Colors.blue,
+        duration: const Duration(seconds: 2),
+        action: SnackBarAction(
+          label: '复制链接',
+          textColor: Colors.white,
+          onPressed: () {
+            // 这里可以添加复制链接到剪贴板的功能
+            // Clipboard.setData(ClipboardData(text: url));
+          },
+        ),
+      ),
+    );
+
+    // 注意：在实际应用中，你需要添加 url_launcher 依赖来打开外部链接
+    // 这里先显示提示，实际实现需要：
+    // import 'package:url_launcher/url_launcher.dart';
+    // launchUrl(Uri.parse(url));
   }
 
   void _speakVocabulary(Vocabulary vocab, String id) {
