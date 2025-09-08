@@ -1940,6 +1940,7 @@ class _LessonContentState extends State<LessonContent>
 
         widgets.add(GestureDetector(
           onTap: () => _speakWord(part),
+          onLongPress: () => _showWordMeaning(context, cleanWord, part),
           child: Container(
             decoration: BoxDecoration(
               color: shouldHighlight ? Colors.yellow[200] : null,
@@ -2633,6 +2634,131 @@ class _LessonContentState extends State<LessonContent>
 
   void _speakWord(String word) {
     widget.ttsService.speakWord(word);
+  }
+
+  /// 显示单词释义弹窗
+  void _showWordMeaning(BuildContext context, String cleanWord, String originalWord) {
+    // 查找对应的词汇释义
+    final vocabulary = widget.lesson.vocabulary.firstWhere(
+      (vocab) => vocab.word.toLowerCase() == cleanWord,
+      orElse: () => Vocabulary(word: originalWord, meaning: '未找到释义'),
+    );
+
+    // 如果找到了词汇，显示弹窗
+    if (vocabulary.meaning != '未找到释义') {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            title: Row(
+              children: [
+                Icon(Icons.translate, color: Colors.blue[600], size: 20),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    vocabulary.word,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue[800],
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => widget.ttsService.speakWord(vocabulary.word),
+                  icon: Icon(
+                    Icons.volume_up,
+                    color: Colors.blue[600],
+                    size: 20,
+                  ),
+                  tooltip: '朗读单词',
+                ),
+              ],
+            ),
+            content: Container(
+              constraints: const BoxConstraints(maxWidth: 300),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.blue[50],
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.blue[200]!),
+                    ),
+                    child: Row(
+                      children: [
+                        Icon(Icons.lightbulb_outline, 
+                             color: Colors.blue[600], size: 16),
+                        const SizedBox(width: 8),
+                        const Text(
+                          '中文释义',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+                  Text(
+                    vocabulary.meaning,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      color: Colors.black87,
+                      height: 1.4,
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      TextButton.icon(
+                        onPressed: () => widget.ttsService.speakWord(vocabulary.word),
+                        icon: const Icon(Icons.play_circle, size: 18),
+                        label: const Text('朗读单词'),
+                        style: TextButton.styleFrom(
+                          foregroundColor: Colors.green[600],
+                        ),
+                      ),
+                      TextButton.icon(
+                        onPressed: () => widget.ttsService.speak(vocabulary.meaning.split(';')[0]),
+                        icon: const Icon(Icons.record_voice_over, size: 18),
+                        label: const Text('朗读释义'),
+                        style: TextButton.styleFrom(
+                          foregroundColor: Colors.purple[600],
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(context).pop(),
+                child: const Text('关闭'),
+              ),
+            ],
+          );
+        },
+      );
+    } else {
+      // 如果没有找到释义，显示简单提示
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('未找到单词 "$originalWord" 的释义'),
+          backgroundColor: Colors.orange,
+          duration: const Duration(seconds: 2),
+        ),
+      );
+    }
   }
 
   void _speakVocabulary(Vocabulary vocab, String id) {
