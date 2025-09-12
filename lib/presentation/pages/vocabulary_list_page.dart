@@ -55,6 +55,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
       }
     });
     // 记录最后点击的单词
+    print('🖱️ 用户点击了单词: $word');
     _saveLastClickedWord(word);
   }
 
@@ -131,6 +132,18 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     final prefs = await SharedPreferences.getInstance();
     _lastClickedWord = prefs.getString('last_clicked_word');
     print('🔍 加载的最后点击单词: $_lastClickedWord');
+    
+    // 如果加载到的是"donated"，说明是旧数据，清除它
+    if (_lastClickedWord == 'donated') {
+      print('⚠️ 检测到旧数据"donated"，清除记录');
+      await prefs.remove('last_clicked_word');
+      _lastClickedWord = null;
+      print('✅ 已清除"donated"记录');
+      
+      // 验证清除是否成功
+      final clearedWord = prefs.getString('last_clicked_word');
+      print('🔍 验证清除结果: $clearedWord');
+    }
   }
 
   /// 保存最后点击的单词
@@ -139,6 +152,10 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     await prefs.setString('last_clicked_word', word);
     _lastClickedWord = word;
     print('💾 保存的最后点击单词: $word');
+    
+    // 验证保存是否成功
+    final savedWord = prefs.getString('last_clicked_word');
+    print('✅ 验证保存结果: $savedWord');
   }
 
   /// 滚动到指定单词位置
@@ -356,6 +373,33 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
+          // 调试按钮 - 显示当前记录的单词
+          IconButton(
+            icon: const Icon(Icons.info),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('当前记录的单词: ${_lastClickedWord ?? "无"}'),
+                  duration: const Duration(seconds: 2),
+                ),
+              );
+            },
+            tooltip: '显示当前记录的单词',
+          ),
+          // 测试按钮 - 手动测试保存功能
+          IconButton(
+            icon: const Icon(Icons.bug_report),
+            onPressed: () async {
+              await _saveLastClickedWord('test_word');
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('已保存测试单词"test_word"'),
+                  duration: Duration(seconds: 2),
+                ),
+              );
+            },
+            tooltip: '测试保存功能',
+          ),
           if (_lastClickedWord != null) ...[
             GestureDetector(
               onTap: () => _scrollToWord(_lastClickedWord!),
