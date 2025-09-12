@@ -255,27 +255,41 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
                 ],
               ],
             ),
-            title: Text(
-              vocab.word,
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w700,
-                color: isUnfamiliar ? Colors.orange[800] : Colors.black87,
-                fontFamily: 'TimesNewRoman',
-              ),
-            ),
-            subtitle: zh.isNotEmpty && zh != eng
-                ? Text(
-                    zh,
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+            title: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    vocab.word,
                     style: TextStyle(
-                      fontSize: 12,
-                      color: isUnfamiliar ? Colors.orange[600] : Colors.black54,
+                      fontSize: 24, // 从18扩大到24
+                      fontWeight: FontWeight.w700,
+                      color: isUnfamiliar ? Colors.orange[800] : Colors.black87,
                       fontFamily: 'TimesNewRoman',
                     ),
-                  )
-                : null,
+                  ),
+                ),
+                if (zh.isNotEmpty && zh != eng)
+                  Container(
+                    margin: const EdgeInsets.only(left: 12),
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green[50],
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(color: Colors.green[200]!),
+                    ),
+                    child: Text(
+                      zh,
+                      style: TextStyle(
+                        fontSize: 16, // 从12扩大到16
+                        color: isUnfamiliar ? Colors.orange[600] : Colors.green[700],
+                        fontFamily: 'TimesNewRoman',
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            subtitle: null, // 移除subtitle，因为中文含义已经移到右侧
             children: [
               _buildDefinitionRow('英文释义', eng, Colors.indigo),
               const SizedBox(height: 8),
