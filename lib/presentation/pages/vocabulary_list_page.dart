@@ -15,6 +15,7 @@ class VocabularyListPage extends StatefulWidget {
 class _VocabularyListPageState extends State<VocabularyListPage> {
   Set<String> _unfamiliarWords = {};
   FlutterTts _flutterTts = FlutterTts();
+  Set<String> _visibleMeanings = {}; // 记录哪些单词的中文含义已显示
 
   @override
   void initState() {
@@ -38,6 +39,17 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     } catch (e) {
       print('TTS朗读失败: $e');
     }
+  }
+
+  /// 切换中文含义显示状态
+  void _toggleMeaningVisibility(String word) {
+    setState(() {
+      if (_visibleMeanings.contains(word)) {
+        _visibleMeanings.remove(word);
+      } else {
+        _visibleMeanings.add(word);
+      }
+    });
   }
 
   /// 加载不熟悉单词列表
@@ -301,21 +313,32 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
                   constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
                 ),
                 if (zh.isNotEmpty && zh != eng)
-                  Container(
-                    margin: const EdgeInsets.only(left: 8),
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.green[50],
-                      borderRadius: BorderRadius.circular(6),
-                      border: Border.all(color: Colors.green[200]!),
-                    ),
-                    child: Text(
-                      zh,
-                      style: TextStyle(
-                        fontSize: 16, // 从12扩大到16
-                        color: isUnfamiliar ? Colors.orange[600] : Colors.green[700],
-                        fontFamily: 'TimesNewRoman',
-                        fontWeight: FontWeight.w500,
+                  GestureDetector(
+                    onTap: () => _toggleMeaningVisibility(vocab.word),
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 8),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: _visibleMeanings.contains(vocab.word) 
+                            ? Colors.green[50] 
+                            : Colors.grey[100],
+                        borderRadius: BorderRadius.circular(6),
+                        border: Border.all(
+                          color: _visibleMeanings.contains(vocab.word) 
+                              ? Colors.green[200]! 
+                              : Colors.grey[300]!,
+                        ),
+                      ),
+                      child: Text(
+                        _visibleMeanings.contains(vocab.word) ? zh : '点击显示',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: _visibleMeanings.contains(vocab.word)
+                              ? (isUnfamiliar ? Colors.orange[600] : Colors.green[700])
+                              : Colors.grey[600],
+                          fontFamily: 'TimesNewRoman',
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ),
