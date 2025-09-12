@@ -551,10 +551,10 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
         ),
         child: Theme(
           data: ThemeData().copyWith(dividerColor: Colors.transparent),
-          child: GestureDetector(
-            onTap: () {
-              // 点击整个单词容器时记住位置
-              print('🖱️ 用户点击了单词容器: ${vocab.word}');
+          child: ExpansionTile(
+            onExpansionChanged: (expanded) {
+              // 无论展开还是收起都记住位置
+              print('🖱️ 用户点击了单词容器: ${vocab.word} (展开: $expanded)');
               print('📝 当前记录的单词: $_lastClickedWord');
               _saveLastClickedWord(vocab.word);
               print('💾 保存后的单词: $_lastClickedWord');
@@ -569,7 +569,6 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
                 ),
               );
             },
-            child: ExpansionTile(
               tilePadding:
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
               childrenPadding:
@@ -669,7 +668,6 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
               const SizedBox(height: 8),
             ],
           ),
-            ),
         ),
       ),
     );
