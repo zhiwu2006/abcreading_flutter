@@ -55,8 +55,18 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
       }
     });
     // 记录最后点击的单词
-    print('🖱️ 用户点击了单词: $word');
+    print('🖱️ 用户点击了中文含义容器: $word');
     _saveLastClickedWord(word);
+    
+    // 显示调试信息
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('🎯 已记住单词位置: $word (通过中文含义容器)'),
+        duration: const Duration(seconds: 2),
+        backgroundColor: Colors.green[600],
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   /// 加载不熟悉单词列表
@@ -531,6 +541,16 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
               // 点击整个单词容器时记住位置
               print('🖱️ 用户点击了单词容器: ${vocab.word}');
               _saveLastClickedWord(vocab.word);
+              
+              // 显示调试信息
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('🎯 已记住单词位置: ${vocab.word}'),
+                  duration: const Duration(seconds: 2),
+                  backgroundColor: Colors.blue[600],
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
             },
             child: ExpansionTile(
               tilePadding:
