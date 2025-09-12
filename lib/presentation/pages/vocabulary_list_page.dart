@@ -633,7 +633,6 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
             ],
           ),
             ),
-          ),
         ),
       ),
     );
