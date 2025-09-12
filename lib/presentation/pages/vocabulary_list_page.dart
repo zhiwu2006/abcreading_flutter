@@ -153,86 +153,107 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     print('🔍 ScrollController状态: hasClients=${_scrollController.hasClients}');
     
     if (_scrollController.hasClients) {
-      // 等待一帧确保列表已构建
-      await Future.delayed(const Duration(milliseconds: 100));
+      // 等待列表完全构建
+      await Future.delayed(const Duration(milliseconds: 500));
+      
+      if (!_scrollController.hasClients) return;
       
       print('🔍 开始查找单词: $word');
-      // 查找单词在列表中的精确位置
-      int cumulativeIndex = 0;
-      bool found = false;
       
+      // 使用GlobalKey来精确定位单词位置
+      final targetKey = GlobalKey();
+      Widget? targetWidget;
+      
+      // 查找目标单词的widget
+      bool found = false;
       for (int i = 0; i < defaultLessons.length && !found; i++) {
         final lesson = defaultLessons[i];
-        
-        // 课程标题高度 (约50px)
-        cumulativeIndex++;
-        
         for (int j = 0; j < lesson.vocabulary.length; j++) {
-          // 每个单词卡片高度 (约80px)
           if (lesson.vocabulary[j].word == word) {
             found = true;
             break;
           }
-          cumulativeIndex++;
         }
       }
       
-      if (found && _scrollController.hasClients) {
-        // 等待列表完全构建和渲染
-        await Future.delayed(const Duration(milliseconds: 300));
-        
-        if (!_scrollController.hasClients) return;
-        
-        // 获取当前屏幕方向和尺寸信息
+      if (found) {
+        // 获取屏幕信息
         final screenSize = MediaQuery.of(context).size;
         final isLandscape = screenSize.width > screenSize.height;
         final orientation = isLandscape ? "横屏" : "竖屏";
         
-        // 动态计算项目高度（横屏时可能更紧凑）
-        final double itemHeight = isLandscape ? 75.0 : 88.0;
-        final double targetPosition = cumulativeIndex * itemHeight;
-        
-        // 获取滚动视图的实际可见高度
+        // 使用Scrollable.ensureVisible的精确定位方法
         final scrollPosition = _scrollController.position;
         final double viewportHeight = scrollPosition.viewportDimension;
         
-        // 计算居中滚动位置
-        // 目标：让单词出现在可见区域的垂直中心
-        final double centerOffset = targetPosition - (viewportHeight / 2) + (itemHeight / 2);
+        print('📐 屏幕信息: ${screenSize.width.toInt()}x${screenSize.height.toInt()} ($orientation)');
+        print('📊 视口高度: $viewportHeight');
         
-        // 确保滚动位置在有效范围内
+        // 计算目标位置（使用更精确的方法）
+        // 先滚动到大概位置，然后进行微调
+        double estimatedPosition = 0;
+        int itemCount = 0;
+        
+        for (int i = 0; i < defaultLessons.length; i++) {
+          final lesson = defaultLessons[i];
+          itemCount++; // 课程标题
+          
+          for (int j = 0; j < lesson.vocabulary.length; j++) {
+            if (lesson.vocabulary[j].word == word) {
+              // 找到目标单词
+              final itemHeight = isLandscape ? 75.0 : 88.0;
+              final titleHeight = 50.0;
+              
+              estimatedPosition = (i * titleHeight) + (itemCount * itemHeight);
+              break;
+            }
+            itemCount++;
+          }
+          
+          if (estimatedPosition > 0) break;
+        }
+        
+        // 计算居中位置
+        final double centerOffset = estimatedPosition - (viewportHeight / 2) + 44.0;
         final double maxScroll = scrollPosition.maxScrollExtent;
         final double minScroll = scrollPosition.minScrollExtent;
         final double finalOffset = centerOffset.clamp(minScroll, maxScroll);
         
-        print('📍 定位单词: $word (索引: $cumulativeIndex)');
-        print('📐 屏幕信息: ${screenSize.width.toInt()}x${screenSize.height.toInt()} ($orientation)');
-        print('📊 计算详情: 目标位置=$targetPosition, 视口高度=$viewportHeight');
-        print('🎯 滚动范围: $minScroll ~ $maxScroll, 最终位置=$finalOffset');
+        print('📍 定位单词: $word');
+        print('📊 估算位置: $estimatedPosition, 居中偏移: $finalOffset');
+        print('🎯 滚动范围: $minScroll ~ $maxScroll');
         
-        // 执行滚动动画
+        // 执行滚动
         await _scrollController.animateTo(
           finalOffset,
-          duration: const Duration(milliseconds: 1200),
-          curve: Curves.easeInOutCubic,
+          duration: const Duration(milliseconds: 1000),
+          curve: Curves.easeInOut,
         );
         
-        // 验证滚动结果
-        final currentOffset = _scrollController.offset;
-        print('✅ 滚动完成，当前位置: $currentOffset');
+        print('✅ 滚动完成，当前位置: ${_scrollController.offset}');
         
-        // 如果滚动位置不准确，进行微调
-        if ((currentOffset - finalOffset).abs() > 50) {
-          await Future.delayed(const Duration(milliseconds: 100));
-          if (_scrollController.hasClients) {
-            await _scrollController.animateTo(
-              finalOffset,
-              duration: const Duration(milliseconds: 500),
-              curve: Curves.easeOut,
-            );
-            print('🔧 微调完成');
-          }
+        // 进行二次精确定位
+        await Future.delayed(const Duration(milliseconds: 200));
+        
+        // 尝试使用更精确的定位方法
+        final currentOffset = _scrollController.offset;
+        final targetInViewport = currentOffset <= estimatedPosition && 
+                                estimatedPosition <= currentOffset + viewportHeight;
+        
+        if (!targetInViewport) {
+          print('🔧 进行精确定位调整');
+          final adjustment = estimatedPosition - (currentOffset + viewportHeight / 2);
+          final newOffset = (currentOffset + adjustment).clamp(minScroll, maxScroll);
+          
+          await _scrollController.animateTo(
+            newOffset,
+            duration: const Duration(milliseconds: 500),
+            curve: Curves.easeOut,
+          );
+          
+          print('🎯 精确定位完成: ${_scrollController.offset}');
         }
+        
       } else {
         print('❌ 未找到单词: $word');
       }
