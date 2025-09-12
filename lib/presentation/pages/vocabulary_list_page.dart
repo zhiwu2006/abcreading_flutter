@@ -55,6 +55,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
       }
     });
     // 记录最后点击的单词
+    print('🖱️ 用户点击了单词: $word');
     _saveLastClickedWord(word);
   }
 
@@ -130,11 +131,13 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
   Future<void> _loadLastClickedWord() async {
     final prefs = await SharedPreferences.getInstance();
     _lastClickedWord = prefs.getString('last_clicked_word');
+    print('🔍 加载的单词: $_lastClickedWord');
     
     // 如果加载到的是"donated"，说明是旧数据，清除它
     if (_lastClickedWord == 'donated') {
       await prefs.remove('last_clicked_word');
       _lastClickedWord = null;
+      print('🗑️ 已清除旧数据');
     }
   }
 
@@ -143,6 +146,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('last_clicked_word', word);
     _lastClickedWord = word;
+    print('✅ 已保存单词: $word');
   }
 
   /// 滚动到指定单词位置
@@ -178,11 +182,17 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
         final double maxOffset = _scrollController.position.maxScrollExtent;
         final double clampedOffset = targetOffset.clamp(0.0, maxOffset);
         
+        print('📍 滚动到位置: $clampedOffset (目标单词: $word, 索引: $cumulativeIndex)');
+        
         await _scrollController.animateTo(
           clampedOffset,
           duration: const Duration(milliseconds: 800),
           curve: Curves.easeInOut,
         );
+        
+        print('✅ 滚动完成');
+      } else {
+        print('❌ 未找到单词: $word');
       }
     }
   }
@@ -335,6 +345,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     // 页面构建完成后自动滚动到上次位置（仅首次）
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!_hasAutoScrolled && _lastClickedWord != null && _scrollController.hasClients) {
+        print('🎯 开始自动滚动到单词: $_lastClickedWord');
         _hasAutoScrolled = true;
         _scrollToWord(_lastClickedWord!);
       }
