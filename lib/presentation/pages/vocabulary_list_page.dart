@@ -174,25 +174,32 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
       }
       
       if (found && _scrollController.hasClients) {
-        // 计算滚动位置
-        // 课程标题: 50px, 单词卡片: 80px, 间距: 8px
-        final double targetOffset = cumulativeIndex * 88.0; // 平均高度
+        // 等待列表完全构建
+        await Future.delayed(const Duration(milliseconds: 200));
         
-        // 获取屏幕高度，将目标单词定位在屏幕中间
-        final double screenHeight = MediaQuery.of(context).size.height;
-        final double appBarHeight = kToolbarHeight + MediaQuery.of(context).padding.top;
-        final double availableHeight = screenHeight - appBarHeight;
-        final double centerOffset = targetOffset - (availableHeight / 2) + 44.0; // 44是单词卡片高度的一半
+        if (!_scrollController.hasClients) return;
         
-        final double maxOffset = _scrollController.position.maxScrollExtent;
-        final double clampedOffset = centerOffset.clamp(0.0, maxOffset);
+        // 计算目标单词的大概位置（每个项目平均高度88px）
+        final double itemHeight = 88.0;
+        final double targetPosition = cumulativeIndex * itemHeight;
         
-        print('📍 滚动到位置: $clampedOffset (目标单词: $word, 索引: $cumulativeIndex)');
-        print('📐 屏幕信息: 总高度=$screenHeight, 可用高度=$availableHeight, 中心偏移=$centerOffset');
+        // 获取视口高度（可见区域高度）
+        final double viewportHeight = _scrollController.position.viewportDimension;
+        
+        // 计算滚动位置：让目标单词出现在视口中间
+        final double scrollOffset = targetPosition - (viewportHeight / 2) + (itemHeight / 2);
+        
+        // 限制滚动范围
+        final double maxScroll = _scrollController.position.maxScrollExtent;
+        final double minScroll = _scrollController.position.minScrollExtent;
+        final double clampedOffset = scrollOffset.clamp(minScroll, maxScroll);
+        
+        print('📍 定位单词: $word (索引: $cumulativeIndex)');
+        print('📐 计算信息: 目标位置=$targetPosition, 视口高度=$viewportHeight, 滚动到=$clampedOffset');
         
         await _scrollController.animateTo(
           clampedOffset,
-          duration: const Duration(milliseconds: 800),
+          duration: const Duration(milliseconds: 1000),
           curve: Curves.easeInOut,
         );
         
