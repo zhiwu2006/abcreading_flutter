@@ -363,14 +363,27 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          '单词列表',
-          style: TextStyle(
-            fontFamily: 'TimesNewRoman',
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '单词列表',
+              style: TextStyle(
+                fontFamily: 'TimesNewRoman',
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+            if (_lastClickedWord != null)
+              Text(
+                '记录: $_lastClickedWord',
+                style: const TextStyle(
+                  fontSize: 12,
+                  color: Colors.white70,
+                ),
+              ),
+          ],
         ),
         backgroundColor: const Color(0xFFF59E0B),
         foregroundColor: Colors.white,
@@ -380,6 +393,20 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
+          // 调试按钮 - 显示当前记录的单词
+          IconButton(
+            icon: const Icon(Icons.info),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('当前记录的单词: ${_lastClickedWord ?? "无"}'),
+                  duration: const Duration(seconds: 3),
+                  backgroundColor: Colors.orange[600],
+                ),
+              );
+            },
+            tooltip: '显示当前记录的单词',
+          ),
           if (_lastClickedWord != null) ...[
             GestureDetector(
               onTap: () => _scrollToWord(_lastClickedWord!),
