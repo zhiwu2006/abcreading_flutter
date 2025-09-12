@@ -130,6 +130,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
   Future<void> _loadLastClickedWord() async {
     final prefs = await SharedPreferences.getInstance();
     _lastClickedWord = prefs.getString('last_clicked_word');
+    print('🔍 加载的最后点击单词: $_lastClickedWord');
   }
 
   /// 保存最后点击的单词
@@ -137,6 +138,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('last_clicked_word', word);
     _lastClickedWord = word;
+    print('💾 保存的最后点击单词: $word');
   }
 
   /// 滚动到指定单词位置
@@ -230,6 +232,49 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     );
   }
 
+  /// 清除最后点击的单词记录
+  Future<void> _clearLastClickedWord() async {
+    // 显示确认对话框
+    final shouldClear = await showDialog<bool>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('清除定位记录'),
+        content: Text('确定要清除当前记录的单词"$_lastClickedWord"吗？\n\n清除后下次打开将不会自动定位。'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text('取消'),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange[600],
+            ),
+            child: const Text('清除', style: TextStyle(color: Colors.white)),
+          ),
+        ],
+      ),
+    );
+
+    if (shouldClear == true) {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.remove('last_clicked_word');
+      setState(() {
+        _lastClickedWord = null;
+        _hasAutoScrolled = false;
+      });
+      print('🗑️ 已清除最后点击的单词记录');
+      
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('✅ 定位记录已清除'),
+          backgroundColor: Colors.green,
+          duration: Duration(seconds: 2),
+        ),
+      );
+    }
+  }
+
   /// 保存不熟悉单词列表
   Future<void> _saveUnfamiliarWords() async {
     final prefs = await SharedPreferences.getInstance();
@@ -311,12 +356,22 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
-          if (_lastClickedWord != null)
-            IconButton(
-              icon: const Icon(Icons.my_location),
-              onPressed: () => _scrollToWord(_lastClickedWord!),
-              tooltip: '定位到上次查看的单词',
+          if (_lastClickedWord != null) ...[
+            GestureDetector(
+              onTap: () => _scrollToWord(_lastClickedWord!),
+              onLongPress: () => _clearLastClickedWord(),
+              child: IconButton(
+                icon: const Icon(Icons.my_location),
+                onPressed: null, // 由GestureDetector处理
+                tooltip: '点击定位到上次查看的单词，长按清除记录',
+              ),
             ),
+            IconButton(
+              icon: const Icon(Icons.clear),
+              onPressed: _clearLastClickedWord,
+              tooltip: '清除定位记录',
+            ),
+          ],
           if (_unfamiliarWords.isNotEmpty)
             IconButton(
               icon: Badge(
