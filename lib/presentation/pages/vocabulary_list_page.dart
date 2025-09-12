@@ -16,11 +16,15 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
   Set<String> _unfamiliarWords = {};
   FlutterTts _flutterTts = FlutterTts();
   Set<String> _visibleMeanings = {}; // 记录哪些单词的中文含义已显示
+  ScrollController _scrollController = ScrollController();
+  String? _lastClickedWord; // 记录最后点击的单词
+  bool _hasAutoScrolled = false; // 标记是否已自动滚动
 
   @override
   void initState() {
     super.initState();
     _loadUnfamiliarWords();
+    _loadLastClickedWord();
     _initTts();
   }
 
@@ -50,6 +54,8 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
         _visibleMeanings.add(word);
       }
     });
+    // 记录最后点击的单词
+    _saveLastClickedWord(word);
   }
 
   /// 加载不熟悉单词列表
@@ -120,6 +126,70 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     }
   }
 
+  /// 加载最后点击的单词
+  Future<void> _loadLastClickedWord() async {
+    final prefs = await SharedPreferences.getInstance();
+    _lastClickedWord = prefs.getString('last_clicked_word');
+  }
+
+  /// 保存最后点击的单词
+  Future<void> _saveLastClickedWord(String word) async {
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setString('last_clicked_word', word);
+    _lastClickedWord = word;
+  }
+
+  /// 滚动到指定单词位置
+  Future<void> _scrollToWord(String word) async {
+    if (_scrollController.hasClients) {
+      // 等待一帧确保列表已构建
+      await Future.delayed(const Duration(milliseconds: 100));
+      
+      // 查找单词在列表中的精确位置
+      int cumulativeIndex = 0;
+      bool found = false;
+      
+      for (int i = 0; i < defaultLessons.length && !found; i++) {
+        final lesson = defaultLessons[i];
+        
+        // 课程标题高度 (约50px)
+        cumulativeIndex++;
+        
+        for (int j = 0; j < lesson.vocabulary.length; j++) {
+          // 每个单词卡片高度 (约80px)
+          if (lesson.vocabulary[j].word == word) {
+            found = true;
+            break;
+          }
+          cumulativeIndex++;
+        }
+      }
+      
+      if (found && _scrollController.hasClients) {
+        // 计算滚动位置
+        // 课程标题: 50px, 单词卡片: 80px, 间距: 8px
+        final double targetOffset = cumulativeIndex * 88.0; // 平均高度
+        final double maxOffset = _scrollController.position.maxScrollExtent;
+        final double clampedOffset = targetOffset.clamp(0.0, maxOffset);
+        
+        await _scrollController.animateTo(
+          clampedOffset,
+          duration: const Duration(milliseconds: 800),
+          curve: Curves.easeInOut,
+        );
+        
+        // 显示定位提示
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('📍 已定位到单词: $word'),
+            duration: const Duration(seconds: 2),
+            backgroundColor: Colors.blue[600],
+          ),
+        );
+      }
+    }
+  }
+
   /// 保存不熟悉单词列表
   Future<void> _saveUnfamiliarWords() async {
     final prefs = await SharedPreferences.getInstance();
@@ -174,6 +244,14 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
 
   @override
   Widget build(BuildContext context) {
+    // 页面构建完成后自动滚动到上次位置（仅首次）
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!_hasAutoScrolled && _lastClickedWord != null && _scrollController.hasClients) {
+        _hasAutoScrolled = true;
+        _scrollToWord(_lastClickedWord!);
+      }
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -193,6 +271,12 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         actions: [
+          if (_lastClickedWord != null)
+            IconButton(
+              icon: const Icon(Icons.my_location),
+              onPressed: () => _scrollToWord(_lastClickedWord!),
+              tooltip: '定位到上次查看的单词',
+            ),
           if (_unfamiliarWords.isNotEmpty)
             IconButton(
               icon: Badge(
@@ -214,6 +298,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
         ),
         child: SafeArea(
           child: ListView(
+            controller: _scrollController,
             padding: const EdgeInsets.all(16),
             children: _buildLessonSections(),
           ),
@@ -473,6 +558,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
   @override
   void dispose() {
     _flutterTts.stop();
+    _scrollController.dispose();
     super.dispose();
   }
 }
