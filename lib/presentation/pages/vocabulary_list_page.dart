@@ -466,7 +466,10 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           ),
           if (_lastClickedWord != null) ...[
             GestureDetector(
-              onTap: () => _scrollToWord(_lastClickedWord!),
+              onTap: () {
+                print('🎯 手动点击定位按钮，目标单词: $_lastClickedWord');
+                _scrollToWord(_lastClickedWord!);
+              },
               onLongPress: () => _clearLastClickedWord(),
               child: IconButton(
                 icon: const Icon(Icons.my_location),
@@ -476,7 +479,10 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
             ),
             IconButton(
               icon: const Icon(Icons.clear),
-              onPressed: _clearLastClickedWord,
+              onPressed: () {
+                print('🗑️ 手动点击清除按钮');
+                _clearLastClickedWord();
+              },
               tooltip: '清除定位记录',
             ),
           ],
