@@ -177,10 +177,18 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
         // 计算滚动位置
         // 课程标题: 50px, 单词卡片: 80px, 间距: 8px
         final double targetOffset = cumulativeIndex * 88.0; // 平均高度
+        
+        // 获取屏幕高度，将目标单词定位在屏幕中间
+        final double screenHeight = MediaQuery.of(context).size.height;
+        final double appBarHeight = kToolbarHeight + MediaQuery.of(context).padding.top;
+        final double availableHeight = screenHeight - appBarHeight;
+        final double centerOffset = targetOffset - (availableHeight / 2) + 44.0; // 44是单词卡片高度的一半
+        
         final double maxOffset = _scrollController.position.maxScrollExtent;
-        final double clampedOffset = targetOffset.clamp(0.0, maxOffset);
+        final double clampedOffset = centerOffset.clamp(0.0, maxOffset);
         
         print('📍 滚动到位置: $clampedOffset (目标单词: $word, 索引: $cumulativeIndex)');
+        print('📐 屏幕信息: 总高度=$screenHeight, 可用高度=$availableHeight, 中心偏移=$centerOffset');
         
         await _scrollController.animateTo(
           clampedOffset,
