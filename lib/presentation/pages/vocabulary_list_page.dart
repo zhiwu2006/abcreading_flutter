@@ -177,15 +177,6 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           duration: const Duration(milliseconds: 800),
           curve: Curves.easeInOut,
         );
-        
-        // 显示定位提示
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('📍 已定位到单词: $word'),
-            duration: const Duration(seconds: 2),
-            backgroundColor: Colors.blue[600],
-          ),
-        );
       }
     }
   }
@@ -220,15 +211,6 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           clampedOffset,
           duration: const Duration(milliseconds: 800),
           curve: Curves.easeInOut,
-        );
-        
-        // 显示定位提示
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('📍 已定位到课程: Lesson $lessonNumber'),
-            duration: const Duration(seconds: 2),
-            backgroundColor: Colors.green[600],
-          ),
         );
       }
     }
