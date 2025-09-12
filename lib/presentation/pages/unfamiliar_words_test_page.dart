@@ -7,10 +7,12 @@ import '../../models/lesson.dart';
 
 class UnfamiliarWordsTestPage extends StatefulWidget {
   final List<String> unfamiliarWords;
+  final Function(String word, bool isCorrect)? onTestResult;
 
   const UnfamiliarWordsTestPage({
     super.key,
     required this.unfamiliarWords,
+    this.onTestResult,
   });
 
   @override
@@ -135,13 +137,19 @@ class _UnfamiliarWordsTestPageState extends State<UnfamiliarWordsTestPage> {
       _selectedAnswerIndex = index;
     });
 
-    final isCorrect = index == _questions[_currentQuestionIndex].correctIndex;
+    final currentQuestion = _questions[_currentQuestionIndex];
+    final isCorrect = index == currentQuestion.correctIndex;
     if (isCorrect) {
       _correctAnswers++;
     }
 
+    // 通知测试结果
+    if (widget.onTestResult != null) {
+      widget.onTestResult!(currentQuestion.word, isCorrect);
+    }
+
     // 朗读单词
-    await _speakWord(_questions[_currentQuestionIndex].word);
+    await _speakWord(currentQuestion.word);
 
     // 延迟后进入下一题
     await Future.delayed(Duration(seconds: isCorrect ? 1 : 2));

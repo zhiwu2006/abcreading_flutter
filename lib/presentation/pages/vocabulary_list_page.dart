@@ -61,6 +61,65 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     });
   }
 
+  /// 加载单词测试正确次数
+  Future<Map<String, int>> _loadWordTestCounts() async {
+    final prefs = await SharedPreferences.getInstance();
+    final countsJson = prefs.getString('word_test_counts');
+    if (countsJson != null) {
+      try {
+        final Map<String, dynamic> counts = Map<String, dynamic>.from(
+          Uri.splitQueryString(countsJson)
+        );
+        return counts.map((key, value) => MapEntry(key, int.tryParse(value) ?? 0));
+      } catch (e) {
+        print('解析单词测试次数失败: $e');
+      }
+    }
+    return {};
+  }
+
+  /// 保存单词测试正确次数
+  Future<void> _saveWordTestCounts(Map<String, int> counts) async {
+    final prefs = await SharedPreferences.getInstance();
+    final countsJson = Uri(queryParameters: counts.map((key, value) => MapEntry(key, value.toString()))).query;
+    await prefs.setString('word_test_counts', countsJson);
+  }
+
+  /// 更新单词测试正确次数
+  Future<void> _updateWordTestCount(String word, bool isCorrect) async {
+    final counts = await _loadWordTestCounts();
+    if (isCorrect) {
+      counts[word] = (counts[word] ?? 0) + 1;
+      await _saveWordTestCounts(counts);
+      
+      // 如果达到3次正确，移出不熟悉列表
+      if (counts[word]! >= 3) {
+        setState(() {
+          _unfamiliarWords.remove(word);
+        });
+        await _saveUnfamiliarWords();
+        
+        // 清除该单词的测试记录
+        counts.remove(word);
+        await _saveWordTestCounts(counts);
+        
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('🎉 "$word" 已连续答对3次，自动移出不熟悉列表！'),
+            backgroundColor: Colors.green,
+            duration: const Duration(seconds: 3),
+          ),
+        );
+      }
+    } else {
+      // 答错时重置计数
+      if (counts.containsKey(word)) {
+        counts.remove(word);
+        await _saveWordTestCounts(counts);
+      }
+    }
+  }
+
   /// 保存不熟悉单词列表
   Future<void> _saveUnfamiliarWords() async {
     final prefs = await SharedPreferences.getInstance();
@@ -104,9 +163,13 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
       MaterialPageRoute(
         builder: (context) => UnfamiliarWordsTestPage(
           unfamiliarWords: _unfamiliarWords.toList(),
+          onTestResult: _updateWordTestCount,
         ),
       ),
-    );
+    ).then((_) {
+      // 测试完成后重新加载不熟悉单词列表
+      _loadUnfamiliarWords();
+    });
   }
 
   @override
