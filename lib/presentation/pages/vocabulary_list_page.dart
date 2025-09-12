@@ -54,19 +54,7 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
         _visibleMeanings.add(word);
       }
     });
-    // 记录最后点击的单词
-    print('🖱️ 用户点击了中文含义容器: $word');
-    _saveLastClickedWord(word);
-    
-    // 显示调试信息
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text('🎯 已记住单词位置: $word (通过中文含义容器)'),
-        duration: const Duration(seconds: 2),
-        backgroundColor: Colors.green[600],
-        behavior: SnackBarBehavior.floating,
-      ),
-    );
+    // 注意：这里不再单独保存单词位置，由整个单词容器的点击来统一处理
   }
 
   /// 加载不熟悉单词列表
