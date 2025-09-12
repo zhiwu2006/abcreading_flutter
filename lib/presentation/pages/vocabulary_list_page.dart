@@ -464,28 +464,6 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
             },
             tooltip: '显示当前记录的单词',
           ),
-          if (_lastClickedWord != null) ...[
-            GestureDetector(
-              onTap: () {
-                print('🎯 手动点击定位按钮，目标单词: $_lastClickedWord');
-                _scrollToWord(_lastClickedWord!);
-              },
-              onLongPress: () => _clearLastClickedWord(),
-              child: IconButton(
-                icon: const Icon(Icons.my_location),
-                onPressed: null, // 由GestureDetector处理
-                tooltip: '点击定位到上次查看的单词，长按清除记录',
-              ),
-            ),
-            IconButton(
-              icon: const Icon(Icons.clear),
-              onPressed: () {
-                print('🗑️ 手动点击清除按钮');
-                _clearLastClickedWord();
-              },
-              tooltip: '清除定位记录',
-            ),
-          ],
           if (_unfamiliarWords.isNotEmpty)
             IconButton(
               icon: Badge(
