@@ -149,10 +149,14 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
 
   /// 滚动到指定单词位置
   Future<void> _scrollToWord(String word) async {
+    print('🚀 开始滚动到单词: $word');
+    print('🔍 ScrollController状态: hasClients=${_scrollController.hasClients}');
+    
     if (_scrollController.hasClients) {
       // 等待一帧确保列表已构建
       await Future.delayed(const Duration(milliseconds: 100));
       
+      print('🔍 开始查找单词: $word');
       // 查找单词在列表中的精确位置
       int cumulativeIndex = 0;
       bool found = false;
@@ -382,10 +386,14 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
   Widget build(BuildContext context) {
     // 页面构建完成后自动滚动到上次位置（仅首次）
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      print('📋 自动滚动检查: hasAutoScrolled=$_hasAutoScrolled, lastWord=$_lastClickedWord, hasClients=${_scrollController.hasClients}');
+      
       if (!_hasAutoScrolled && _lastClickedWord != null && _scrollController.hasClients) {
         print('🎯 开始自动滚动到单词: $_lastClickedWord');
         _hasAutoScrolled = true;
         _scrollToWord(_lastClickedWord!);
+      } else {
+        print('❌ 自动滚动条件不满足');
       }
     });
 
