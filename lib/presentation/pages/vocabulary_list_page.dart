@@ -144,119 +144,56 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString('last_clicked_word', word);
     _lastClickedWord = word;
-    print('✅ 已保存单词: $word');
   }
 
-  /// 滚动到指定单词位置
+  /// 滚动到指定单词位置 - 性能优化版本
   Future<void> _scrollToWord(String word) async {
-    print('🚀 开始滚动到单词: $word');
-    print('🔍 ScrollController状态: hasClients=${_scrollController.hasClients}');
+    if (!_scrollController.hasClients) return;
     
-    if (_scrollController.hasClients) {
-      // 等待列表完全构建
-      await Future.delayed(const Duration(milliseconds: 500));
+    // 减少延迟，提高响应速度
+    await Future.delayed(const Duration(milliseconds: 100));
+    
+    if (!_scrollController.hasClients) return;
+    
+    // 快速查找目标单词
+    double estimatedPosition = 0;
+    int itemCount = 0;
+    
+    for (int i = 0; i < defaultLessons.length; i++) {
+      final lesson = defaultLessons[i];
+      itemCount++; // 课程标题
       
-      if (!_scrollController.hasClients) return;
-      
-      print('🔍 开始查找单词: $word');
-      
-      // 使用GlobalKey来精确定位单词位置
-      final targetKey = GlobalKey();
-      Widget? targetWidget;
-      
-      // 查找目标单词的widget
-      bool found = false;
-      for (int i = 0; i < defaultLessons.length && !found; i++) {
-        final lesson = defaultLessons[i];
-        for (int j = 0; j < lesson.vocabulary.length; j++) {
-          if (lesson.vocabulary[j].word == word) {
-            found = true;
-            break;
-          }
+      for (int j = 0; j < lesson.vocabulary.length; j++) {
+        if (lesson.vocabulary[j].word == word) {
+          // 简化的位置计算
+          final screenSize = MediaQuery.of(context).size;
+          final isLandscape = screenSize.width > screenSize.height;
+          final itemHeight = isLandscape ? 75.0 : 88.0;
+          estimatedPosition = itemCount * itemHeight;
+          break;
         }
+        itemCount++;
       }
       
-      if (found) {
-        // 获取屏幕信息
-        final screenSize = MediaQuery.of(context).size;
-        final isLandscape = screenSize.width > screenSize.height;
-        final orientation = isLandscape ? "横屏" : "竖屏";
-        
-        // 使用Scrollable.ensureVisible的精确定位方法
-        final scrollPosition = _scrollController.position;
-        final double viewportHeight = scrollPosition.viewportDimension;
-        
-        print('📐 屏幕信息: ${screenSize.width.toInt()}x${screenSize.height.toInt()} ($orientation)');
-        print('📊 视口高度: $viewportHeight');
-        
-        // 计算目标位置（使用更精确的方法）
-        // 先滚动到大概位置，然后进行微调
-        double estimatedPosition = 0;
-        int itemCount = 0;
-        
-        for (int i = 0; i < defaultLessons.length; i++) {
-          final lesson = defaultLessons[i];
-          itemCount++; // 课程标题
-          
-          for (int j = 0; j < lesson.vocabulary.length; j++) {
-            if (lesson.vocabulary[j].word == word) {
-              // 找到目标单词
-              final itemHeight = isLandscape ? 75.0 : 88.0;
-              final titleHeight = 50.0;
-              
-              estimatedPosition = (i * titleHeight) + (itemCount * itemHeight);
-              break;
-            }
-            itemCount++;
-          }
-          
-          if (estimatedPosition > 0) break;
-        }
-        
-        // 计算居中位置
-        final double centerOffset = estimatedPosition - (viewportHeight / 2) + 44.0;
-        final double maxScroll = scrollPosition.maxScrollExtent;
-        final double minScroll = scrollPosition.minScrollExtent;
-        final double finalOffset = centerOffset.clamp(minScroll, maxScroll);
-        
-        print('📍 定位单词: $word');
-        print('📊 估算位置: $estimatedPosition, 居中偏移: $finalOffset');
-        print('🎯 滚动范围: $minScroll ~ $maxScroll');
-        
-        // 执行滚动
-        await _scrollController.animateTo(
-          finalOffset,
-          duration: const Duration(milliseconds: 1000),
-          curve: Curves.easeInOut,
-        );
-        
-        print('✅ 滚动完成，当前位置: ${_scrollController.offset}');
-        
-        // 进行二次精确定位
-        await Future.delayed(const Duration(milliseconds: 200));
-        
-        // 尝试使用更精确的定位方法
-        final currentOffset = _scrollController.offset;
-        final targetInViewport = currentOffset <= estimatedPosition && 
-                                estimatedPosition <= currentOffset + viewportHeight;
-        
-        if (!targetInViewport) {
-          print('🔧 进行精确定位调整');
-          final adjustment = estimatedPosition - (currentOffset + viewportHeight / 2);
-          final newOffset = (currentOffset + adjustment).clamp(minScroll, maxScroll);
-          
-          await _scrollController.animateTo(
-            newOffset,
-            duration: const Duration(milliseconds: 500),
-            curve: Curves.easeOut,
-          );
-          
-          print('🎯 精确定位完成: ${_scrollController.offset}');
-        }
-        
-      } else {
-        print('❌ 未找到单词: $word');
-      }
+      if (estimatedPosition > 0) break;
+    }
+    
+    if (estimatedPosition > 0) {
+      // 简化的滚动计算
+      final scrollPosition = _scrollController.position;
+      final double viewportHeight = scrollPosition.viewportDimension;
+      final double centerOffset = estimatedPosition - (viewportHeight / 2) + 50.0;
+      final double finalOffset = centerOffset.clamp(
+        scrollPosition.minScrollExtent, 
+        scrollPosition.maxScrollExtent
+      );
+      
+      // 使用更快的动画
+      await _scrollController.animateTo(
+        finalOffset,
+        duration: const Duration(milliseconds: 600),
+        curve: Curves.easeOutCubic,
+      );
     }
   }
 
@@ -407,14 +344,9 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
   Widget build(BuildContext context) {
     // 页面构建完成后自动滚动到上次位置（仅首次）
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      print('📋 自动滚动检查: hasAutoScrolled=$_hasAutoScrolled, lastWord=$_lastClickedWord, hasClients=${_scrollController.hasClients}');
-      
       if (!_hasAutoScrolled && _lastClickedWord != null && _scrollController.hasClients) {
-        print('🎯 开始自动滚动到单词: $_lastClickedWord');
         _hasAutoScrolled = true;
         _scrollToWord(_lastClickedWord!);
-      } else {
-        print('❌ 自动滚动条件不满足');
       }
     });
 
@@ -488,6 +420,10 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
             controller: _scrollController,
             padding: const EdgeInsets.all(16),
             children: _buildLessonSections(),
+            // 性能优化：增加缓存范围
+            cacheExtent: 1000,
+            // 性能优化：使用更高效的物理特性
+            physics: const BouncingScrollPhysics(),
           ),
         ),
       ),
@@ -606,21 +542,8 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
           data: ThemeData().copyWith(dividerColor: Colors.transparent),
           child: ExpansionTile(
             onExpansionChanged: (expanded) {
-              // 无论展开还是收起都记住位置
-              print('🖱️ 用户点击了单词容器: ${vocab.word} (展开: $expanded)');
-              print('📝 当前记录的单词: $_lastClickedWord');
+              // 记住位置，减少UI反馈提高性能
               _saveLastClickedWord(vocab.word);
-              print('💾 保存后的单词: $_lastClickedWord');
-              
-              // 显示调试信息
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text('🎯 已记住单词位置: ${vocab.word}'),
-                  duration: const Duration(seconds: 2),
-                  backgroundColor: Colors.blue[600],
-                  behavior: SnackBarBehavior.floating,
-                ),
-              );
             },
               tilePadding:
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
