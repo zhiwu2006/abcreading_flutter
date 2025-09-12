@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import '../../data/default_lessons.dart';
 import '../../models/lesson.dart';
 import 'unfamiliar_words_test_page.dart';
@@ -13,11 +14,30 @@ class VocabularyListPage extends StatefulWidget {
 
 class _VocabularyListPageState extends State<VocabularyListPage> {
   Set<String> _unfamiliarWords = {};
+  FlutterTts _flutterTts = FlutterTts();
 
   @override
   void initState() {
     super.initState();
     _loadUnfamiliarWords();
+    _initTts();
+  }
+
+  /// 初始化TTS
+  Future<void> _initTts() async {
+    await _flutterTts.setLanguage('en-US');
+    await _flutterTts.setSpeechRate(0.5);
+    await _flutterTts.setVolume(1.0);
+    await _flutterTts.setPitch(1.0);
+  }
+
+  /// 朗读单词
+  Future<void> _speakWord(String word) async {
+    try {
+      await _flutterTts.speak(word);
+    } catch (e) {
+      print('TTS朗读失败: $e');
+    }
   }
 
   /// 加载不熟悉单词列表
@@ -268,9 +288,21 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
                     ),
                   ),
                 ),
+                // 发音按钮
+                IconButton(
+                  icon: Icon(
+                    Icons.volume_up,
+                    color: Colors.blue[600],
+                    size: 20,
+                  ),
+                  onPressed: () => _speakWord(vocab.word),
+                  tooltip: '朗读单词',
+                  padding: const EdgeInsets.all(4),
+                  constraints: const BoxConstraints(minWidth: 32, minHeight: 32),
+                ),
                 if (zh.isNotEmpty && zh != eng)
                   Container(
-                    margin: const EdgeInsets.only(left: 12),
+                    margin: const EdgeInsets.only(left: 8),
                     padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                     decoration: BoxDecoration(
                       color: Colors.green[50],
@@ -350,5 +382,11 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
       final only = meaning.trim();
       return (only, only);
     }
+  }
+
+  @override
+  void dispose() {
+    _flutterTts.stop();
+    super.dispose();
   }
 }
