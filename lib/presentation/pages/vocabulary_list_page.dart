@@ -190,6 +190,64 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     }
   }
 
+  /// 滚动到指定课程位置
+  Future<void> _scrollToLesson(int lessonNumber) async {
+    if (_scrollController.hasClients) {
+      // 等待一帧确保列表已构建
+      await Future.delayed(const Duration(milliseconds: 100));
+      
+      // 查找课程在列表中的位置
+      int cumulativeIndex = 0;
+      bool found = false;
+      
+      for (int i = 0; i < defaultLessons.length && !found; i++) {
+        final lesson = defaultLessons[i];
+        if (lesson.lesson == lessonNumber) {
+          found = true;
+          break;
+        }
+        // 课程标题 + 该课程的所有单词
+        cumulativeIndex += 1 + lesson.vocabulary.length;
+      }
+      
+      if (found && _scrollController.hasClients) {
+        // 计算滚动位置
+        final double targetOffset = cumulativeIndex * 88.0; // 平均高度
+        final double maxOffset = _scrollController.position.maxScrollExtent;
+        final double clampedOffset = targetOffset.clamp(0.0, maxOffset);
+        
+        await _scrollController.animateTo(
+          clampedOffset,
+          duration: const Duration(milliseconds: 800),
+          curve: Curves.easeInOut,
+        );
+        
+        // 显示定位提示
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('📍 已定位到课程: Lesson $lessonNumber'),
+            duration: const Duration(seconds: 2),
+            backgroundColor: Colors.green[600],
+          ),
+        );
+      }
+    }
+  }
+
+  /// 显示课程导航对话框
+  void _showLessonNavigator() {
+    showDialog(
+      context: context,
+      builder: (context) => _LessonNavigatorDialog(
+        lessons: defaultLessons,
+        onLessonSelected: (lessonNumber) {
+          Navigator.of(context).pop();
+          _scrollToLesson(lessonNumber);
+        },
+      ),
+    );
+  }
+
   /// 保存不熟悉单词列表
   Future<void> _saveUnfamiliarWords() async {
     final prefs = await SharedPreferences.getInstance();
@@ -321,29 +379,46 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
   }
 
   Widget _buildLessonHeader(Lesson lesson) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
-      decoration: BoxDecoration(
-        color: Colors.orange[50],
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.orange[200]!),
-      ),
-      child: Row(
-        children: [
-          Icon(Icons.menu_book, color: Colors.orange[600], size: 18),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              'Lesson ${lesson.lesson}: ${lesson.title}',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.orange[700],
-                fontWeight: FontWeight.w600,
-                fontFamily: 'TimesNewRoman',
+    return GestureDetector(
+      onTap: _showLessonNavigator,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        decoration: BoxDecoration(
+          color: Colors.orange[50],
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.orange[200]!),
+        ),
+        child: Row(
+          children: [
+            Icon(Icons.menu_book, color: Colors.orange[600], size: 18),
+            const SizedBox(width: 8),
+            Expanded(
+              child: Text(
+                'Lesson ${lesson.lesson}: ${lesson.title}',
+                style: TextStyle(
+                  fontSize: 14,
+                  color: Colors.orange[700],
+                  fontWeight: FontWeight.w600,
+                  fontFamily: 'TimesNewRoman',
+                ),
               ),
             ),
-          ),
-        ],
+            Icon(
+              Icons.navigation,
+              color: Colors.orange[600],
+              size: 16,
+            ),
+            const SizedBox(width: 4),
+            Text(
+              '导航',
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.orange[600],
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -560,5 +635,255 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
     _flutterTts.stop();
     _scrollController.dispose();
     super.dispose();
+  }
+}
+
+/// 课程导航对话框
+class _LessonNavigatorDialog extends StatefulWidget {
+  final List<Lesson> lessons;
+  final Function(int lessonNumber) onLessonSelected;
+
+  const _LessonNavigatorDialog({
+    required this.lessons,
+    required this.onLessonSelected,
+  });
+
+  @override
+  State<_LessonNavigatorDialog> createState() => _LessonNavigatorDialogState();
+}
+
+class _LessonNavigatorDialogState extends State<_LessonNavigatorDialog> {
+  late ScrollController _scrollController;
+  int _selectedLesson = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.8,
+        height: MediaQuery.of(context).size.height * 0.6,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(16),
+          gradient: const LinearGradient(
+            colors: [Color(0xFFFFFBEB), Color(0xFFFFF7ED)],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+        child: Column(
+          children: [
+            // 标题栏
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.orange[600],
+                borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
+                ),
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.navigation,
+                    color: Colors.white,
+                    size: 24,
+                  ),
+                  const SizedBox(width: 8),
+                  const Expanded(
+                    child: Text(
+                      '课程导航',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'TimesNewRoman',
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.close, color: Colors.white),
+                    onPressed: () => Navigator.of(context).pop(),
+                  ),
+                ],
+              ),
+            ),
+            
+            // 当前选择显示
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              color: Colors.orange[100],
+              child: Row(
+                children: [
+                  Icon(Icons.touch_app, color: Colors.orange[700], size: 16),
+                  const SizedBox(width: 8),
+                  Text(
+                    '当前选择: Lesson $_selectedLesson',
+                    style: TextStyle(
+                      color: Colors.orange[700],
+                      fontWeight: FontWeight.w600,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            
+            // 课程列表
+            Expanded(
+              child: ListView.builder(
+                controller: _scrollController,
+                padding: const EdgeInsets.all(8),
+                itemCount: widget.lessons.length,
+                itemBuilder: (context, index) {
+                  final lesson = widget.lessons[index];
+                  final isSelected = lesson.lesson == _selectedLesson;
+                  
+                  return Container(
+                    margin: const EdgeInsets.symmetric(vertical: 2),
+                    child: InkWell(
+                      onTap: () {
+                        setState(() {
+                          _selectedLesson = lesson.lesson;
+                        });
+                      },
+                      borderRadius: BorderRadius.circular(8),
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                        decoration: BoxDecoration(
+                          color: isSelected ? Colors.orange[200] : Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(
+                            color: isSelected ? Colors.orange[400]! : Colors.orange[200]!,
+                            width: isSelected ? 2 : 1,
+                          ),
+                        ),
+                        child: Row(
+                          children: [
+                            Container(
+                              width: 32,
+                              height: 32,
+                              decoration: BoxDecoration(
+                                color: isSelected ? Colors.orange[600] : Colors.orange[100],
+                                borderRadius: BorderRadius.circular(16),
+                              ),
+                              child: Center(
+                                child: Text(
+                                  '${lesson.lesson}',
+                                  style: TextStyle(
+                                    color: isSelected ? Colors.white : Colors.orange[700],
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(width: 12),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Lesson ${lesson.lesson}',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: isSelected ? Colors.orange[800] : Colors.orange[700],
+                                    ),
+                                  ),
+                                  Text(
+                                    lesson.title,
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: isSelected ? Colors.orange[700] : Colors.grey[600],
+                                    ),
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              '${lesson.vocabulary.length}词',
+                              style: TextStyle(
+                                fontSize: 11,
+                                color: Colors.grey[600],
+                              ),
+                            ),
+                            if (isSelected) ...[
+                              const SizedBox(width: 8),
+                              Icon(
+                                Icons.check_circle,
+                                color: Colors.orange[600],
+                                size: 20,
+                              ),
+                            ],
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+            
+            // 底部按钮
+            Container(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: OutlinedButton(
+                      onPressed: () => Navigator.of(context).pop(),
+                      style: OutlinedButton.styleFrom(
+                        side: BorderSide(color: Colors.orange[300]!),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: Text(
+                        '取消',
+                        style: TextStyle(color: Colors.orange[700]),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: ElevatedButton(
+                      onPressed: () => widget.onLessonSelected(_selectedLesson),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.orange[600],
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        '导航到课程',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
