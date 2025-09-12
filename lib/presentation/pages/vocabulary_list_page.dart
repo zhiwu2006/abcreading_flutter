@@ -555,7 +555,9 @@ class _VocabularyListPageState extends State<VocabularyListPage> {
             onTap: () {
               // 点击整个单词容器时记住位置
               print('🖱️ 用户点击了单词容器: ${vocab.word}');
+              print('📝 当前记录的单词: $_lastClickedWord');
               _saveLastClickedWord(vocab.word);
+              print('💾 保存后的单词: $_lastClickedWord');
               
               // 显示调试信息
               ScaffoldMessenger.of(context).showSnackBar(
